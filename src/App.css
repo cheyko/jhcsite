@@ -1,5 +1,57 @@
 .App {
   text-align: center;
+  background-color: darkgreen !important;
+}
+
+.banner{
+  text-align: left;
+  background-color: yellow;
+}
+
+.blkYellow, .footer-container hr{
+  background-color: yellow;
+  color: black;
+}
+
+.navbar{
+  position: fixed !important;
+  width: 100% !important;
+}
+
+.navbar-item span{
+  margin: 0 auto !important;
+}
+
+.below-nav{
+  margin-top:3.5rem;
+}
+
+@media screen and (min-width: 1025px){
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+      max-width: 100% !important;
+  }
+  .banner-column{
+    margin-block: 10%;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 770px){
+  
+  .banner-column{
+    margin-block: 10%;
+  }
+  .container:is(.is-max-desktop):is(.is-max-widescreen){
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 770px){
+  .banner{
+    text-align: center;
+  }
+  .wrap-text{
+    display: none;
+  }
 }
 
 .App-logo {
@@ -35,4 +87,58 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar-item{
+  color:yellow !important;
+  background-color: darkgreen !important;
+}
+
+.navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover{
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.customSlide {
+  height: 25rem !important;
+  width: 100%;
+}
+
+.flag-card{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.slick-prev{
+  left: 10px !important;
+  z-index: 3 !important;
+}
+
+.slick-next{
+  z-index: 3  !important;
+  right: 35px !important;
+}
+.slick-prev:before, .slick-next:before {
+  font-size: 3rem !important;
+  color: green !important;
+}
+
+.slick-dots li button:before{
+  font-size: 12px !important;
+}
+
+.footer-container{
+  background-color: black !important;
+  color: yellow !important;
+}
+.links span{
+  color: yellow !important;
+}
+
+.links span:hover{
+  color: blue !important;
 }
