@@ -17,7 +17,7 @@ const Footer = props => {
                                 <dd>13 Hassan Musa Katsina Street</dd>
                                 <dd>Asokoro</dd>
                                 <dd>Federal Republic of Nigeria</dd>
-                                <dd><Link to="/contact"><img className="image is-64x64" src="/images/location.png"></img><span>Click to see location on Map</span></Link></dd>
+                                <dd><Link to="/contact"><img className="image is-64x64" src={process.env.PUBLIC_URL + "/images/location.png"}></img><span>Click to see location on Map</span></Link></dd>
                             </dl>
                             <br />
                             <b>Telephone Numbers</b> 
