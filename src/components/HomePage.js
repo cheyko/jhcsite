@@ -52,7 +52,7 @@ const HomePage = props => {
                   {slides.map((slide) => 
                       <div key={slide.id}>
                           <img className="slick-slide-image customSlide" 
-                            name={slide.id} alt={slide.id} src={slide.path}>
+                            name={slide.id} alt={slide.id} src={process.env.PUBLIC_URL + slide.path}>
                           </img>
                       </div>
                   )}
@@ -69,7 +69,7 @@ const HomePage = props => {
                 <div className="media">
                   <div className="media-left">
                     <figure className="image is-4x3">
-                      <img className="image is-128x128" src="/images/high_commissioner.jpg" alt="Placeholder" />
+                      <img className="image is-128x128" src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} alt="Placeholder" />
                     </figure>
                   </div>
                   <div className="media-content">
@@ -88,7 +88,7 @@ const HomePage = props => {
         <div className="hero flag-card" style={{margin:"3%"}}>
           <div className="container">
             <figure className="image is-4x3">
-              <img className="flag-card" src="/images/flag3d.jpg" alt="The Jamaican Flag" style={{height:"50%",width:"50%",margin:"0 auto"}} />
+              <img className="flag-card" src={process.env.PUBLIC_URL + "/images/flag3d.jpg"} alt="The Jamaican Flag" style={{height:"50%",width:"50%",margin:"0 auto"}} />
             </figure>
           </div>
         </div>
@@ -100,7 +100,7 @@ const HomePage = props => {
                 <div className="media">
                   <div className="media-left">
                     <figure className="image is-4x3">
-                      <img className="image is-128x128" src="/images/high_commissioner.jpg" alt="Placeholder" />
+                      <img className="image is-128x128" src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} alt="Placeholder" />
                     </figure>
                   </div>
                   <div className="media-content">
