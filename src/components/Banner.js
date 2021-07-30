@@ -10,7 +10,7 @@ const Banner = props => {
                         <div className="column">
                             <div className="hero banner-column">
                                 <figure className="image is-4x3">
-                                    <img src="/images/image1.jpg" alt="Placeholder" />
+                                    <img src={process.env.PUBLIC_URL + "/images/image1.jpg"} alt="Placeholder" />
                                 </figure>
                             </div>
                         </div>
@@ -26,7 +26,7 @@ const Banner = props => {
                         </div>
                         <div className="column is-two-fifths">
                             <figure className="image is-2by1">
-                                <img src="/images/consulate_office.jpg" alt="Placeholder" />
+                                <img src={process.env.PUBLIC_URL + "/images/consulate_office.jpg"} alt="Placeholder" />
                             </figure>
                         </div>
                     </div>
