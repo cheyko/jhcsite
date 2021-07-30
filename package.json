@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build && ./node_modules/.bin/json-server-auth ./backend/db.json --port 3001",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
