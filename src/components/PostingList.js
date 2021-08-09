@@ -40,7 +40,7 @@ const PostingList = props => {
                 <div className="box yellowbkgn column">
                   <div className="container">
                     <div className="column columns is-multiline">
-                      {postings && postings.length ? (
+                      {postings && postings.length > 0 ? (
                         postings.map((posting, index) => (
                           <PostingItem
                           posting={posting}

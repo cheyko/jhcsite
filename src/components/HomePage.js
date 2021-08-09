@@ -118,7 +118,7 @@ const HomePage = props => {
                     <br></br>
                     <br></br>
                     <div className="column columns is-multiline is-mobile">
-                      {postings && postings.length ? (
+                      {postings && postings.length > 0 ? (
                         postings.slice(0,6).map((posting, index) => (
                           <PostingItem
                           posting={posting}
