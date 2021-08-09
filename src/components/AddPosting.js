@@ -5,12 +5,12 @@ import axios from 'axios';
 
 const initState = {
   title: "",
-  type: "",
+  category: "",
   author: "",
   date: "",
   description: "",
   body: "",
-  postingTypes : ["Article","Notice"]
+  categories : ["Article","Notice"]
 };
 
 class AddPosting extends Component {
@@ -18,22 +18,34 @@ class AddPosting extends Component {
     super(props);
     this.state = initState;
   }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  FormatDate = d => {
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    var year = d.getFullYear();
+    return (year + "-" + month + "-" + day);
+  }
 
   save = async (e) => {
     e.preventDefault();
-    const { title, type, author, date, description, body } = this.state;
+    const { title, category, author, description, body } = this.state;
 
-    if (title && body) {
-      const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
-
-      await axios.post(
-        'http://localhost:3001/postings',
-        { id, title, type, author, date, description, body },
+    if (title && body && category) {
+      //const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      const date = this.FormatDate(new Date());
+      const res = await axios.post(
+        '/api/postings',
+        { title, category, author, date, description, body },
       )
+
+      const id = res.id;
 
       this.props.context.addPosting(
         {
-          title, type, author, date, description, body
+          id, title, category, author, date, description, body
         },
         () => this.setState(initState)
       );
@@ -51,7 +63,7 @@ class AddPosting extends Component {
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
 
   render() {
-    const { title, type, author, date, description, body, postingTypes } = this.state;
+    const { title, category, author, date, description, body, categories } = this.state;
     const { user } = this.props.context;
 
     return !(user && user.accessLevel < 1) ? (
@@ -80,14 +92,14 @@ class AddPosting extends Component {
                 />
               </div>
               <div className="field">
-                <label className="label">Type Of Post: </label>
-                {postingTypes.map((option,index) => (
+                <label className="label">Category Of Post: </label>
+                {categories.map((option,index) => (
                   <label key={index}>
                     {option} {" "}
                     <input
-                      name="type"
+                      name="category"
                       value={option}
-                      onSelect={this.handleChange}
+                      onChange={this.handleChange}
                       type="radio"
                     /> {" "}
                     </label>

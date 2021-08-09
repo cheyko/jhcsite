@@ -4,8 +4,8 @@ import withContext from "../withContext";
 const Banner = props => {
     return(
         <>
-            <section className="hero is-primary">
-                <div className="below-nav banner">
+            <section>
+                <div className="banner">
                     <div className="columns">
                         <div className="column">
                             <div className="hero banner-column">

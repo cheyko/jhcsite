@@ -1,42 +1,40 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {Link} from "react-router-dom";
 
 const PostingItem = props => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   const { posting } = props;
   return (
-    <div className="column is-half">
-      <div className="box">
-        <small>{posting.type}</small>
-        <div className="media">
-          
-          <div className="media-left">
-            <figure className="image is-64x64">
-              <img
-                src="https://bulma.io/images/placeholders/128x128.png"
-                alt={posting.description}
-              />
-            </figure>
-          </div>
-          <div className="media-content">
-            <b style={{ textTransform: "capitalize" }}>
-              {posting.title}{" "}
-              <br/>
-              <span className="tag is-primary">
-                  {posting.date ? (
-                    <small>{posting.date + " New"}</small>
-                    ) : (
-                    <small className="has-text-warning">No Date Available</small>
-                )}
-                </span>
-            </b>
-            <div>{posting.description}</div>
-            <div className="is-clearfix">
-              <b style={{ textTransform: "capitalize",color:"blue" }} className="is-pulled-right" >
-                {posting.author}
-              </b>
+    <div className="column news-article is-mobile">
+      <Link to={`/view-posting/${posting.id}`}>
+        <div className="posting-item-card" style={{height:"100%",margin:"0 auto"}}>
+          {/*<div className="has-text-left"> <small style={{color:"red"}}>{posting.type}</small> </div>*/}
+          <div className="card grnBkgn" style={{height:"100%"}}>
+            
+            <div className="card-image">
+              <figure className="image is-4x3">
+                <img
+                  src={process.env.PUBLIC_URL + "/images/image7.jpg"}
+                  alt={posting.description}
+                />
+              </figure>
+            </div>
+            <div className="card-content">
+              <div className="content">
+                <b className="posting-title" style={{ textTransform: "capitalize"}}>
+                  {posting.title}{" "}
+                </b>
+                
+              </div>
+
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

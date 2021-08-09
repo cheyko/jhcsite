@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: darkgreen !important;
+  background-color: rgb(109, 138, 106) !important;
+  /*background-color: white;*/
 }
 
 .banner{
@@ -13,45 +14,113 @@
   color: black;
 }
 
-.navbar{
+.page-header{
+  margin-top: 3rem;;
+}
+
+.page-header-body{
+  padding:1rem;
+}
+/*.navbar{
   position: fixed !important;
   width: 100% !important;
-}
+}*/
 
 .navbar-item span{
   margin: 0 auto !important;
+  font-weight: bold;
 }
 
-.below-nav{
-  margin-top:3.5rem;
+.map-button{
+  background-color: black;
+  cursor: pointer;
+  color: yellow;
+  border: none;
+}
+/*.below-nav{
+  margin-top:4.5rem;
+}*/
+
+.navbar-item{
+  padding: 0.1rem 0.3rem !important;
+}
+.navbar-item .navbar-link {
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 1025px){
-  .container:not(.is-max-desktop):not(.is-max-widescreen) {
-      max-width: 100% !important;
-  }
-  .banner-column{
-    margin-block: 10%;
-  }
+.navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
+  color: black !important;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 1025px) and (min-width: 770px){
+.navbar-link{
+  color: yellow !important;
+  background-color: rgba(0,128,0,0) !important;
+}
+
+.navbar-brand.is-tab:focus, .navbar-brand.is-tab:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.navbar-link.is-tab:focus, .navbar-link.is-tab:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  border-color: yellow !important;
+}
+
+.navbar-item.is-tab:focus .navbar-link:not(.is-arrowless)::after, .navbar-item.is-tab:hover .navbar-link:not(.is-arrowless)::after{
+  border-color: black !important;
+}
+
+.yellowbkgn{
+  background-color: yellow !important;
+}
+
+.grnBkgn{
+  background-color: rgb(0,128,0,0.7) !important;
+}
+
+.grnBkgn p {
+  color:yellow;
+}
+
+.home-page-card-horizontal{
+  margin-inline: 3rem;
+}
+
+.home-page-card-horizontal .title, .home-page-card-horizontal .subtitle {
+  color: yellow !important;
+}
+
+.is-content .message-header, .standardLook{
+  background-color: rgb(0,128,0) !important;
+  color: yellow;
   
-  .banner-column{
-    margin-block: 10%;
-  }
-  .container:is(.is-max-desktop):is(.is-max-widescreen){
-    width: 50% !important;
-  }
 }
 
-@media screen and (max-width: 770px){
-  .banner{
-    text-align: center;
-  }
-  .wrap-text{
-    display: none;
-  }
+.standardLook{
+  padding: 0 !important;
+}
+.is-content .message-body{
+  background-color: rgb(255,255,0) !important;
+  color: black;
+}
+
+.hide-element{
+  display: none;
+}
+
+.left-margin{
+  margin-left: 3rem;
 }
 
 .App-logo {
@@ -91,10 +160,10 @@
 
 .navbar-item{
   color:yellow !important;
-  background-color: darkgreen !important;
+  background-color: rgb(0,128,0) !important;
 }
 
-.navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
+.navbar-item.is-tab:focus, .navbar-item.is-tab:hover, .navbar-item:hover, .navbar-item:focus {
   background-color: yellow !important;
   color: black !important;
 }
@@ -109,9 +178,11 @@
   width: 100%;
 }
 
+/*
 .flag-card{
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
+*/
 
 .slick-prev{
   left: 10px !important;
@@ -124,7 +195,7 @@
 }
 .slick-prev:before, .slick-next:before {
   font-size: 3rem !important;
-  color: green !important;
+  color: rgb(0,128,0) !important;
 }
 
 .slick-dots li button:before{
@@ -141,4 +212,106 @@
 
 .links span:hover{
   color: blue !important;
+}
+
+.contactForm{
+  background-color: rgb(0,128,0) !important ;
+}
+
+.p-format{
+  text-align: justify;
+  text-indent: 3rem;
+}
+
+.remarks .read-more-link {
+  display: none;
+}
+
+.posting-title{
+  color:yellow;
+}
+
+.posting-author{
+  color:black;
+}
+
+.posting-item-card:hover {
+  color: #00f !important;
+  border: #00f solid 2px;
+}
+
+.commissionerPic:hover{
+  border: solid 3px blue;
+}
+
+.ad-card-image{
+  height : 12rem !important;
+}
+
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .hero {
+    padding-top: 60px !important;
+  }
+
+@media screen and (max-width: 770px){
+  .banner{
+    text-align: center;
+  }
+  .wrap-text{
+    display: none;
+  }
+
+ /* .posting-item-card {
+    background-color: rgb(0,128,0,0.7) !important;
+    width: auto;
+  }*/
+
+  .hero article ul{
+    margin: 0 !important;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  .container:not(.is-max-desktop):not(.is-max-widescreen) {
+      max-width: 100% !important;
+  }
+  .banner-column{
+    margin-block: 10%;
+  }
+  .posting-item-card {
+    width:25rem !important;
+  }
+  .break-text{
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 1025px) and (min-width: 770px){
+  
+  .banner-column{
+    margin-block: 10%;
+  }
+  .container:is(.is-max-desktop):is(.is-max-widescreen){
+    width: 50% !important;
+  }
+
+  .posting-item-card {
+    width:25rem !important;
+  }
+
+  .break-text{
+    display: none;
+  }
+}
+
+.hero, article{
+  margin-block: 1rem;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import withContext from "../withContext";
 
 class Login extends Component {
@@ -9,6 +9,10 @@ class Login extends Component {
       username: "",
       password: ""
     };
+  }
+  
+  componentDidUpdate(){
+    window.scrollTo(0, 0);
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
@@ -31,16 +35,24 @@ class Login extends Component {
   render() {
     return !this.props.context.user ? (
       <>
-        <div className="hero blkYellow" >
-          <div className="hero-body container">
-            <h4 className="title">Login</h4>
+        <div className="header">
+          <div className="hero blkYellow page-header" >
+            <div className="page-header-body container">
+              <h4 className="title">Login</h4>
+            </div>
           </div>
+          <br />
+          <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li class="is-active"><a href="#" aria-current="page">Login</a></li>
+            </ul>
+          </nav>
         </div>
         <br />
-        <br />
-        <form onSubmit={this.login}>
+        <form onSubmit={this.login} >
           <div className="columns is-mobile is-centered">
-            <div className="column is-one-third">
+            <div className="box column grnBkgn is-one-third" style={{padding:"3rem",margin:"3rem"}}>
               <div className="field">
                 <label className="label">Email: </label>
                 <input
@@ -64,7 +76,7 @@ class Login extends Component {
               )}
               <div className="field is-clearfix">
                 <button
-                  className="button is-primary is-outlined is-pulled-right"
+                  className="button is-info is-pulled-right"
                 >
                   Submit
                 </button>

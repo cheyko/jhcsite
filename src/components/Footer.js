@@ -1,6 +1,7 @@
 import React from "react";
 import withContext from "../withContext";
 import {Link} from "react-router-dom";
+import MapModal from "./MapModal";
 
 const Footer = props => {
     return (
@@ -8,43 +9,67 @@ const Footer = props => {
             <div className="hero" style={{marginBlock:"1rem"}}>
                 <div className="box footer-container">
                     <div className="columns">
-                        <div class="column">
-                            <b>Consulate Information</b>
+                        <div class="column has-text-left">
                             <hr></hr>
-                            <b>Address</b> 
-                            <dl style={{textAlign:"left"}}>
+                            <b >Consulate Information</b>
+                            <hr></hr>
+                            <b style={{textDecoration:"underline"}}>Address</b> 
+                            <dl style={{marginLeft:"1rem"}}>
                                 <dd>The Jamaican High Commission</dd>
                                 <dd>13 Hassan Musa Katsina Street</dd>
-                                <dd>Asokoro</dd>
+                                <dd>Asokoro, Abuja</dd>
                                 <dd>Federal Republic of Nigeria</dd>
-                                <dd><Link to="/contact"><img className="image is-64x64" src={process.env.PUBLIC_URL + "/images/location.png"}></img><span>Click to see location on Map</span></Link></dd>
+                                
+                                <MapModal />
                             </dl>
                             <br />
-                            <b>Telephone Numbers</b> 
-                            <dl style={{textAlign:"left"}}>
+                            <b style={{textDecoration:"underline"}}>Telephone Numbers</b> 
+                            <dl style={{marginLeft:"1rem"}}>
                                 <dd>Tel1: 0813 606 3356 </dd>
                                 <dd>Tel2: 0816 737 4252 </dd>
                             </dl>
                         </div>
                         
                         <div class="column">
-                            <b> Documents </b>
                             <hr></hr>
+                            <b> Quick Links </b>
+                            <hr></hr>
+                            <dl className="links" style={{textAlign:"left"}}>
+                                <dd><Link to="/about"><span> About Us </span></Link></dd>
+                                <br />
+                                <dd><Link to="/documents"><span> Forms & Documents </span></Link></dd>
+                                <br />
+                                <dd><Link to="/postings"><span> Latest News </span></Link></dd>
+                                <br />
+                                <dd><Link to="/terms"><span> Terms and Conditions </span></Link></dd>
+                            </dl>
                         </div>
                         
                         <div class="column">
-                            <b> J.H.C in Nigeria </b>
+                            <hr></hr>
+                            <b> Jamaican Government Services </b>
                             <hr></hr>
                             <dl className="links" style={{textAlign:"left"}}>
-                                <dd><Link to="/"><span>Link 1 </span></Link></dd>
-                                <dd><Link to="/"><span>Link 2 </span></Link></dd>
-                                <dd><Link to="/"><span>Link 3 </span></Link></dd>
                                 <dd><a href="https://www.gov.jm/"><span> Government of Jamaica </span></a></dd>
+                                <br />
+                                <dd><a href="https://www.jacustoms.gov.jm/"><span> Jamaica Customs </span></a></dd>
+                                <br />
+                                <dd><a href="https://dobusinessjamaica.com/"><span> Jamaica Trade & Invest (JAMPRO) </span></a></dd>
+                                <br />
+                                <dd><a href="https://www.pica.gov.jm/"><span> Passport Immigration & Citizenship (PICA) </span></a></dd>
+                                <br />
+                                <dd><a href="https://www.tradeboard.gov.jm/"><span> Trade Board</span></a></dd>
+                                <br />
+                                <dd><a href="https://www.jamaicatax.gov.jm/"><span> Tax Administration Jamaica</span></a></dd>
                             </dl>
                         </div>
                     </div>
                     <hr></hr>
-                     &copy; 2021 Jamaican High Commission, Nigeria
+                     <div>&copy; 2021 Jamaican High Commission, Nigeria</div>
+                     <br />
+                     <div style={{width:"100%"}} className="blkYellow"> 
+                        <p>Website developed by Ariel Carmichael Wilson</p>
+                     </div>
                 </div>
             </div>
         </>    
