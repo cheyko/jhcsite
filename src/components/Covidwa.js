@@ -4,7 +4,6 @@ import SideBar from "./SideBar";
 //import Alerts from "./Alerts";
 //import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
-import { green } from "@material-ui/core/colors";
 
 const Covidwa = props => {
     useEffect(() => {
