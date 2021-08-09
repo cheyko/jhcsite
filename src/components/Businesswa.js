@@ -4,8 +4,6 @@ import SideBar from "./SideBar";
 //import Alerts from "./Alerts";
 //import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
-import { green } from "@material-ui/core/colors";
-import { Business } from "@material-ui/icons";
 
 const Businesswa = props => {
     useEffect(() => {
