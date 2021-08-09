@@ -131,7 +131,7 @@ const HomePage = props => {
                             posting={posting}
                               key={index}
                             />
-                        )
+                        )))
                       ) : (
                         <div className="column">
                           <span className="is-size-3 has-text-grey-light" style={{color:"blue"}}>
