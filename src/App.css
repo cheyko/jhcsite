@@ -68,18 +68,23 @@
   color: black !important;
 }
 
-.navbar-item.is-tab:focus, .navbar-item.is-tab:hover {
-  background-color: yellow !important;
-  color: black !important;
+.navbar-link .custom-nav {
+  color: yellow !important;
 }
 
 .navbar-link:not(.is-arrowless)::after {
   border-color: yellow !important;
 }
 
-.navbar-item.is-tab:focus .navbar-link:not(.is-arrowless)::after, .navbar-item.is-tab:hover .navbar-link:not(.is-arrowless)::after{
+/*.navbar-item .is-tab:focus .navbar-link, .navbar-item .is-tab:hover .navbar-link{
+  background-color: yellow !important;
+  color: black !important;
+}*/
+
+.navbar-item .is-tab:focus .navbar-link:not(.is-arrowless)::after, .navbar-item .is-tab:hover .navbar-link:not(.is-arrowless)::after{
   border-color: black !important;
 }
+
 
 .yellowbkgn{
   background-color: yellow !important;
@@ -163,7 +168,12 @@
   background-color: rgb(0,128,0) !important;
 }
 
-.navbar-item.is-tab:focus, .navbar-item.is-tab:hover, .navbar-item:hover, .navbar-item:focus {
+.navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {
+  background-color: yellow !important;
+  color: black !important;
+}
+
+.navbar-item .is-tab:focus .custom-nav, .navbar-item .is-tab:hover .custom-nav, .navbar-item:hover .custom-nav, .navbar-item:focus .custom-nav {
   background-color: yellow !important;
   color: black !important;
 }

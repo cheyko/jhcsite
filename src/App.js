@@ -178,35 +178,38 @@ export default class App extends Component {
               <div className={`navbar-menu ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
-                <div class="navbar-item is-expanded is-tab has-dropdown is-hoverable">
-                  <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/general" className="navbar-link is-expanded is-tab" style={{paddingTop:"0"}}>
-                   <span><i class="fa fa-laptop"></i> General <br className="wrap-text"/> Information </span> 
-                  </Link>
-                  <div className="navbar-dropdown standardLook is-size-6">
-                    <Link to="/covid19" className="navbar-item is-expanded is-tab">
-                      General COVID-19 Information
-                    </Link>
-                    <Link to="/covidja" class="navbar-item is-expanded is-tab">
-                      COVID-19 in Jamaica
-                    </Link>
-                    <Link to="/covidwa" class="navbar-item is-expanded is-tab">
-                      COVID-19 in West Africa
-                    </Link>
-                    <Link to="/businessja" class="navbar-item is-expanded is-tab">
-                      Doing Business in Jamaica
-                    </Link>
-                    <Link to="/businesswa" class="navbar-item is-expanded is-tab">
-                      Doing Business in West Africa
-                    </Link>
-                    <a href="https://www.gov.jm/" class="navbar-item is-expanded is-tab">
-                      Government of Jamaica
-                    </a>
-                    <a href="https://mot.gov.jm/" class="navbar-item is-expanded is-tab">
-                      Ministry of Tourism, Jamaica
-                    </a>
-
+                  <div class="dropdown navbar-item is-tab is-hoverable">
+                    <div class="dropdown-trigger navbar-link is-expanded">
+                      <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/general" className="custom-nav" style={{paddingTop:"0"}}>
+                        <span><i class="fa fa-laptop"></i> General <br className="wrap-text"/> Information </span> 
+                      </Link>
+                    </div>
+                    <div class="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content standardLook is-size-6">                      
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covid19" className="navbar-item is-expanded is-tab">
+                          General COVID-19 Information
+                        </Link>
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidja" class="navbar-item is-expanded is-tab">
+                          COVID-19 in Jamaica
+                        </Link>
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidwa" class="navbar-item is-expanded is-tab">
+                          COVID-19 in West Africa
+                        </Link>
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businessja" class="navbar-item is-expanded is-tab">
+                          Doing Business in Jamaica
+                        </Link>
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businesswa" class="navbar-item is-expanded is-tab">
+                          Doing Business in West Africa
+                        </Link>
+                        <a onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://www.gov.jm/" class="navbar-item is-expanded is-tab">
+                          Government of Jamaica
+                        </a>
+                        <a  href="https://mot.gov.jm/" class="navbar-item is-expanded is-tab">
+                          Ministry of Tourism, Jamaica
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
                 <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/citizens" className="navbar-item is-expanded is-tab">
                 <span> <i class="fa fa-book"></i> Jamaican <br className="wrap-text"/> Nationals</span>
                 </Link>
@@ -216,22 +219,27 @@ export default class App extends Component {
                 <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/postings" className="navbar-item is-expanded is-tab">
                 <span> <i class="fa fa-globe"></i> News Articles <br className="wrap-text"/> and Notices</span>
                 </Link>
-                <div class="navbar-item is-expanded is-tab has-dropdown is-hoverable">
-                  <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/about" className="navbar-link is-expanded is-tab" style={{paddingTop:"0"}}>
-                  <span> <i class="fa fa-building"></i> About <br className="wrap-text"/> The Consulate </span>
-                  </Link>
-                  <div class="navbar-dropdown standardLook is-size-6">
-                    <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" class="navbar-item is-expanded is-tab">
-                      The Commissioner
-                    </Link>
-                    <a class="navbar-item is-expanded is-tab">
-                      The General Staff
-                    </a>
-                    <a href="https://mfaft.gov.jm/jm/" class="navbar-item is-expanded is-tab">
-                      Ministry of Foreign Affairs and Foreign Trade Jamaica
-                    </a>
+
+                <div class="dropdown navbar-item is-tab is-hoverable">
+                    <div class="dropdown-trigger navbar-link is-expanded is-tab">
+                      <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/about" className="custom-nav" style={{paddingTop:"0"}}>
+                        <span> <i class="fa fa-building"></i> About <br className="wrap-text"/> The Consulate </span>
+                      </Link>
+                    </div>
+                    <div class="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content standardLook is-size-6">                      
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" class="navbar-item is-expanded is-tab">
+                          The Commissioner
+                        </Link>
+                        <a onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} class="navbar-item is-expanded is-tab">
+                          The General Staff
+                        </a>
+                        <a onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://mfaft.gov.jm/jm/" class="navbar-item is-expanded is-tab">
+                          Ministry of Foreign Affairs and Foreign Trade Jamaica
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
                 
                 {this.state.user && this.state.user.accessLevel < 1 && (
                   <Link to="/add-posting" className="navbar-item is-expanded is-tab">
