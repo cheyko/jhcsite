@@ -79,7 +79,7 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
-@app.route('/')
+@app.route('/api/')
 def home():
     return "ok"
 
