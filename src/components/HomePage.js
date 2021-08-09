@@ -58,7 +58,7 @@ const HomePage = props => {
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
   const CardBody = "Opening remarks .... "
 
-  const postings = props.context.postings;
+  const postings = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
 
   return (
     <>
@@ -119,19 +119,12 @@ const HomePage = props => {
                     <br></br>
                     <div className="column columns is-multiline is-mobile">
                       {postings && postings.length > 0 ? (
-                        postings.length > 5 ? (
-                          (postings.slice(0,6)).map((posting, index) => (
-                            <PostingItem
-                            posting={posting}
-                              key={index}
-                            />
-                        ))):(
-                          postings.map((posting, index) => (
-                            <PostingItem
-                            posting={posting}
-                              key={index}
-                            />
-                        )))
+                        postings.map((posting, index) => (
+                          <PostingItem
+                          posting={posting}
+                            key={index}
+                          />
+                        ))
                       ) : (
                         <div className="column">
                           <span className="is-size-3 has-text-grey-light" style={{color:"blue"}}>
