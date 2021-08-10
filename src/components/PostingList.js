@@ -12,7 +12,7 @@ const PostingList = props => {
   }, []);
 
 
-  const { postings } = props.context;
+  const { postings } = props.context.postings;
 
   return (
     <>

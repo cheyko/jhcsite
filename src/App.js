@@ -61,7 +61,7 @@ export default class App extends Component {
   handleScroll = e => {
     // Get the navbar
     let navbar = document.getElementById("navbar");
-    console.log(navbar);
+    
     // Get the offset position of the navbar
     let sticky = navbar.offsetTop;
 
