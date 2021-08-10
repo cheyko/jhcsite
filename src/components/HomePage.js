@@ -24,7 +24,15 @@ const HomePage = props => {
     slidesToScroll: 1,
     lazyload: 'progressive',
     autoplay: true,
-    autoplayspeed: 5000
+    autoplayspeed: 5000,
+    responsive:[
+      {
+        breakpoint: 700,
+        settings: {
+            arrows: false,
+        }
+      }
+    ]
   };
 
   const slides = [
