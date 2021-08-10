@@ -42,7 +42,6 @@
 }*/
 
 .navbar-item, .navbar-link{
-  padding: 0.1rem 0.3rem !important;
   text-align: left;
   margin: 0 auto;
 }
@@ -298,6 +297,10 @@
   }
   .a-feature{
     margin-bottom: 3rem !important;
+  }
+
+  .navbar-item, .navbar-link{
+    padding: 0.1rem 0.3rem !important;
   }
 }
 
