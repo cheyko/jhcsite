@@ -288,6 +288,19 @@
   .hero article ul{
     margin: 0 !important;
   }
+
+  .message-body{
+    padding: 1rem !important;
+    text-align: left !important;
+  }
+
+  .p-format{
+    text-align: left !important;
+    text-indent: 3rem !important;
+  }
+  .a-feature{
+    margin-bottom: 3rem !important;
+  }
 }
 
 @media screen and (min-width: 1025px){
@@ -326,4 +339,9 @@
 
 .hero, article{
   margin-block: 1rem;
+}
+
+.remarks a.link-to{
+  pointer-events: none !important;
+  cursor: default;
 }

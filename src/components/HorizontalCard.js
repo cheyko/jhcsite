@@ -9,7 +9,7 @@ const HorizontalCard = props => {
               <div className="card-content">
                 <div className="columns">
                   <div className="column is-one-fifth commissionerPic" >
-                    <Link to="/commissioner">
+                    <Link className="link-to" to="/commissioner">
                       <figure className="image is-4x3">
                         <img style={{width:"100%",height:"100%",margin:"0 auto"}} className="image is-128x128" src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} alt="Placeholder" />
                       </figure>

@@ -40,8 +40,8 @@ const CitizenPage = props => {
                       <p>The Jamaican High Commision in Abuja, Nigeria Welcomes 
                         all Jamaicans in Nigeria, Cameroon, Ghana, Senegal and Sierre Leone.</p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
-                      <p>
+                      <div className="message-body">
+                      <p className="p-format">
                       The Jamaican High Comission in Abuja the capital of the Federal 
                       Republic of Nigeria provides information and assistance to Jamaican 
                       Nationals in the West African States under its jurisdiction. These countries 
@@ -67,7 +67,7 @@ const CitizenPage = props => {
                       <div className="message-header">
                       <p> Services provided to Jamaicans</p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body" style={{padding:"0"}}>
                         <ul>
                           <li> <strong> <a href="">Passport Services</a> </strong> </li>
                           <li> <strong> <a href="">Citizen Application - Marriage</a> </strong> </li>
@@ -87,7 +87,7 @@ const CitizenPage = props => {
                       <div className="message-header">
                         <p> Documents </p>
                       </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body">
                           <ul>
                             <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Descent</a> </strong> </li>
                             <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Marriage</a> </strong> </li>

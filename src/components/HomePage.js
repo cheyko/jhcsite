@@ -135,7 +135,7 @@ const HomePage = props => {
                     </div>
                     <p>
                       <Link to="/postings">
-                        <button className="button outlined is-info" style={{margin:"1rem",padding:"1.5rem"}}> 
+                        <button className="button outlined is-info" style={{margin:"0 auto",padding:"1.5rem"}}> 
                             View latest articles <br className="break-text"/> and notices
                         </button> 
                       </Link>
@@ -153,7 +153,7 @@ const HomePage = props => {
         <div className="hero site-features">
           <div className="hero-body">
             <div className="columns is-multiline is-mobile">
-              <div className="column">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image" style={{backgroundColor:"skyblue"}}>
                     <figure className="image is-4x3">
@@ -173,7 +173,8 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column">
+              
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
@@ -193,7 +194,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
@@ -214,7 +215,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">

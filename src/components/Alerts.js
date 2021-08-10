@@ -10,11 +10,11 @@ const Alerts  = props => {
                       <div className="message-header">
                       <p> Alerts and Messages </p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body">
                         <dl>
                           <dt> <h3> COVID-19 INFORMATION</h3> </dt>
                         <dd>
-                          <ul style={{marginLeft:"3rem"}}>
+                          <ul>
                             <li> 
                               <div>
                                 <article className="message is-danger">

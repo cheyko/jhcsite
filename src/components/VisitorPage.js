@@ -123,14 +123,15 @@ const VisitorPage = props => {
                               </ul>
                             </li>
                         </ol>
-                        <div className="columns" style={{padding:"3rem"}}>
+                        <br />
+                        <div className="columns">
                           <div className="column has-text-centered">
-                            <button style={{color:"black"}} className="button is-large is-rounded is-outlined is-primary">
+                            <button style={{color:"black",margin:"0 auto"}} className="button is-large is-rounded is-outlined is-primary">
                               Download Form
                             </button>
                           </div>
                           <div className="column has-text-centered">
-                            <button style={{color:"black"}} className="button is-large is-rounded is-outlined is-primary">
+                            <button style={{color:"black",margin:"0 auto"}} className="button is-large is-rounded is-outlined is-primary">
                               Contact Us
                             </button>
                           </div>
