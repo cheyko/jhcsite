@@ -41,11 +41,9 @@
   margin-top:4.5rem;
 }*/
 
-.navbar-item{
+.navbar-item, .navbar-link{
   padding: 0.1rem 0.3rem !important;
   text-align: left;
-}
-.navbar-item .navbar-link {
   margin: 0 auto;
 }
 
