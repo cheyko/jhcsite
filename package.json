@@ -24,14 +24,15 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://jhcsite.herokuapp.com/",
+  "homepage": "https://cheyko.github.io/",
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run --no-debugger",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": [
