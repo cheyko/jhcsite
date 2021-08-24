@@ -67,7 +67,7 @@ const HomePage = props => {
   const CardBody = "Opening remarks .... "
 
   const postings = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  console.log(postings.length > 0);
+  console.log(postings.length);
   
   return (
     <>
@@ -127,7 +127,7 @@ const HomePage = props => {
                     <br></br>
                     <br></br>
                     <div className="column columns is-multiline is-mobile">
-                      {postings !== undefined && postings.length > 0 ? (
+                      {postings !== undefined && postings.length ? (
                         postings.map((posting, index) => (
                           <PostingItem
                           posting={posting}
