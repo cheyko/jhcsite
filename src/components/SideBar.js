@@ -34,7 +34,7 @@ const SideBar  = props => {
                           </dl>
                     </div>
                   </article>
-
+                    <br />
                   <article className="message is-normal">
                     <div className="message-header">
                       <p> Currency</p>
@@ -55,7 +55,7 @@ const SideBar  = props => {
                         </div>
                     </a>
                   </article>
-
+                    <br />
                   <article className="message is-link">
                     <div className="message-header">
                       <p>Additional Resources</p>
@@ -71,7 +71,7 @@ const SideBar  = props => {
                       </ul>
                     </div>
                   </article>
-                  
+                    <br />
                   <article className="message" style={{backgroundColor:"rgb(0,0,0,0)"}}>
                     <div className="message-header">
                       <p>Map of Jamaica</p>
