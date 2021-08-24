@@ -12,6 +12,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 jwt = JWTManager(app)
 db = SQLAlchemy(app)

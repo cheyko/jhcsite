@@ -66,7 +66,7 @@ const HomePage = props => {
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
   const CardBody = "Opening remarks .... "
 
-  const {postings} = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
+  const postings = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
   
   return (
     <>

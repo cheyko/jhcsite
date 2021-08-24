@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(109, 138, 106) !important;
+  background-color: rgb(255,255,255) !important;
   /*background-color: white;*/
 }
 
@@ -52,7 +52,7 @@
 }
 
 .navbar-link{
-  color: yellow !important;
+  color: black !important;
   background-color: rgba(0,128,0,0) !important;
 }
 
@@ -67,11 +67,11 @@
 }
 
 .navbar-link .custom-nav {
-  color: yellow !important;
+  color: black !important;
 }
 
 .navbar-link:not(.is-arrowless)::after {
-  border-color: yellow !important;
+  border-color: black !important;
 }
 
 /*.navbar-item .is-tab:focus .navbar-link, .navbar-item .is-tab:hover .navbar-link{
@@ -101,12 +101,12 @@
 }
 
 .home-page-card-horizontal .title, .home-page-card-horizontal .subtitle {
-  color: yellow !important;
+  color: black !important;
 }
 
 .is-content .message-header, .standardLook{
   background-color: rgb(0,128,0) !important;
-  color: yellow;
+  color: black;
   
 }
 
@@ -163,7 +163,7 @@
 }
 
 .navbar-item{
-  color:yellow !important;
+  color:black !important;
   background-color: rgb(0,128,0) !important;
 }
 
@@ -213,10 +213,10 @@
 
 .footer-container{
   background-color: black !important;
-  color: yellow !important;
+  color: white !important;
 }
 .links span{
-  color: yellow !important;
+  color: white !important;
 }
 
 .links span:hover{

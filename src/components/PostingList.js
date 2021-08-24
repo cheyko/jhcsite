@@ -11,8 +11,7 @@ const PostingList = props => {
     window.scrollTo(0, 0)
   }, []);
 
-
-  const { postings } = props.context.postings;
+  const postings = props.context.postings;
 
   return (
     <>
