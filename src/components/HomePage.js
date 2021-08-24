@@ -155,6 +155,7 @@ const HomePage = props => {
         </div>
         
         <br></br>
+        <br></br>
 
         <hr />
         <br></br>
