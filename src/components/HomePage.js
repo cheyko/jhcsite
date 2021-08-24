@@ -67,7 +67,7 @@ const HomePage = props => {
   const CardBody = "Opening remarks .... "
 
   const postings = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  console.log(postings > 0);
+  console.log(postings.length > 0);
   
   return (
     <>
