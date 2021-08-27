@@ -1,5 +1,10 @@
 import time
 import json
+import os
+
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -9,14 +14,86 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
+app.config['GMAIL_PASSWORD'] = "@MamaWill93" #change
+app.config['GMAIL_PORT'] = 465 
+app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
+app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change
+app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
+
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+#change
+text = """\
+
+This is email was sent from THAKKB.com .
+Visit THAKKB.com for more information or Contact 1-646-477-9309 or
+DM @barbiebeatKKB on Instagram with your queries.
+
+"""
+
+#change
+EmailTemp = """\
+    <html>
+        <body style="background-color:burlywood;padding:3rem">
+            <h1 style="color:crimson;font-family:fantasy"> This email was a message sent from JHC Website </h1>
+            <br>
+            <b style="color:chocolate;text-decoration:underline"> Name of Sender </b>
+            <br>
+            <p style="color:black;padding:1rem;font-style:italic">
+                {0}
+            </p>
+            <br>
+            <b style="color:chocolate;text-decoration:underline"> Email of Sender </b>
+            <br>
+            <p style="color:black;padding:1rem;font-style:italic">
+                {1}
+            </p>
+            <br>
+            <b style="color:chocolate;text-decoration:underline"> Nationality of Sender </b>
+            <br>
+            <p style="color:black;padding:1rem;font-style:italic">
+                {2}
+            </p>
+            <br>
+            <b style="color:chocolate;text-decoration:underline"> Subject of Sender </b>
+            <br>
+            <p style="color:black;padding:1rem;font-style:italic">
+                {3}
+            </p>
+            <br>
+            <b style="color:chocolate;text-decoration:underline"> Message of Sender </b>
+            <br>
+            <p style="color:black;padding:1rem;font-style:italic">
+                {4}
+            </p>
+            <small> Copyright &copy; 2021. </small>
+        </body>
+    </html>
+    """
+
+plainEmail = MIMEText(text, "plain")
+
+def sendEmail(contactEmail, subject, emailTemp):
+    message = MIMEMultipart("alternative")
+    message["Subject"] = subject
+    message["From"] = contactEmail
+    message["To"] = app.config['GMAIL_JHC']  
+
+    message.attach(plainEmail)
+    message.attach(emailTemp)
+
+    context = ssl.create_default_context() 
+    with smtplib.SMTP_SSL(app.config['GMAIL_SERVER'], app.config['GMAIL_PORT'], context=context) as server:
+        server.login(app.config['GMAIL_SENDER'], app.config['GMAIL_PASSWORD'])
+        server.sendmail(app.config['GMAIL_SENDER'], app.config['GMAIL_JHC'] , message.as_string())
 
 class User(db.Model):
     # You can use this to change the table name. The default convention is to use
@@ -30,6 +107,7 @@ class User(db.Model):
     last_name = db.Column(db.String(80))
     email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255))
+    is_admin = db.Column(db.Boolean)
 
     #userType ex: admin,client,artist
     #dateAdded
@@ -68,14 +146,16 @@ class Posting(db.Model):
     date = db.Column(db.DateTime)
     description = db.Column(db.String(255))
     body = db.Column(db.String(255))
+    numOfPics = db.Column(db.Integer)
 
-    def __init__(self, title, category, author, date, description, body ):
+    def __init__(self, title, category, author, date, description, body, numOfPics ):
         self.title = title
         self.category = category
         self.author = author
         self.date = date
         self.description = description
         self.body = body
+        self.numOfPics = numOfPics
 
     def __repr__(self):
         return '<House %r>' %  self.title
@@ -109,7 +189,8 @@ def login():
                 'firstname' : user.first_name,
                 'lastname' : user.last_name,
                 'access_token': access_token,
-                'refresh_token': refresh_token
+                'refresh_token': refresh_token,
+                'access_rights': user.is_admin
             }
         return jsonify({"msg": "Incorrect email or password"}), 400
     else:
@@ -121,23 +202,41 @@ def postings():
         result = Posting.query.all()
         postings = []
         for posting in result:
-            post = {"id":posting.id,"title":posting.title, "category":posting.category, "author":posting.author, "date":str(posting.date), "description":posting.description, "body":posting.body }
+            post = {"id":posting.id,"title":posting.title, "category":posting.category, "author":posting.author, "date":str(posting.date), "description":posting.description, "body":posting.body, "numOfPics":posting.numOfPics }
             postings.append(post)
         return json.dumps(postings)
     else:
         result = request.form
-        #photos = request.files.getlist("photos")
-        #numOfPics = (len(photos))
-        #parking = result["parking"].split(',')
-        title = request.json.get('title', None)
-        category = request.json.get('category', None)
-        author = request.json.get('author', None)
-        date = request.json.get('date', None)
-        description = request.json.get('description', None)
-        body = request.json.get('body', None)
-        newPost = Posting( title=title, category=category, author=author, date=date, description=description, body=body)
+        photos = request.files.getlist("photos")
+        numOfPics = (len(photos))
+        print(photos)
+        #title = request.json.get('title', None)
+        #category = request.json.get('category', None)
+        #author = request.json.get('author', None)
+        #date = request.json.get('date', None)
+        #description = request.json.get('description', None)
+        #body = request.json.get('body', None)
+        newPost = Posting( title=result['title'], category=result['category'], author=result['author'], date=result['date'], description=result['description'], body=result['body'], numOfPics=numOfPics)
         db.session.add(newPost)
         db.session.flush()
-        filename = "post" + str(newPost.id)
+        prefix = "post" + str(newPost.id)
+        os.makedirs(app.config['UPLOAD_FOLDER'] + prefix)   
+        for index, pic in enumerate(photos):
+            filename = "img" + str(index) + ".jpg"
+            pic.save(os.path.join(app.config['UPLOAD_FOLDER'] + prefix, filename))
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id}), 200
+
+@app.route('/api/message', methods=['POST'])
+def sendMessage():
+    if request.method == "POST":
+        contactName = request.json.get('contactName', None)
+        contactEmail = request.json.get('contactEmail', None)
+        nationality = request.json.get('nationality', None) 
+        contactSubject =  request.json.get('contactSubject', None)
+        contactMessage = request.json.get('contactMessage', None)
+
+        #sending email message
+        body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage))
+        sendEmail(contactEmail ,contactSubject,body)
+        return jsonify({"msg":"Message sent successfully"}), 200
