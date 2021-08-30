@@ -24,7 +24,7 @@ const VisitorPage = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Visiting Jamaica</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;Visiting Jamaica</span></li>
             </ul>
           </nav>
         </div>
@@ -62,7 +62,7 @@ const VisitorPage = props => {
                       <div className="message-body" style={{textAlign:"justify"}}>
                       <p>
                           The Consular section is open on Tuesdays and Thursday, between the 
-                          hourse of 9:00am to 12:00 noon. The Consular Section is responsible 
+                          hours of 9:00am to 12:00 noon. The Consular Section is responsible 
                           for Processing Visa Applications for residents of Countries that fall under
                           its jurisdiction. These residents include Nigerians, Ghanians, Sengalese, 
                           Cameroonians and Sierra Leoneans. Other persons from other west-african states
@@ -102,9 +102,9 @@ const VisitorPage = props => {
                         </p>
                         <ol style={{marginLeft:"3rem"}}>
                           <li> A Valid Passport from his/her Country of Residence </li>
-                          <li> Completed Visa Application Form, signed by the applicant </li>
-                          <li> Two (2) References in Jamaica </li>
-                          <li> One passport-sized photograph </li>
+                          <li> Completed Visa Application Form, signed by the applicant (<a href={process.env.PUBLIC_URL + '/documents/Visa-Application-Form&Requirements.pdf'} download>Form</a>) </li>
+                          <li> Two (2) References in Jamaica. </li>
+                          <li> One passport-sized photograph. </li>
                           <li> Flight itinerary; and proof of sufficient funds to cover the visit</li>
                           <li> *The visa fee is $20.00 USD. </li>
                           <li> *Passport(s) not required for Nigerian nationals on submission; only a copy of the bio-data page.
@@ -118,7 +118,7 @@ const VisitorPage = props => {
                                   Jamaican visas and the relevant immigration entry stamps.</li>
                                   <li> Copy of transit visa, if applicable. </li>
                                   <li> A letter of invitation from a person or organization 
-                                    in Jamaica (if applicable) or confirmation of accommodation reservation</li>
+                                    in Jamaica (if applicable) or confirmation of accommodation reservation.</li>
                                   <li> Proof of Financial Status (i.e. current bank statements) </li>
                               </ul>
                             </li>
@@ -127,12 +127,12 @@ const VisitorPage = props => {
                         <div className="columns">
                           <div className="column has-text-centered">
                             <button style={{color:"black",margin:"0 auto"}} className="button is-large is-rounded is-outlined is-primary">
-                              Download Form
+                              <Link to="/test/3"> Download Form </Link>
                             </button>
                           </div>
                           <div className="column has-text-centered">
                             <button style={{color:"black",margin:"0 auto"}} className="button is-large is-rounded is-outlined is-primary">
-                              Contact Us
+                              <Link to="/contact"> Contact Us </Link>
                             </button>
                           </div>
 
@@ -152,7 +152,7 @@ const VisitorPage = props => {
                       </div>
                       <div className="message-body" style={{textAlign:"justify"}}>
                           <ul>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Visa Application Form </a> </strong> </li>
+                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a download href={process.env.PUBLIC_URL + '/documents/Visa-Application-Form&Requirements.pdf'}> Visa Application Form </a> </strong> </li>
                           </ul>
                       </div>
                     </article>
@@ -161,11 +161,8 @@ const VisitorPage = props => {
 
                 <div className="column is-one-quarter">
                   <SideBar />
-
                 </div>
-
-
-
+                
               </div>
             </div>
           </div>

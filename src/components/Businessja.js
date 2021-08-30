@@ -24,7 +24,7 @@ const Businessja = props => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/general">General Information</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Doing Business in Jamaica </a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;Doing Business in Jamaica </span></li>
             </ul>
           </nav>
         </div>

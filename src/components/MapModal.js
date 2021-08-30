@@ -55,7 +55,7 @@ class MapModal extends Component {
         return(
             <div>
                 <button className="map-button" onClick={this.openModal}>   
-                    <img className="image is-64x64" src={process.env.PUBLIC_URL + "/images/location.png"}></img>
+                    <img alt="click to see map" className="image is-64x64" src={process.env.PUBLIC_URL + "/images/location.png"}></img>
                     <span>Click to see location on Map</span>
                 </button>
                 <Modal 

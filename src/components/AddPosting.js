@@ -10,7 +10,8 @@ const initState = {
   date: "",
   description: "",
   body: "",
-  categories : ["Article","Notice"]
+  categories : ["Article","Notice"],
+  photos : []
 };
 
 class AddPosting extends Component {
@@ -31,21 +32,41 @@ class AddPosting extends Component {
 
   save = async (e) => {
     e.preventDefault();
-    const { title, category, author, description, body } = this.state;
-
+    const { title, category, author, description, body, photos } = this.state;
+    console.log(photos);
     if (title && body && category) {
       //const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
       const date = this.FormatDate(new Date());
+      const formData = new FormData();
+      formData.append('title',title);
+      formData.append('category',category);
+      formData.append('author',author);
+      formData.append('date',date);
+      formData.append('description',description);
+      formData.append('body',body);
+      photos.forEach( (photo,index) => {
+        formData.append('photos',photo);
+      });
+
+      
       const res = await axios.post(
         '/api/postings',
-        { title, category, author, date, description, body },
-      )
-
+        formData, 
+        {
+          headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).catch((res) => {
+        //return { status: 401, message: 'Unauthorized' }
+        console.log(res);
+      })
+      
+      const numOfPics = res.numOfPics; // might not be needed, compare count b4 and after
       const id = res.id;
 
       this.props.context.addPosting(
         {
-          id, title, category, author, date, description, body
+          id, title, category, author, date, description, body, numOfPics
         },
         () => this.setState(initState)
       );
@@ -61,12 +82,13 @@ class AddPosting extends Component {
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });
+  handlePhotos = e => this.setState({ [e.target.name]: Array.from(e.target.files), error: "" })
 
   render() {
-    const { title, category, author, date, description, body, categories } = this.state;
+    const { title, author, description, body, categories } = this.state;
     const { user } = this.props.context;
 
-    return !(user && user.accessLevel < 1) ? (
+    return !(user && user.accessLevel > 0) ? (
       <Redirect to="/" />
     ) : (
       <>
@@ -139,6 +161,15 @@ class AddPosting extends Component {
                   name="body"
                   value={body}
                   onChange={this.handleChange}
+                />
+              </div>
+              <div className="field">
+                <label className="label">Photos: </label>
+                <input 
+                  name="photos"
+                  type="file"
+                  multiple
+                  onChange={this.handlePhotos}
                 />
               </div>
               {this.state.flash && (

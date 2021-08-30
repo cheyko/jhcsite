@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
@@ -8,9 +8,13 @@ import HorizontalCard from "./HorizontalCard";
 
 const CommissionerName = "H. E. Esmond Reid";
 const CommissionerTitle = "High Commissioner For The Jamaican High Commission in Nigeria.";
-const CommissionerBio = " testing ";
+const CommissionerBio = "His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ...  ";
 
 const AboutPage = props => {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  },[]);
 
   return (
     <>
@@ -25,7 +29,7 @@ const AboutPage = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">About The Consulate</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;About The Consulate</span></li>
             </ul>
           </nav>
         </div>
@@ -55,11 +59,11 @@ const AboutPage = props => {
                       September 2018 to its current location at 13 Hassan Musa Katsina Street, 
                       Asokoro, Abuja, Federal Republic of Nigeria.  
                       The High Commission / Chancery can be contacted via its Nigerian Telephone numbers
-                      <strong> <a type="tel">0813 606 3356</a> </strong> or 
-                      <strong> <a type="tel">0816 737 4252</a> </strong>. 
+                      <strong> <span type="tel">0813 606 3356</span> </strong> or 
+                      <strong> <span type="tel">0816 737 4252</span> </strong>. 
                       Persons can also contact the Chancery by email via 
-                      <strong> <a href="mailto:consular-jhcnig@mfaft.gov.jm">Send Email</a></strong> or 
-                      the <strong> <a href="">contact page</a> </strong> of this website.
+                      <strong> <span href="mailto:consular-jhcnig@mfaft.gov.jm">Send Email</span></strong> or 
+                      the <strong> <span href="">contact page</span> </strong> of this website.
                       <em>The Jamaican High Commission is here to serve its Country and its People.</em>
                       </p>
                     </div>

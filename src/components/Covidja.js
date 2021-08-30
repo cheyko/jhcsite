@@ -24,7 +24,7 @@ const Covidja = props => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/general">General Information</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Covid-19 in Jamaica</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;Covid-19 in Jamaica</span></li>
             </ul>
           </nav>
         </div>
@@ -37,7 +37,7 @@ const Covidja = props => {
                 <div className="column">
                     <article>
                         <h1 className="title"> COVID-19 in Jamaica</h1>
-                        <p style={{color:"black"}} className="has-text-left"> Last Updated : August 6, 2021</p>
+                        <p style={{color:"black"}} className="has-text-left"> Last Updated : August 6, 2021 </p>
                         <br />
                         <div className="message is-info">
                             <div className="message-header">

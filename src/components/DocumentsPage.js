@@ -24,7 +24,7 @@ const DocumentsPage = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">All Documents</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;All Documents</span></li>
             </ul>
           </nav>
         </div>
@@ -41,10 +41,30 @@ const DocumentsPage = props => {
                       </div>
                       <div className="message-body" style={{textAlign:"justify"}}>
                           <ul>
-                          <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Descent</a> </strong> </li>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Marriage</a> </strong> </li>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Jamaican Passport Form & Guidelines</a> </strong> </li>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Visa Application Form </a> </strong> </li>
+                            <li> 
+                              <strong> 
+                                <i className="fa fa-file-pdf-o"></i> 
+                                <Link to="/test/0"> Citizen Application Form - Descent</Link> 
+                              </strong> 
+                            </li>
+                            <li> 
+                              <strong> 
+                                <i className="fa fa-file-pdf-o"></i> 
+                                <Link to="/test/1"> Citizen Application Form - Marriage</Link> 
+                              </strong> 
+                            </li>
+                            <li> 
+                              <strong> 
+                                <i className="fa fa-file-pdf-o"></i> 
+                                <Link to="/test/2"> Jamaican Passport Form & Guidelines</Link> 
+                              </strong> 
+                            </li>
+                            <li> 
+                              <strong> 
+                                <i className="fa fa-file-pdf-o"></i> 
+                                <Link to="/test/3"> Visa Application Form</Link> 
+                              </strong> 
+                            </li>
                           </ul>
                       </div>
                     </article>

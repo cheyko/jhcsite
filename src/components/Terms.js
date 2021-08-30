@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
-import Alerts from "./Alerts";
-import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
 
 const Terms = props => {
@@ -24,7 +22,7 @@ const Terms = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Terms and Conditions</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;Terms and Conditions</span></li>
             </ul>
           </nav>
         </div>

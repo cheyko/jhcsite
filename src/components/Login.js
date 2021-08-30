@@ -45,7 +45,7 @@ class Login extends Component {
           <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li class="is-active"><a href="#" aria-current="page">Login</a></li>
+              <li class="is-active"><span aria-current="page"> &nbsp; Login</span></li>
             </ul>
           </nav>
         </div>

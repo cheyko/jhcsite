@@ -1,16 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
 import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
 
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
+
 const CommissionerPage = props => {
+
+  const [openImage, setOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
 
+  function imgControl(e){
+    setOpen(true);
+    e.preventDefault();
+  };
   return (
 <>
       <div className="hero">
@@ -24,7 +34,7 @@ const CommissionerPage = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">The High Commissioner</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;The High Commissioner</span></li>
             </ul>
           </nav>
         </div>
@@ -39,7 +49,14 @@ const CommissionerPage = props => {
                     <div className="message-body">
                       <div className="box grnBkgn" style={{width:"75%",margin:"0 auto"}}>
                         <figure className="image is-4x3">
-                          <img src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} />
+                          <img alt="High Commissioner" onClick={imgControl} src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} />
+                          {openImage && (
+                            <Lightbox
+                              imageTitle="Jamaican High Comissioner"
+                              mainSrc={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"}
+                              onCloseRequest={() => setOpen(false)}
+                            />
+                          )}
                           <figcaption>
                             <p>His Excellency Esmond St. Clair Reid</p>
                             <br></br>

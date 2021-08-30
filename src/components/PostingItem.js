@@ -8,6 +8,7 @@ const PostingItem = props => {
   }, []);
 
   const { posting } = props;
+  
   return (
     <div className="column news-article is-mobile">
       <Link to={`/view-posting/${posting.id}`}>
@@ -16,12 +17,15 @@ const PostingItem = props => {
           <div className="card grnBkgn" style={{height:"100%"}}>
             
             <div className="card-image">
-              <figure className="image is-4x3">
-                <img
-                  src={process.env.PUBLIC_URL + "/images/image7.jpg"}
-                  alt={posting.description}
-                />
-              </figure>
+                {posting.numOfPics > 0 ? (
+                    <figure className="image is-4x3">
+                        <img alt="article" style={{height:"20rem"}} src={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/img0.jpg`} />
+                    </figure>
+                  ):(
+                    <figure className="image is-4x3">
+                        <img alt="article" style={{height:"20rem"}} src={process.env.PUBLIC_URL + "/images/image7.jpg"} />
+                    </figure>
+                )}
             </div>
             <div className="card-content">
               <div className="content">

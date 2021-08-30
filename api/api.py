@@ -15,7 +15,8 @@ from flask_jwt_extended import create_access_token, create_refresh_token, jwt_re
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -33,9 +34,8 @@ migrate = Migrate(app, db)
 #change
 text = """\
 
-This is email was sent from THAKKB.com .
-Visit THAKKB.com for more information or Contact 1-646-477-9309 or
-DM @barbiebeatKKB on Instagram with your queries.
+This is email was sent from the Jamaican High Commission in Nigeria Website. 
+Visit url for more information or call 0813 606 3356.
 
 """
 

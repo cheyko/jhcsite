@@ -11,7 +11,6 @@ import Alerts from "./Alerts";
 
 const HomePage = props => {
 
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
@@ -66,19 +65,19 @@ const HomePage = props => {
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
   const CardBody = "Opening remarks .... "
 
-  const postings = props.context.postings ? (props.context.postings > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  //console.log(postings.length);
+  const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
+  console.log(postings.length);
   
   return (
     <>
       <div>
-        <div className="container slideshow" style={{marginBottom:"1rem"}}> 
+        <div className="hero slideshow" style={{marginBottom:"1rem"}}> 
               <div className="slick-wrapper">
                 <Slider {...settings}>
                   {slides.map((slide) => 
                       <div key={slide.id}>
                           <img className="slick-slide-image customSlide" 
-                            name={slide.id} alt={slide.id} src={process.env.PUBLIC_URL + slide.path}>
+                            name={slide.id} alt={slide.info} src={process.env.PUBLIC_URL + slide.path}>
                           </img>
                       </div>
                   )}
@@ -127,7 +126,7 @@ const HomePage = props => {
                     <br></br>
                     <br></br>
                     <div className="column columns is-multiline is-mobile">
-                      {postings && postings > 0 ? (
+                      {postings && postings.length > 0 ? (
                         postings.map((posting, index) => (
                           <PostingItem
                           posting={posting}
@@ -195,7 +194,7 @@ const HomePage = props => {
                     <div className="card-header-title is-centered"> Visas </div>
                   </div>
                   <div className="card-content">
-                    <p> The Jamaican High Commission is here to facilitate your Visa Applications and Inquires. 
+                    <p> The Jamaican High Commission is here to facilitate Your Visa Applications and Inquires. 
                     </p>
                     <br/>
                     <Link to="/visitors"><button className="button is-info is-outlined">
@@ -268,7 +267,7 @@ const HomePage = props => {
               <div className="message-body">
                 <figure className="image is-4x3">
                         <a href="http://www.mapsofworld.com/jamaica/">
-                          <img src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
+                          <img alt="map of jamaica" src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
                         </a>
                 </figure>
               </div>

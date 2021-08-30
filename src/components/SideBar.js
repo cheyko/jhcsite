@@ -22,15 +22,13 @@ const SideBar  = props => {
                                 <br></br>
                                 <dd>Email Address: <a href="mailto:consular-jhcnig@mfaft.gov.jm">consular-jhcnig@mfaft.gov.jm</a></dd> 
                                 <br></br>
-                                <dd>Monday - Friday , 9:00 am - 4:00 pm</dd>
+                                <dd>Monday - Thursday , 9:00 am - 5:00 pm</dd>
+                                <br></br>
+                                <dd>Fridays , 9:00 am - 4:00 pm</dd>
                           </dl>
                           <br></br>
                           <dl style={{textAlign:"left"}}>
-                            <dd>For Consular Services, Please Schedule an appointment</dd>
-                            <br></br>
-                            <b> Consular Days and Hours</b>
-                            <dd> Tuesdays and Thurdays , 9:00 am - 12:00 noon </dd>
-
+                            <dd>No Appointments required, visitors must visit within the consular hours.</dd>
                           </dl>
                     </div>
                   </article>
@@ -41,15 +39,15 @@ const SideBar  = props => {
                     </div>
                     <a href="https://boj.org.jm">
                         <div className="message-body">
-                            <div class="media">
-                                <div class="media-left">
-                                <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                            <div className="media">
+                                <div className="media-left">
+                                <figure className="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder" />
                                 </figure>
                                 </div>
-                                <div class="media-content">
-                                <p class="title is-4">FX | Rates</p>
-                                <p class="subtitle is-4">Bank of Jamaica</p>
+                                <div className="media-content">
+                                <p className="title is-4">FX | Rates</p>
+                                <p className="subtitle is-4">Bank of Jamaica</p>
                                 </div>
                             </div>
                         </div>
@@ -62,12 +60,12 @@ const SideBar  = props => {
                     </div>
                     <div className="message-body">
                       <ul style={{listStyleType:"circle"}}>
-                        <li> <strong><a href=""> Passport, Citizenship and Identity</a></strong></li>
-                        <li> <strong><a href=""> Motor Vehicle Services</a></strong></li>
-                        <li> <strong><a href=""> Taxes, Paying Fines and Bills</a></strong></li>
-                        <li> <strong><a href=""> Permits and Licences</a></strong></li>
-                        <li> <strong><a href=""> Import and Export in Jamaica</a></strong></li>
-                        <li> <strong><a href=""> Voter's Information</a></strong></li>
+                        <li> <strong><a href="https://www.pica.gov.jm/"> Passport, Citizenship and Identity</a></strong></li>
+                        <li> <strong><a href="https://www.jamaicatax.gov.jm/"> Motor Vehicle Services</a></strong></li>
+                        <li> <strong><a href="https://www.jamaicatax.gov.jm/"> Taxes, Paying Fines and Bills</a></strong></li>
+                        <li> <strong><a href="https://www.tradeboard.gov.jm/"> Permits and Licences</a></strong></li>
+                        <li> <strong><a href="https://www.jacustoms.gov.jm/"> Import and Export in Jamaica</a></strong></li>
+                        <li> <strong><a href="https://ecj.com.jm/"> Voter's Information</a></strong></li>
                       </ul>
                     </div>
                   </article>
@@ -79,7 +77,7 @@ const SideBar  = props => {
                     <div className="message-body">
                       
                         <a href="http://www.mapsofworld.com/jamaica/">
-                          <img src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
+                          <img alt="map of jamaica" src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
                         </a>
                      
                     </div>

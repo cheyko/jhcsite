@@ -9,7 +9,7 @@ const Footer = props => {
             <div className="hero" style={{marginBlock:"1rem"}}>
                 <div className="box footer-container">
                     <div className="columns">
-                        <div class="column has-text-left">
+                        <div className="column has-text-left">
                             <hr></hr>
                             <b >Consulate Information</b>
                             <hr></hr>
@@ -30,7 +30,7 @@ const Footer = props => {
                             </dl>
                         </div>
                         
-                        <div class="column">
+                        <div className="column">
                             <hr></hr>
                             <b> Quick Links </b>
                             <hr></hr>
@@ -45,7 +45,7 @@ const Footer = props => {
                             </dl>
                         </div>
                         
-                        <div class="column">
+                        <div className="column">
                             <hr></hr>
                             <b> Jamaican Government Services </b>
                             <hr></hr>

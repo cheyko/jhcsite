@@ -24,7 +24,7 @@ const CitizenPage = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Jamaican Nationals</a></li>
+              <li className="is-active"><span href="#" aria-current="page">&nbsp;Jamaican Nationals</span></li>
             </ul>
           </nav>
         </div>
@@ -48,11 +48,11 @@ const CitizenPage = props => {
                       include the <strong> Federal Republic of Nigeria, Republics of Cameroon, Ghana, 
                       Senegal and Sierre Leone</strong>. For visit to the Consular Office, Jamaicans
                       can schedule an appointment by contacting the chancery at telephone numbers
-                      <strong> <a type="tel">0813 606 3356</a> </strong> or 
-                      <strong> <a type="tel">0816 737 4252</a> </strong>. 
+                      <strong> <span type="tel">0813 606 3356</span> </strong> or 
+                      <strong> <span type="tel">0816 737 4252</span> </strong>. 
                       Citizens of Jamaica can also contact the Chancery by email via 
                       <strong> <a href="mailto:consular-jhcnig@mfaft.gov.jm">Send Email</a></strong> or 
-                      the <strong> <a href="">contact page</a> </strong> of this website.
+                      the <strong> <span href="">contact page</span> </strong> of this website.
                       <em>The Jamaican High Commission is here to serve its Country and its People.</em>
                       </p>
                       <br></br>  
@@ -68,11 +68,12 @@ const CitizenPage = props => {
                       <p> Services provided to Jamaicans</p>
                     </div>
                       <div className="message-body" style={{padding:"0"}}>
-                        <ul>
-                          <li> <strong> <a href="">Passport Services</a> </strong> </li>
-                          <li> <strong> <a href="">Citizen Application - Marriage</a> </strong> </li>
-                          <li> <strong> <a href="">Covid Updates and Information</a> </strong> </li>
-                          <li> <strong> <a href="">Returning Residents</a> </strong> </li>
+                        <ul style={{padding:"1rem"}}>
+                          <li> <strong> <Link to="/test/2"> Passport Services </Link> </strong> </li>
+                          <li> <strong> <Link to="/test/1">Citizen Application - Marriage</Link> </strong> </li>
+                          <li> <strong> <Link to="/test/0">Citizen Application - Descent</Link> </strong> </li>
+                          <li> <strong> <Link to="/general">Covid Updates and Information</Link> </strong> </li>
+                          <li> <strong> <span>Returning Residents</span> </strong> </li>
                         </ul>
                     </div>
                     </article>
@@ -89,9 +90,9 @@ const CitizenPage = props => {
                       </div>
                       <div className="message-body">
                           <ul>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Descent</a> </strong> </li>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Citizen Application Form - Marriage</a> </strong> </li>
-                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a href=""> Jamaican Passport Form & Guidelines</a> </strong> </li>
+                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a download href={process.env.PUBLIC_URL + '/documents/Jamaican-Citizenship-Application-Descent.pdf'}> Citizen Application Form - Descent</a> </strong> </li>
+                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a download href={process.env.PUBLIC_URL + '/documents/Jamaican-Citizenship-Application-Marriage.pdf'}> Citizen Application Form - Marriage</a> </strong> </li>
+                            <li> <strong> <i className="fa fa-file-pdf-o"></i> <a download href={process.env.PUBLIC_URL + '/documents/Jamaican-Passport-Form&Guidelines.pdf'}> Jamaican Passport Form & Guidelines</a> </strong> </li>
                           </ul>
                       </div>
                     </article>

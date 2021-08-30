@@ -1,17 +1,26 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import PostingItem from "./PostingItem";
 import withContext from "../withContext";
 import SideBar from "./SideBar";
+import ReactPaginate from 'react-paginate';
 
 const PostingList = props => {
-
+  const postings = props.context.postings;
+  const perPage = 6;
+  const pageCount = Math.ceil(postings.length / perPage);
+  let slice;
+  const [offset, setOffset] = useState(0);
   
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 300);
   }, []);
 
-  const postings = props.context.postings;
+  const handlePageClick = (e) => {
+    setOffset(e.selected * perPage);
+    window.scrollTo(0, 300);
+  };
+  slice = postings.slice(offset, offset + perPage); 
 
   return (
     <>
@@ -27,7 +36,7 @@ const PostingList = props => {
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">News Articles and Notices</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;News Articles and Notices</span></li>
             </ul>
           </nav>
         </div>
@@ -39,8 +48,8 @@ const PostingList = props => {
                 <div className="box yellowbkgn column">
                   <div className="container">
                     <div className="column columns is-multiline">
-                      {postings && postings > 0 ? (
-                        postings.map((posting, index) => (
+                      {slice && slice.length > 0 ? (
+                        slice.map((posting, index) => (
                           <PostingItem
                           posting={posting}
                             key={index}
@@ -53,6 +62,21 @@ const PostingList = props => {
                           </span>
                         </div>
                       )}
+                    </div>
+                      <div className="box paginationBox">
+                        <ReactPaginate
+                            previousLabel="prev"
+                            nextLabel="next"
+                            breakLabel={'...'}
+                            breakClassName={'break-me'}
+                            pageCount={pageCount}
+                            marginPagesDisplayed={2}
+                            pageRangeDisplayed={5}
+                            onPageChange={handlePageClick}
+                            containerClassName={'pagination'}
+                            subContainerClassName={'pages pagination'}
+                            activeClassName={'active'}
+                            />
                     </div>
                   </div>
                 </div>

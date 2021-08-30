@@ -24,7 +24,7 @@ const Businesswa = props => {
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/general">General Information</Link></li>
-              <li className="is-active"><a href="#" aria-current="page">Doing Business in West Africa</a></li>
+              <li className="is-active"><span aria-current="page">&nbsp;Doing Business in West Africa</span></li>
             </ul>
           </nav>
         </div>
@@ -125,11 +125,18 @@ const Businesswa = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p className="p-format">
-
+                                    Cameroon is a strategic bridge between west and central african markets hence making it
+                                    a unique hub for trading within Africa. With English and French as its official languages,
+                                    it has become one of largest and most diversified markets on the African continent. Cameroon 
+                                    also has strong ties to the United Kingdom, and the commmonwealth at large with an very educated 
+                                    workforce and an aspiring growth agenda.
                                 </p>
                                 <br/>
                                 <p className="p-format">
-
+                                    There is a rising energy sector in cameroon, facilitated by the creation of new dams. The agriculture 
+                                    sector accounts for the bulk of economic activity. This sector includes industrial scale plantation agriculture to artisanal subsistence farming and
+                                    crops such as bananas and cocoa are exported to Europe and other parts of the world.
+                                    The mining sector is active, along with the long standing oil and gas sectors.
                                 </p>
                             </div>
                         </div>
@@ -142,11 +149,20 @@ const Businesswa = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p className="p-format">
-
+                                    Senegal's location is "business spot on" due to its proximity with other 
+                                    west africa countries and also with Europe. Senegal is home to numerous 
+                                    non-governmental organisations and the united nations representations. The country 
+                                    has a strong political system committed democratic values at its core. And is one 
+                                    of the most attractive country on the african continent for investors.  
                                 </p>
                                 <br />
                                 <p className="p-format">
-
+                                    Senegal is a member of WAEMU (West African Economic and Monetary Union) and 
+                                    ECOWAS (Economic Community of West Africa), this exposes potential investors to an even
+                                    broader economic spectrum with over 300 million consumers. Added compliments to senegals economy is the
+                                    Organisation for the Harmonisation of Corporate Law in Africa (Organisation pour l’Harmonisation du Droit des Affaires en Afrique (“OHADA“)) 
+                                    which has established through these uniform acts and its various institutions a much welcomed harmonised legal framework in many areas of business law 
+                                    (commercial law, collective proceedings and securities among others) and dispute settlement (with arbitration).
                                 </p>
                             </div>
                         </div>
@@ -159,7 +175,17 @@ const Businesswa = props => {
                             </div>
                             <div className="message-body has-text-left">
                               <p className="p-format">
-                                
+                                English is the main language of Sierra Leone and the agriculture sector employs 
+                                two thirds of the workforce. Coffee, Cocoa, Palm Oil and cashew nuts are the main crops that 
+                                are cultivated. The fishing Industry also plays a major role in the economy of Sierra Leone.
+                                The main industrial activity is mining: the country have some of the world's most valuealbe 
+                                diamond mines as well as deposits of gold and titanium ore.
+                              </p>
+                              <br />
+                              <p className="p-format">
+                                Sierre Leone was able to commence rebuilding its economy are a long standing civil war which saw
+                                rebel forces and the government fight for control of diamond mines and the other vast resources that
+                                are in the country. 
                               </p>
                             </div>
                         </div>

@@ -12,7 +12,7 @@ const Alerts  = props => {
                     </div>
                       <div className="message-body">
                         <dl>
-                          <dt> <h3> COVID-19 INFORMATION</h3> </dt>
+                          <dt> <h3> COVID-19 INFORMATION </h3> </dt>
                         <dd>
                           <ul>
                             <li> 
@@ -24,8 +24,8 @@ const Alerts  = props => {
                                   </div>
                                   <div className="message-body">
                                     <p>The coronavirus disease 2019 or 
-                                    more commmonly known as COVID-19 is a new strain of the coronavirus 
-                                    and was discovered in 2019 hence given the name COVID-19 (COVID for Coronavirus 
+                                    more commmonly known as COVID-19 is a new strain of the coronavirus. 
+                                    It was discovered in 2019 hence given the name COVID-19 (COVID for Coronavirus 
                                     Disease and -19 represents the year 2019). For more details on Covid-19 click on the link below.</p>
                                     <br />
                                     <p><Link style={{color:"blue"}} to="/covid19">Covid Details</Link></p>
@@ -59,8 +59,7 @@ const Alerts  = props => {
                                   </div>
                                   <div className="message-body">
                                   <p>African countries have been using experiences from past epidemics to build resilience and response strategies 
-                                which may be contributing to protecting the continent’s health systems from being overwhelmed. <Link style={{color:"blue"}} to="/covidwa">Read More</Link></p>
-
+                                      which may be the contributing factor why the continent’s health systems are not overwhelmed. <Link style={{color:"blue"}} to="/covidwa">Read More</Link></p>
                                   </div>
                                 </article>
                               </div>   
