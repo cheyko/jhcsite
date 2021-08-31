@@ -6,6 +6,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+from flask_cors import CORS, cross_origin
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
@@ -13,7 +14,7 @@ from flask_migrate import Migrate
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='/build',static_url_path='')
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
@@ -30,6 +31,7 @@ app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+cors = CORS(app)
 
 #change
 text = """\
