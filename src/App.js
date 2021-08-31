@@ -141,7 +141,6 @@ export default class App extends Component {
     this.setState({ showQues3: !this.state.showQues3 });
   };
   
-
   render() {
     return (
       <Context.Provider
