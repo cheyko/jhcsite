@@ -172,7 +172,7 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/do-login', methods=['GET', 'POST'])
+@app.route('/api/do-login', methods=['POST'])
 def do_login():
     print(request)
     if request.method == 'POST' and request.is_json:    
@@ -231,7 +231,7 @@ def postings():
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id}), 200
 
-@app.route('/api/message', methods=['GET', 'POST'])
+@app.route('/api/message', methods=['POST'])
 def sendMessage():
     if request.method == "POST":
         contactName = request.json.get('contactName', None)
