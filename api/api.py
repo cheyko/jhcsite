@@ -33,8 +33,7 @@ app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-from flask_cors import CORS
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 #change
 text = """\
@@ -174,6 +173,7 @@ def get_current_time():
     return {'time': time.time()}
 
 @app.route('/api/loginnow', methods=['POST'])
+@cross_origin()
 def loginnow():
     email = request.json.get('email', None)
     return jsonify({"msg": email}), 200
