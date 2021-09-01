@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 #from flask_cors import CORS, cross_origin
-#from flask import Flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
 from flask_migrate import Migrate
@@ -176,6 +176,7 @@ def get_current_time():
 @app.route('/api/loginnow', methods=['POST'])
 def loginnow():
     email = request.json.get('username', None)
+    return jsonify({"msg": email}), 200
     user = User.query.filter_by(email=email).first()
     if user is not None and check_password_hash(user.password,password):           
         access_token = create_access_token(identity=email)
