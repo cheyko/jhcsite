@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
 #from flask_cors import CORS, cross_origin
-from flask import Flask
+#from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
 from flask_migrate import Migrate
