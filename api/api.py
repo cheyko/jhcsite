@@ -6,7 +6,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from flask_cors import CORS, cross_origin
+#from flask_cors import CORS, cross_origin
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
@@ -28,12 +28,12 @@ app.config['GMAIL_PORT'] = 465
 app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
 app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change
 app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
-app.url_map.strict_slashes = False
+#app.url_map.strict_slashes = False
 
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-cors = CORS(app)
+#cors = CORS(app)
 
 #change
 text = """\
