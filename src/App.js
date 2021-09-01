@@ -97,10 +97,10 @@ export default class App extends Component {
     this.setState({ postings }, () => callback && callback());
   };
   
-  login = async (username, password) => {
+  login = async (email, password) => {
     const res = await axios.post(
       '/api/loginnow',
-      { username, password },
+      { email, password },
     ).catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
       console.log(res);

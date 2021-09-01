@@ -175,7 +175,7 @@ def get_current_time():
 
 @app.route('/api/loginnow', methods=['POST'])
 def loginnow():
-    email = request.json.get('username', None)
+    email = request.json.get('email', None)
     return jsonify({"msg": email}), 200
     user = User.query.filter_by(email=email).first()
     if user is not None and check_password_hash(user.password,password):           
