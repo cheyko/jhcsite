@@ -2,11 +2,6 @@ import time
 import json
 import os
 
-import smtplib, ssl
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-
-from flask_cors import CORS, cross_origin
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
@@ -14,6 +9,11 @@ from flask_migrate import Migrate
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
+from flask-cors import CORS, cross_origin
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 
 app = Flask(__name__,static_folder='/build',static_url_path='/')
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
