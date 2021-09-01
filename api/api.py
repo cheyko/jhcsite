@@ -11,6 +11,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
 from flask_migrate import Migrate
+from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
 
@@ -162,16 +163,16 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
-@app.route('/api/')
+@app.route('/api/', methods=['GET', 'POST'])
 def home():
     return "ok"
 
-@app.route('/api/time')
+@app.route('/api/time', methods=['GET', 'POST'])
 def get_current_time():
     return {'time': time.time()}
 
 #api method for Login
-@app.route('/api/login', methods=['GET', 'POST', 'get', 'post'])
+@app.route('/api/login', methods=['GET', 'POST'])
 @cross_origin()
 def login():
     print(request)
@@ -231,7 +232,7 @@ def postings():
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id}), 200
 
-@app.route('/api/message', methods=['POST'])
+@app.route('/api/message', methods=['GET', 'POST'])
 def sendMessage():
     if request.method == "POST":
         contactName = request.json.get('contactName', None)
