@@ -50,7 +50,7 @@ class Login extends Component {
           </nav>
         </div>
         <br />
-        <form action="/api/login" method="post" onSubmit={this.login}>
+        <form onSubmit={this.login}>
           <div className="columns is-mobile is-centered">
             <div className="box column grnBkgn is-one-third" style={{padding:"3rem",margin:"3rem"}}>
               <div className="field">
