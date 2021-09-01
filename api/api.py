@@ -267,3 +267,5 @@ def sendMessage():
         body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage))
         sendEmail(contactEmail ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
+
+logging.getLogger('flask_cors').level = logging.DEBUG
