@@ -102,7 +102,7 @@ export default class App extends Component {
     formData.append('password',password);
     
     const res = await axios.post(
-      'api/do-login',
+      'api/dologin',
       formData, 
       {
         headers: {

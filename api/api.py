@@ -172,7 +172,7 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('api/do-login', methods=['POST','GET'])
+@app.route('api/dologin', methods=['POST','GET'])
 def do_login():
     result = request.form
     if result: # == 'POST' and request.is_json    
