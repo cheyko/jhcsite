@@ -175,12 +175,12 @@ def get_current_time():
 @app.route('api/do-login', methods=['POST','GET'])
 def do_login():
     result = request.form
-    if request.method: # == 'POST' and request.is_json    
+    if result: # == 'POST' and request.is_json    
         #email = request.json.get('email', None)
         #password = request.json.get('password', None)
 
-        email = result['email'];
-        password = result['password'];
+        email = result["email"]
+        password = result["password"]
 
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
