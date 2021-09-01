@@ -99,13 +99,16 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    const res = await axios.post(
+    
+    /*const res = await axios.post(
       '/api/loginnow/',
       { email, password },
     ).catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
       console.log(res);
-    })
+    })*/
+
+    const res = await axios.get("/api/loginnow");
     
     if(res.status === 200) {
       let email  = jwt_decode(res.data.access_token).sub;

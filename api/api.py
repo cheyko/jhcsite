@@ -173,14 +173,10 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/loginnow/', methods=['POST'])
-@cross_origin()
+@app.route('/api/loginnow', methods=['GET'])
 def loginnow():
-    email = request.json.get('email', None)
-    return jsonify({"msg": email}), 200
-    
-    user = User.query.filter_by(email=email).first()
-    if user is not None and check_password_hash(user.password,password):           
+    user = User.query.first()
+    if user is not None:           
         access_token = create_access_token(identity=email)
         refresh_token = create_refresh_token(identity=email)
         return {
