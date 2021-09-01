@@ -174,7 +174,7 @@ def get_current_time():
 @app.route('/api/login', methods=['GET', 'POST', 'get', 'post'])
 def login():
     print(request)
-    if request.method == 'POST' and request.is_json:    
+    if request.method == 'POST' or request.method == 'post'  and request.is_json:    
         email = request.json.get('email', None)
         password = request.json.get('password', None)
 
