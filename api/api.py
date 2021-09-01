@@ -177,8 +177,8 @@ def get_current_time():
 def loginnow():
     user = User.query.first()
     if user is not None:           
-        access_token = create_access_token(identity=email)
-        refresh_token = create_refresh_token(identity=email)
+        access_token = create_access_token(identity=user.email)
+        refresh_token = create_refresh_token(identity=user.email)
         return {
             'id' : user.id,
             'firstname' : user.first_name,
@@ -189,8 +189,8 @@ def loginnow():
         }
     return jsonify({"msg": "Incorrect email or password"}), 400
     
-@app.route('/api/dologin', methods=['POST','GET'])
-def do_login():
+@app.route('/api/login', methods=['POST','GET'])
+def login():
     result = request.form
     if result: # == 'POST' and request.is_json    
         #email = request.json.get('email', None)
