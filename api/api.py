@@ -173,21 +173,21 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/login', methods=['POST','GET'])
-def login():
+@app.route('/api/loginnow', methods=['POST'])
+def loginnow():
     user = User.query.filter_by(email=email).first()
-        if user is not None and check_password_hash(user.password,password):           
-            access_token = create_access_token(identity=email)
-            refresh_token = create_refresh_token(identity=email)
-            return {
-                'id' : user.id,
-                'firstname' : user.first_name,
-                'lastname' : user.last_name,
-                'access_token': access_token,
-                'refresh_token': refresh_token,
-                'access_rights': user.is_admin
-            }
-        return jsonify({"msg": "Incorrect email or password"}), 400
+    if user is not None and check_password_hash(user.password,password):           
+        access_token = create_access_token(identity=email)
+        refresh_token = create_refresh_token(identity=email)
+        return {
+            'id' : user.id,
+            'firstname' : user.first_name,
+            'lastname' : user.last_name,
+            'access_token': access_token,
+            'refresh_token': refresh_token,
+            'access_rights': user.is_admin
+        }
+    return jsonify({"msg": "Incorrect email or password"}), 400
     
 @app.route('/api/dologin', methods=['POST','GET'])
 def do_login():
