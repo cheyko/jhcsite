@@ -175,13 +175,13 @@ def get_current_time():
 @app.route('/api/do-login', methods=['POST','GET'])
 def do_login():
     result = request.form
-    if request.method == 'POST' and request.is_json:    
+    if request.method: # == 'POST' and request.is_json    
         #email = request.json.get('email', None)
         #password = request.json.get('password', None)
 
         email = result['email'];
         password = result['password'];
-        
+
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
         if not password:
@@ -234,9 +234,9 @@ def postings():
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id}), 200
 
-@app.route('/api/message', methods=['GET'])
+@app.route('/api/message', methods=['POST'])
 def sendMessage():
-    if request.method == "GET":
+    if request.method == "POST":
         contactName = request.json.get('contactName', None)
         contactEmail = request.json.get('contactEmail', None)
         nationality = request.json.get('nationality', None) 
