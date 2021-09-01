@@ -37,7 +37,7 @@ class ContactPage extends Component {
     console.log(contactName);
 
     if(contactName !== " " && contactEmail !== " " && nationality !== " " && contactSubject !== " " && contactMessage !== " " ){
-      const res = await axios.post(
+      const res = await axios.get(
         '/api/message',
         {contactName, contactEmail, nationality, contactSubject, contactMessage },
         ).catch(

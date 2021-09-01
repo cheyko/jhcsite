@@ -97,7 +97,7 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    const res = await axios.post(
+    const res = await axios.get(
       '/api/do-login',
       { email, password },
     ).catch((res) => {

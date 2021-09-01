@@ -172,10 +172,10 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/do-login', methods=['POST'])
+@app.route('/api/do-login', methods=['GET'])
 def do_login():
     print(request)
-    if request.method == 'POST' and request.is_json:    
+    if request.method == 'GET' and request.is_json:    
         email = request.json.get('email', None)
         password = request.json.get('password', None)
 
@@ -231,9 +231,9 @@ def postings():
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id}), 200
 
-@app.route('/api/message', methods=['POST'])
+@app.route('/api/message', methods=['GET'])
 def sendMessage():
-    if request.method == "POST":
+    if request.method == "GET":
         contactName = request.json.get('contactName', None)
         contactEmail = request.json.get('contactEmail', None)
         nationality = request.json.get('nationality', None) 
