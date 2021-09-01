@@ -165,7 +165,7 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
-@app.route('/api/', methods=['GET', 'POST'])
+@app.route('/api', methods=['GET', 'POST'])
 def home():
     return "ok"
 
@@ -173,7 +173,7 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/loginnow', methods=['POST'])
+@app.route('/api/loginnow/', methods=['POST'])
 @cross_origin()
 def loginnow():
     email = request.json.get('email', None)
