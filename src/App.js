@@ -48,7 +48,7 @@ export default class App extends Component {
     console.log(time);
     let user = localStorage.getItem("user");
     const postings = await axios.get('/api/postings');
-    
+    console.log(postings);
     user = user ? JSON.parse(user) : null;
     this.setState({ user, postings : postings.data });
     window.scrollTo(0, 0);
