@@ -28,6 +28,7 @@ app.config['GMAIL_PORT'] = 465
 app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
 app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change
 app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
+app.url_map.strict_slashes = False
 
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
