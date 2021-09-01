@@ -96,7 +96,7 @@ export default class App extends Component {
   
   login = async (email, password) => {
     const res = await axios.post(
-      '/api/do_login',
+      '/api/do-login',
       { email, password },
     ).catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
