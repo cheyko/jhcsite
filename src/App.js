@@ -30,6 +30,7 @@ import Businesswa from "./components/Businesswa";
 import Terms from "./components/Terms";
 import Test from "./components/Test";
 
+const cors = require('cors');
 
 export default class App extends Component {
   constructor(props) {

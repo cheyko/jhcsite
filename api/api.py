@@ -33,7 +33,8 @@ app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-#cors = CORS(app)
+from flask_cors import CORS
+CORS(app)
 
 #change
 text = """\
