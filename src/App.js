@@ -45,7 +45,9 @@ export default class App extends Component {
 
   async componentDidMount() {
     const time = await axios.get("/api/time");
+    const testVar = await axios.post('/api/');
     console.log(time);
+    console.log(testVar);
     let user = localStorage.getItem("user");
     const postings = await axios.get('/api/postings');
     console.log(postings);
