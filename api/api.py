@@ -172,13 +172,16 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/do-login', methods=['GET'])
+@app.route('/api/do-login', methods=['POST','GET'])
 def do_login():
-    print(request)
-    if request.method == 'GET' and request.is_json:    
-        email = request.json.get('email', None)
-        password = request.json.get('password', None)
+    result = request.form
+    if request.method == 'POST' and request.is_json:    
+        #email = request.json.get('email', None)
+        #password = request.json.get('password', None)
 
+        email = result['email'];
+        password = result['password'];
+        
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
         if not password:
