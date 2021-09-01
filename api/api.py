@@ -196,7 +196,7 @@ def do_login():
         #email = request.json.get('email', None)
         #password = request.json.get('password', None)
 
-        email = result["email"]
+        email = result["username"]
         password = result["password"]
 
         if not email:
