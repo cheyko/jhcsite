@@ -97,18 +97,10 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    const formData = new FormData();
-    formData.append('email',email);
-    formData.append('password',password);
-    
     const res = await axios.post(
-      '/api/dologin',
-      formData, 
-      {
-        headers: {
-        'Content-Type': 'multipart/form-data'
-      },
-    }).catch((res) => {
+      '/api/login',
+      { email, password },
+    ).catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
       console.log(res);
     })
