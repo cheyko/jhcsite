@@ -172,6 +172,7 @@ def get_current_time():
 
 #api method for Login
 @app.route('/api/login', methods=['GET', 'POST', 'get', 'post'])
+@cross_origin()
 def login():
     print(request)
     if request.method == 'POST' or request.method == 'post' and request.is_json:    
