@@ -6,7 +6,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-#from flask_cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
@@ -15,7 +15,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
 
-app = Flask(__name__,static_folder='/build',static_url_path='')
+app = Flask(__name__,static_folder='/build',static_url_path='/')
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
@@ -177,6 +177,7 @@ def get_current_time():
 def loginnow():
     email = request.json.get('email', None)
     return jsonify({"msg": email}), 200
+    
     user = User.query.filter_by(email=email).first()
     if user is not None and check_password_hash(user.password,password):           
         access_token = create_access_token(identity=email)

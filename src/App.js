@@ -32,6 +32,7 @@ import Test from "./components/Test";
 
 const cors = require('cors');
 
+
 export default class App extends Component {
   constructor(props) {
     super(props);
