@@ -99,19 +99,19 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    
+    /*
     const res = await axios.post(
       '/api/login',
       { email, password },
     ).catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
       console.log(res);
-    })
+    })*/
 
-    /*const res = await axios.get("/api/loginnow").catch((res) => {
+    const res = await axios.get("/api/loginnow").catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
       console.log(res);
-    })*/
+    })
     console.log(res.data);
     if(res.status === 200) {
       let email  = jwt_decode(res.data.access_token).sub;
@@ -263,14 +263,14 @@ export default class App extends Component {
                     </div>
                   </div>
                 
-                {this.state.user && this.state.user.accessLevel > 0 && (
+                {/*this.state.user && this.state.user.accessLevel > 0 && (
                   <Link to="/add-posting" className="navbar-item is-expanded is-tab">
                     <span> <i className="fa fa-plus"></i> Add <br className="wrap-text"/> Post</span>
                   </Link>
-                )}
-                {/*<Link to="/add-posting" className="navbar-item is-expanded is-tab">
+                )*/}
+                <Link to="/add-posting" className="navbar-item is-expanded is-tab">
                   <span> <i className="fa fa-plus"></i> Add <br className="wrap-text"/> Post</span>
-                </Link>*/}
+                </Link>
 
                 <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/contact" className="navbar-item is-expanded is-tab">
                   <span> <i className="fa fa-phone"></i> Contact <br className="wrap-text"/> Us</span>
