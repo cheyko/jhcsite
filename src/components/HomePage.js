@@ -16,7 +16,7 @@ const HomePage = props => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setPostings(props.context.postings);
-  }, []);
+  }, [props.context.postings]);
 
   const settings = {
     dots: true,
