@@ -263,11 +263,14 @@ export default class App extends Component {
                     </div>
                   </div>
                 
-                {!this.state.user || this.state.user.accessLevel > 0 && (
+                {this.state.user && this.state.user.accessLevel > 0 && (
                   <Link to="/add-posting" className="navbar-item is-expanded is-tab">
                     <span> <i className="fa fa-plus"></i> Add <br className="wrap-text"/> Post</span>
                   </Link>
                 )}
+                <Link to="/add-posting" className="navbar-item is-expanded is-tab">
+                  <span> <i className="fa fa-plus"></i> Add <br className="wrap-text"/> Post</span>
+                </Link>
 
                 <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/contact" className="navbar-item is-expanded is-tab">
                   <span> <i className="fa fa-phone"></i> Contact <br className="wrap-text"/> Us</span>
