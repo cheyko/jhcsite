@@ -11,7 +11,7 @@ import Alerts from "./Alerts";
 
 const HomePage = props => {
 
-  const [postings, setPostings] = useState([]);
+  const [postings, setPostings] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0)
