@@ -88,7 +88,7 @@ class AddPosting extends Component {
     const { title, author, description, body, categories } = this.state;
     const { user } = this.props.context;
 
-    return (user && user.accessLevel > 0) ? (
+    return !(user && user.accessLevel > 0) ? (
       <Redirect to="/" />
     ) : (
       <>
