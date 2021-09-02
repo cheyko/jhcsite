@@ -28,13 +28,13 @@ app.config['GMAIL_PORT'] = 465
 app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
 app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change this
 app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change this
-#app.url_map.strict_slashes = False
+app.url_map.strict_slashes = False
 
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-#CORS(app, resources={r"/api/*": {"origins": "*"}})
-#app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 #change
 text = """\
