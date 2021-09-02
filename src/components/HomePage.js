@@ -70,7 +70,7 @@ const HomePage = props => {
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
  
-  //console.log(postings);
+  console.log(postings);
   
   return (
     <>
