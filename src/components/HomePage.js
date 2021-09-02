@@ -185,8 +185,7 @@ const HomePage = props => {
                     </button></Link>
                   </div>
                 </div>
-              </div>
-              
+              </div>      
               <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
