@@ -11,12 +11,12 @@ import Alerts from "./Alerts";
 
 const HomePage = props => {
 
-  const [postings, setPostings] = useState(null);
+  //const [postings, setPostings] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setPostings(props.context.postings);
-  }, [props.context.postings]);
+    //setPostings(props.context.postings);
+  }, /*[props.context.postings]*/);
 
   const settings = {
     dots: true,
@@ -69,7 +69,7 @@ const HomePage = props => {
   const CardBody = "Opening remarks ..... "
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
- 
+  const postings = props.context.postings;
   console.log(postings);
   
   return (
