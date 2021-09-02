@@ -49,12 +49,13 @@ const PostingList = props => {
                   <div className="container">
                     <div className="column columns is-multiline">
                       {slice && slice.length > 0 ? (
-                        slice.map((posting, index) => (
+                        /*slice.map((posting, index) => (
                           <PostingItem
                           posting={posting}
                             key={index}
                           />
-                        ))
+                        ))*/
+                        <h1> Article Placeholder</h1>
                       ) : (
                         <div className="column">
                           <span className="title has-text-grey-light">
