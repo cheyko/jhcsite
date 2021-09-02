@@ -14,7 +14,8 @@ const HomePage = props => {
   const [postings, setPostings] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    setPostings(props.context.postings);
   }, []);
 
   const settings = {
@@ -68,7 +69,7 @@ const HomePage = props => {
   const CardBody = "Opening remarks ..... "
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
-  setPostings(props.context.postings);
+ 
   //console.log(postings);
   
   return (
