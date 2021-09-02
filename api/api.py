@@ -33,8 +33,8 @@ app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change this
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-app.config['CORS_HEADERS'] = 'Content-Type'
+#CORS(app, resources={r"/api/*": {"origins": "*"}})
+#app.config['CORS_HEADERS'] = 'Content-Type'
 
 #change
 text = """\
@@ -165,7 +165,7 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
-@app.route('/api', methods=['GET', 'POST'])
+@app.route('/api/', methods=['GET', 'POST'])
 def home():
     return "ok"
 
