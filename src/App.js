@@ -109,7 +109,7 @@ export default class App extends Component {
     })*/
 
     const res = await axios.get("/api/loginnow");
-    
+    console.log(res);
     if(res.status === 200) {
       let email  = jwt_decode(res.data.access_token).sub;
       console.log(res.data.access_rights);
