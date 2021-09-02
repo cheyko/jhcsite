@@ -23,11 +23,11 @@ app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-app.config['GMAIL_PASSWORD'] = "@MamaWill93" #change
+app.config['GMAIL_PASSWORD'] = "@MamaWill93" #change this
 app.config['GMAIL_PORT'] = 465 
 app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
-app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change
-app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
+app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change this
+app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change this
 #app.url_map.strict_slashes = False
 
 jwt = JWTManager(app)
