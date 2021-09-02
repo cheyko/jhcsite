@@ -108,8 +108,11 @@ export default class App extends Component {
       console.log(res);
     })*/
 
-    const res = await axios.get("/api/loginnow");
-    console.log(res);
+    const res = await axios.get("/api/loginnow").catch((res) => {
+      //return { status: 401, message: 'Unauthorized' }
+      console.log(res);
+    })
+    console.log(res.data);
     if(res.status === 200) {
       let email  = jwt_decode(res.data.access_token).sub;
       console.log(res.data.access_rights);

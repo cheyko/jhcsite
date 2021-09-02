@@ -33,8 +33,8 @@ app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-app.config['CORS_HEADERS'] = 'Content-Type'
+#CORS(app, resources={r"/api/*": {"origins": "*"}})
+#app.config['CORS_HEADERS'] = 'Content-Type'
 
 #change
 text = """\
@@ -175,7 +175,9 @@ def get_current_time():
 
 @app.route('/api/loginnow', methods=['GET'])
 def loginnow():
+    print(request)
     user = User.query.first()
+    print(user)
     if user is not None:           
         access_token = create_access_token(identity=user.email)
         refresh_token = create_refresh_token(identity=user.email)
@@ -191,13 +193,9 @@ def loginnow():
     
 @app.route('/api/login', methods=['POST','GET'])
 def login():
-    result = request.form
-    if result: # == 'POST' and request.is_json    
-        #email = request.json.get('email', None)
-        #password = request.json.get('password', None)
-
-        email = result["username"]
-        password = result["password"]
+    if request.method == 'POST' and request.is_json:   
+        email = request.json.get('email', None)
+        password = request.json.get('password', None)
 
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
@@ -264,5 +262,3 @@ def sendMessage():
         body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage))
         sendEmail(contactEmail ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
-
-logging.getLogger('flask_cors').level = logging.DEBUG
