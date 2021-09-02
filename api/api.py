@@ -175,7 +175,6 @@ def get_current_time():
 
 @app.route('/api/loginnow', methods=['GET'])
 def loginnow():
-    print(request)
     user = User.query.first()
     print(user)
     if user is not None:           
