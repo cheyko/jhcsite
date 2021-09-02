@@ -65,8 +65,9 @@ const HomePage = props => {
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
   const CardBody = "Opening remarks ..... "
 
-  const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
-  console.log(postings.length);
+  //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
+  const postings = props.context.postings;
+  //console.log(postings.length);
   
   return (
     <>
@@ -127,7 +128,7 @@ const HomePage = props => {
                     <br></br>
                     <div className="column columns is-multiline is-mobile">
                       {postings && postings.length > 0 ? (
-                        postings.map((posting, index) => (
+                        postings.slice(0,6).map((posting, index) => (
                           <PostingItem
                           posting={posting}
                             key={index}
