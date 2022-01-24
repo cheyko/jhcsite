@@ -195,7 +195,7 @@ def login():
     if request.method == 'POST' and request.is_json:   
         email = request.json.get('email', None)
         password = request.json.get('password', None)
-
+        print("test")
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
         if not password:
