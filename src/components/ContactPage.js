@@ -112,20 +112,29 @@ class ContactPage extends Component {
                       </div>
                       <div className="column">
                         <div className="box yellowbkgn" style={{height:"100%"}}>
+                          <FontAwesomeIcon className="is-size-1" icon={faInbox} />
+                          <br/><br/>
+                          <h3> <strong style={{textDecoration:"underline"}}> Email </strong> </h3>
+                          <dl>
+                            <dd>info-nig@mfaft.gov.jm</dd>
+                          </dl>
+                        </div>
+                      </div> 
+                    </div>
+                    <div className="columns">
+                      <div className="column">
+                        <div className="box yellowbkgn" style={{height:"100%"}}>
                           <FontAwesomeIcon className="is-size-1" icon={faMapMarkedAlt} />
                           <br/><br/>
                           <h3><strong style={{textDecoration:"underline"}}> Our Address </strong> </h3>
                           <dl>
                             <dd>The Jamaican High Commission</dd>
-                            <dd>13 Hassan Musa Katsina Street</dd>
+                            <dd>13 Hassan Usman Katsina Street</dd>
                             <dd>Asokoro, Abuja</dd>
                             <dd>Federal Republic of Nigeria</dd>
                           </dl>
                         </div>
                       </div>
-  
-                    </div>
-                    <div className="columns">
                       <div className="column">
                         <div className="box yellowbkgn"style={{height:"100%"}} >
                           <FontAwesomeIcon className="is-size-1" icon={faClock} />
@@ -133,27 +142,17 @@ class ContactPage extends Component {
                           <h3> <strong style={{textDecoration:"underline"}}> Operating Hours</strong> </h3>
                           <dl>
                             <dd style={{textAlign:"left"}}><strong> Office Hours :</strong> </dd>
-                            <dd >Monday - Thursday</dd>
+                            <dd>Monday - Thursday</dd>
                             <dd>9:00am - 5:00pm</dd>
-                            <dd style={{textAlign:"left"}}><strong>Consular Appointments :</strong> </dd>
                             <dd>Fridays</dd>
                             <dd>9:00am - 4:00pm</dd>
+                            <dd style={{textAlign:"left"}}><strong>Consular Hours :</strong> </dd>
+                            <dd>Tuesdays, Wednesdays & Thursdays</dd>
+                            <dd>9:00am - 12:00noon</dd>
                           </dl>
                         </div>
                       </div>
-                      <div className="column">
-                        <div className="box yellowbkgn" style={{height:"100%"}}>
-                          <FontAwesomeIcon className="is-size-1" icon={faInbox} />
-                          <br/><br/>
-                          <h3> <strong style={{textDecoration:"underline"}}> Email </strong> </h3>
-                          <dl>
-                            <dd>infonig@mfatt.gov.jm</dd>
-                          </dl>
-                        </div>
-                      </div>
-  
                     </div>
-  
                   </div>
                 </div>
                 <div>

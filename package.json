@@ -29,7 +29,7 @@
     "slick-carousel": "^1.8.1",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "https://jhcsite.herokuapp.com/",
+  "homepage": "http://jhcsite.herokuapp.com/",
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run --no-debugger",

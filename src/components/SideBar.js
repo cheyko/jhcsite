@@ -5,7 +5,6 @@ const SideBar  = props => {
     return (
         <>
                 <div className="hero">
-
                   <article className="message is-link">
                     <div className="message-header">
                       <p> Contact Us</p>
@@ -13,7 +12,7 @@ const SideBar  = props => {
                     <div className="message-body">
                           <dl style={{textAlign:"left"}}>
                                 <dd>The Jamaican High Commission</dd>
-                                <dd>13 Hassan Musa Katsina Street</dd>
+                                <dd>13 Hassan Usman Katsina Street</dd>
                                 <dd>Asokoro, Abuja</dd>
                                 <dd>Federal Republic of Nigeria</dd>
                                 <br></br>
@@ -25,10 +24,14 @@ const SideBar  = props => {
                                 <dd>Monday - Thursday , 9:00 am - 5:00 pm</dd>
                                 <br></br>
                                 <dd>Fridays , 9:00 am - 4:00 pm</dd>
+                                
                           </dl>
                           <br></br>
                           <dl style={{textAlign:"left"}}>
-                            <dd>No Appointments required, visitors must visit within the consular hours.</dd>
+                              <dd style={{textAlign:"left"}}><strong>Consular Hours :</strong> </dd>
+                              <dd>Tuesdays, Wednesdays & Thursdays</dd>
+                              <dd>9:00am - 12:00noon</dd>
+                              <dd>No Appointments required, visitors must visit within the consular hours.</dd>
                           </dl>
                     </div>
                   </article>
@@ -75,11 +78,9 @@ const SideBar  = props => {
                       <p>Map of Jamaica</p>
                     </div>
                     <div className="message-body">
-                      
                         <a href="http://www.mapsofworld.com/jamaica/">
                           <img alt="map of jamaica" src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
                         </a>
-                     
                     </div>
                   </article>
                 </div>

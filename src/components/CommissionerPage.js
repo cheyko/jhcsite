@@ -44,7 +44,7 @@ const CommissionerPage = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                   <article className="message special-notice is-content is-size-4">
                     <div className="message-body">
                       <div className="box grnBkgn" style={{width:"75%",margin:"0 auto"}}>

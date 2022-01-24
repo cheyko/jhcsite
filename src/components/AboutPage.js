@@ -39,7 +39,7 @@ const AboutPage = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                     <article className="message intro is-content is-size-5">
                       <div className="message-header">
                       <p>About the Jamaican High Commision in Abuja, Nigeria.</p>

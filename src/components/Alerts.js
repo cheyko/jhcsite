@@ -12,6 +12,44 @@ const Alerts  = props => {
                     </div>
                       <div className="message-body">
                         <dl>
+                          <dt> <h3> LEAVING NIGERIA </h3> </dt>
+                          <dd>
+                            <ul>
+                              <li>
+                                <div>
+                                  <article className="message is-success">
+                                    <div className="message-header">
+                                      <p> COVID-19 Testing </p>
+                                      <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
+                                    </div>
+                                    <div className="message-body">
+                                     ---- enter details of covid testing ----
+                                    The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
+                                        for tourism. <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
+                                    </div>
+                                  </article>
+                                </div>
+                              </li>
+                              <br></br>
+                              <li>
+                                <div>
+                                  <article className="message is-success">
+                                    <div className="message-header">
+                                      <p> COVID-19 Vaccination </p>
+                                      <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
+                                    </div>
+                                    <div className="message-body">
+                                    ---- enter details of covid vaccination ---
+                                    The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
+                                        for tourism. <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
+                                    </div>
+                                  </article>
+                                </div>
+                              </li>
+                            </ul>
+                          </dd>
+                        </dl>
+                        <dl>
                           <dt> <h3> COVID-19 INFORMATION </h3> </dt>
                         <dd>
                           <ul>

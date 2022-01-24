@@ -7,7 +7,7 @@ import ReactPaginate from 'react-paginate';
 
 const PostingList = props => {
   const postings = props.context.postings;
-  const perPage = 6;
+  const perPage = 12;
   const pageCount = Math.ceil(postings.length / perPage);
   let slice;
   const [offset, setOffset] = useState(0);
@@ -45,17 +45,16 @@ const PostingList = props => {
           <div className="hero">
             <div className="hero-body"> 
               <div className="columns">
-                <div className="box yellowbkgn column">
-                  <div className="container">
-                    <div className="column columns is-multiline">
+                <div className="column">
+                  <div className="box yellowbkgn">
+                    <div className="columns is-multiline">
                       {slice && slice.length > 0 ? (
-                        /*slice.map((posting, index) => (
+                        slice.map((posting, index) => (
                           <PostingItem
                           posting={posting}
                             key={index}
                           />
-                        ))*/
-                        <h1> Article Placeholder </h1>
+                        ))
                       ) : (
                         <div className="column">
                           <span className="title has-text-grey-light">
@@ -64,7 +63,7 @@ const PostingList = props => {
                         </div>
                       )}
                     </div>
-                      <div className="box paginationBox">
+                      <div className="card paginationBox">
                         <ReactPaginate
                             previousLabel="prev"
                             nextLabel="next"

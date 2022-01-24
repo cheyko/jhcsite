@@ -29,12 +29,17 @@ const Test = props => {
     {
         id : 2,
         src : '/documents/Jamaican-Passport-Form&Guidelines.pdf',
-        title : ' Jamaicn Passport Form & Guidelines '
+        title : ' Jamaicn Passport Form & Guidelines. '
     },
     {
         id : 3,
         src : '/documents/Visa-Application-Form&Requirements.pdf',
-        title : ' Visa Application Form & Requirements '
+        title : ' Visa Application Form & Requirements. '
+    },
+    {
+        id : 4,
+        src : '/documents/public_holidays_2021.pdf',
+        title : ' List of Holidays observed by the consulate. '
     }
 
   ]

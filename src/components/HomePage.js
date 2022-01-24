@@ -14,7 +14,7 @@ const HomePage = props => {
   //const [postings, setPostings] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     //setPostings(props.context.postings);
   }, /*[props.context.postings]*/);
 
@@ -123,21 +123,20 @@ const HomePage = props => {
         <br></br>
 
         <div className="hero latest-news">
-          <div className="card yellowbkgn home-page-card-horizontal" style={{padding:"1rem"}}>
+          <div className="card yellowbkgn home-page-card-horizontal">
                <div className="container">
-                 <div className="">
+                 <div className="hero-body">
                     <b className="is-size-4">Latest News</b>
                     <br></br>
                     <br></br>
-                    <div className="column columns is-multiline is-mobile">
+                    <div className="columns is-multiline is-mobile">
                       {postings && postings.length > 0 ? (
-                        /*postings.slice(0,6).map((posting, index) => (
+                        postings.slice(0,6).map((posting, index) => (
                           <PostingItem
                           posting={posting}
                             key={index}
                           />
-                        ))*/
-                        <h1> Article Placeholder </h1>
+                        )) 
                       ) : (
                         <div className="column">
                           <span className="is-size-3 has-text-grey-light" style={{color:"blue"}}>

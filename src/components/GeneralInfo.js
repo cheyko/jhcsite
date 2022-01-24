@@ -34,7 +34,7 @@ const GeneralInfo = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                     <article>
                         <h1 className="subtitle is-size-3"> Health and Wellness</h1>
                         <div className="message is-content">

@@ -34,7 +34,7 @@ const VisitorPage = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                   <article className="message special-notice is-content is-size-5">
                     <div className="message-header">
                       <p> Entry to Jamaica </p>
@@ -61,9 +61,8 @@ const VisitorPage = props => {
                     </div>
                       <div className="message-body" style={{textAlign:"justify"}}>
                       <p>
-                          The Consular section is open on Tuesdays and Thursday, between the 
-                          hours of 9:00am to 12:00 noon. The Consular Section is responsible 
-                          for Processing Visa Applications for residents of Countries that fall under
+                          The Consular hours are between the 9:00am to 12:00 noon; Tuesdays, Wednesdays and Thursdays. 
+                          The Consular Section is responsible for Processing Visa Applications for residents of Countries that fall under
                           its jurisdiction. These residents include Nigerians, Ghanians, Sengalese, 
                           Cameroonians and Sierra Leoneans. Other persons from other west-african states
                           can also apply for visa through the Jamaican Consulate once they meet all
@@ -71,8 +70,8 @@ const VisitorPage = props => {
                       </p>
                       <br></br>  
                       <p>
-                      The Jamaican High Commission in Abuja, Nigeria is closed on all Jamaican and Nigerian 
-                      holidays, thank you for your cooperation.
+                      The Jamaican High Commission in Abuja, Nigeria is closed on the following holidays;  
+                      see <Link to="/test/4" style={{color:"blue"}}>list</Link> for details and thank you for your cooperation.
                       </p>
                     </div>
                     </article>

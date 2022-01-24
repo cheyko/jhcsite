@@ -34,7 +34,7 @@ const DocumentsPage = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                   <article className="message is-content is-size-5">
                       <div className="message-header">
                         <p>All Documents </p>

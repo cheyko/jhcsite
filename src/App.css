@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(255,255,255) !important;
-  /*background-color: white;*/
+  background-color:white;
 }
 
 .banner{
@@ -21,6 +20,7 @@
 .page-header-body{
   padding:1rem;
 }
+
 /*.navbar{
   position: fixed !important;
   width: 100% !important;
@@ -37,11 +37,10 @@
   color: yellow;
   border: none;
 }
+
 /*.below-nav{
   margin-top:4.5rem;
 }*/
-
-
 
 .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
   color: black !important;
@@ -80,6 +79,9 @@
   border-color: black !important;
 }
 
+.navbar-item, .navbar-link {
+  padding: 0.25rem 0.5rem !important;
+}
 
 .yellowbkgn{
   background-color: yellow !important;
@@ -93,16 +95,12 @@
   color:yellow;
 }
 
-.home-page-card-horizontal{
-  margin-inline: 3rem;
-}
-
 .home-page-card-horizontal .title, .home-page-card-horizontal .subtitle {
   color: black !important;
 }
 
 .is-content .message-header, .standardLook{
-  background-color: rgb(0,128,0) !important;
+  background-color: rgb(0,128,0,0.7) !important;
   color: black;
   
 }
@@ -164,9 +162,13 @@
   }
 }
 
-.navbar-item{
+.navbar-item, .navbar-brand{
   color:black !important;
-  background-color: rgb(0,128,0) !important;
+  background-color: rgb(0,128,0, 0.7) !important;
+}
+
+.nav-span{
+  padding: 1rem;
 }
 
 .navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {
@@ -206,7 +208,7 @@
 }
 .slick-prev:before, .slick-next:before {
   font-size: 3rem !important;
-  color: rgb(0,128,0) !important;
+  color: rgb(0,128,0,0.7) !important;
 }
 
 .slick-dots li button:before{
@@ -226,7 +228,7 @@
 }
 
 .contactForm{
-  background-color: rgb(0,128,0) !important ;
+  background-color: rgb(0,128,0,0.7) !important ;
 }
 
 .p-format{
@@ -253,6 +255,7 @@
 
 .commissionerPic:hover{
   border: solid 3px blue;
+  cursor: pointer;
 }
 
 .ad-card-image{
@@ -274,7 +277,7 @@
   /* thumbnail css */
 
   .imagesContainer{
-    width:50rem;
+    width:auto;
     padding: 1.75rem;
     padding-top: 0;
     padding-bottom: 0;
@@ -291,6 +294,11 @@
   .info-link .subtitle{
     color: blue !important;
   }
+
+  .breadcrumb li + li::before {
+    color: gray !important;
+    font-weight: bolder !important;
+}
   
 @media screen and (max-width: 770px){
   .banner{
@@ -298,6 +306,10 @@
   }
   .wrap-text{
     display: none;
+  }
+
+  .latest-news{
+    margin: 0;
   }
 
  /* .posting-item-card {
@@ -341,9 +353,7 @@
   .banner-column{
     margin-block: 10%;
   }
-  .posting-item-card {
-    width:25rem !important;
-  }
+
   .break-text{
     display: none;
   }
@@ -364,7 +374,7 @@
   }
 
   .posting-item-card {
-    width:25rem !important;
+    width:auto !important;
   }
 
   .break-text{
@@ -372,9 +382,9 @@
   }
 }
 
-.hero, article{
+/*.hero, article{
   margin-block: 1rem;
-}
+}*/
 
 .remarks a.link-to{
   pointer-events: none !important;
@@ -451,4 +461,8 @@
 }
 .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
   border-radius: unset
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  right: 0em !important;
 }

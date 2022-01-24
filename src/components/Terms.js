@@ -32,7 +32,7 @@ const Terms = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                     <article>
                         
                         <div className="message is-content">

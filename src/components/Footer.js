@@ -9,25 +9,27 @@ const Footer = props => {
             <div className="hero" style={{marginBlock:"1rem"}}>
                 <div className="box footer-container">
                     <div className="columns">
-                        <div className="column has-text-left">
+                        <div className="column">
                             <hr></hr>
                             <b >Consulate Information</b>
                             <hr></hr>
-                            <b style={{textDecoration:"underline"}}>Address</b> 
-                            <dl style={{marginLeft:"1rem"}}>
-                                <dd>The Jamaican High Commission</dd>
-                                <dd>13 Hassan Musa Katsina Street</dd>
-                                <dd>Asokoro, Abuja</dd>
-                                <dd>Federal Republic of Nigeria</dd>
-                                
-                                <MapModal />
-                            </dl>
-                            <br />
-                            <b style={{textDecoration:"underline"}}>Telephone Numbers</b> 
-                            <dl style={{marginLeft:"1rem"}}>
-                                <dd>Tel1: 0813 606 3356 </dd>
-                                <dd>Tel2: 0816 737 4252 </dd>
-                            </dl>
+                            <div className="has-text-left">
+                                <b style={{textDecoration:"underline"}}>Address</b> 
+                                <dl style={{marginLeft:"1rem"}}>
+                                    <dd>The Jamaican High Commission</dd>
+                                    <dd>13 Hassan Musa Katsina Street</dd>
+                                    <dd>Asokoro, Abuja</dd>
+                                    <dd>Federal Republic of Nigeria</dd>
+                                    
+                                    <MapModal />
+                                </dl>
+                                <br />
+                                <b style={{textDecoration:"underline"}}>Telephone Numbers</b> 
+                                <dl style={{marginLeft:"1rem"}}>
+                                    <dd>Tel1: 0813 606 3356 </dd>
+                                    <dd>Tel2: 0816 737 4252 </dd>
+                                </dl>
+                            </div>
                         </div>
                         
                         <div className="column">

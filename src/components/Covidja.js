@@ -34,7 +34,7 @@ const Covidja = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                     <article>
                         <h1 className="title"> COVID-19 in Jamaica</h1>
                         <p style={{color:"black"}} className="has-text-left"> Last Updated : August 6, 2021 </p>

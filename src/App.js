@@ -167,7 +167,8 @@ export default class App extends Component {
         }}
       >
         <Router ref={this.routerRef}>
-        <div className="App">
+          {/*style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/images/jhc_wallpaper.jpg'})`,backgroundPositionX:'center',backgroundSize:'contain'}} */}
+        <div className="App" >
           <Banner />
           <nav
             id="navbar"
@@ -176,8 +177,8 @@ export default class App extends Component {
             aria-label="main navigation"
           >
             <div className="navbar-brand">
-              <b className="navbar-item is-expanded is-tab "><Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/" style={{width:"100%"}} className="navbar-item is-expanded is-tab">
-                  <span className="is-size-6"> JHC Nigeria &nbsp; <br className="wrap-text"></br> <i className="fa fa-home"> </i> &nbsp; Home </span>
+              <b className="nav-span"><Link to="/" style={{color:"black"}}>
+                  <span className="is-size-6"> JHC Nigeria <br className="wrap-text"></br> <i className="fa fa-home"> </i> Home </span>
                 </Link></b>
               <label
                 role="button"
@@ -189,7 +190,7 @@ export default class App extends Component {
                   e.preventDefault();
                   this.setState({ showMenu: !this.state.showMenu });
                 }}
-                style={{backgroundColor:"yellow"}}
+                
               >
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -207,7 +208,7 @@ export default class App extends Component {
                       </Link>
                     </div>
                     <div className="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
-                      <div className="dropdown-content standardLook is-size-6">                      
+                      <div className="dropdown-content standardLook ">                      
                         <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covid19" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
                           General COVID-19 Information
                         </Link>

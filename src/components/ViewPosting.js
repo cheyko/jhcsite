@@ -43,7 +43,7 @@ const ViewPosting = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                   <article className="message special-notice is-content is-size-4">
                       <div> 
                         {posting.numOfPics > 0 ? (

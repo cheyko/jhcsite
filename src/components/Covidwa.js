@@ -34,7 +34,7 @@ const Covidwa = props => {
             <div className="hero-body"> 
               <div className="columns">
 
-                <div className="column">
+                <div className="column is-three-quarters">
                     
                     <article>
                         <h1 className="title"> COVID-19 in West Africa</h1>

@@ -17,8 +17,8 @@ from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__,static_folder='/build',static_url_path='/')
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
-#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -47,7 +47,7 @@ Visit url for more information or call 0813 606 3356.
 #change
 EmailTemp = """\
     <html>
-        <body style="background-color:burlywood;padding:3rem">
+        <body style="background-color:darkseagreen;padding:3rem">
             <h1 style="color:crimson;font-family:fantasy"> This email was a message sent from JHC Website </h1>
             <br>
             <b style="color:chocolate;text-decoration:underline"> Name of Sender </b>
@@ -79,7 +79,7 @@ EmailTemp = """\
             <p style="color:black;padding:1rem;font-style:italic">
                 {4}
             </p>
-            <small> Copyright &copy; 2021. </small>
+            <small> Copyright &copy; 2022. </small>
         </body>
     </html>
     """
