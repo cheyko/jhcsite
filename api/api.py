@@ -190,7 +190,7 @@ def loginnow():
         }
     return jsonify({"msg": "Incorrect email or password"}), 400
     
-@app.route('/api/login', methods=['POST','GET'])
+@app.route('/api/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':   
         email = request.json.get('email', None)
