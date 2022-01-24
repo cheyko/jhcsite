@@ -192,7 +192,7 @@ def loginnow():
     
 @app.route('/api/login', methods=['POST','GET'])
 def login():
-    if request.method == 'POST' and request.is_json:   
+    if request.method == 'POST':   
         email = request.json.get('email', None)
         password = request.json.get('password', None)
         print("test")
