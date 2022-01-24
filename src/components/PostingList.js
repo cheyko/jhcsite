@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 import ReactPaginate from 'react-paginate';
 
 const PostingList = props => {
-  const postings = props.context.postings;
+  const postings = props.context.postings ? props.context.postings : [];
   const perPage = 12;
   const pageCount = Math.ceil(postings.length / perPage);
   let slice;
