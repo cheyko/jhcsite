@@ -25,6 +25,7 @@ class ContactPage extends Component {
   constructor(props){
     super(props);
     this.state = initState;
+    window.scrollTo(0,0);
   }
 
   handleChange = (e) => {this.setState({[e.target.name]: e.target.value, error: ""})}

@@ -225,7 +225,7 @@ def postings():
         for posting in result:
             post = {"id":posting.id,"title":posting.title, "category":posting.category, "author":posting.author, "date":str(posting.date), "description":posting.description, "body":posting.body, "numOfPics":posting.numOfPics }
             postings.append(post)
-        return json.dumps(postings) , 200
+        return json.dumps(postings)
     else:
         result = request.form
         photos = request.files.getlist("photos")
