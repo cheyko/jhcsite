@@ -180,7 +180,7 @@ export default class App extends Component {
                 </Link></b>
               <label
                 role="button"
-                className="navbar-burger burger"
+                className="navbar-burger burger has-text-weight-bold"
                 aria-label="menu"
                 aria-expanded="false"
                 data-target="navbarBasicExample"
