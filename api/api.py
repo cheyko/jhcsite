@@ -13,9 +13,12 @@ from flask_cors import CORS, cross_origin
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from flask_restful import Api, Resource, reqparse
 
 
 app = Flask(__name__,static_folder='../build',static_url_path='')
+api = Api(app)
+
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
