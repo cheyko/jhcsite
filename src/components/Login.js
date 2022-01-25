@@ -54,7 +54,7 @@ class Login extends Component {
           <div className="columns is-mobile is-centered">
             <div className="box column grnBkgn is-one-third" style={{padding:"3rem",margin:"3rem"}}>
               <div className="field">
-                <label className="label">Email: </label>
+                <label className="label"> Email: </label>
                 <input
                   className="input"
                   type="email"
