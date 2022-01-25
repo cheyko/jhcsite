@@ -21,8 +21,6 @@ const HomePage = props => {
   }, /*[props.context.postings]);*/
 
   let history = useHistory();
-
-  /*
   useEffect(() => {
     // find if server refresh needs history
     const $request_path = $('input[name=request_path]');
@@ -32,7 +30,7 @@ const HomePage = props => {
         history.push(val);
         return;
     }
-} , []);*/
+  } , []);
 
 
   const settings = {
