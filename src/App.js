@@ -48,13 +48,13 @@ export default class App extends Component {
   async componentDidMount() {
     const time = await axios.get("/api/time");
     const testVar = await axios.get("/api/");
-    console.log(time);
-    console.log(testVar);
+    //console.log(time);
+    //console.log(testVar);
     let user = localStorage.getItem("user");
-    const postings = await axios.get('/api/postings');
-    console.log(postings);
+    const postings = await axios.get("/api/postings");
+    //console.log(postings);
     user = user ? JSON.parse(user) : null;
-    this.setState({ user, postings});
+    this.setState({ user, postings:postings.data});
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.handleScroll);
   }
