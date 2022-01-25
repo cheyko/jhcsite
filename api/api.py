@@ -15,8 +15,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask_restful import Api, Resource, reqparse
 
-
-app = Flask(__name__,static_folder='/build',static_url_path='/')
+app = Flask(__name__, static_url_path='', static_folder='../build')
 api = Api(app)
 
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
@@ -168,11 +167,11 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
-"""@app.route("/", defaults={'path':''})
+@app.route("/", defaults={'path':''})
 @app.route('/index')
 @cross_origin()
 def serve(path):
-    return send_from_directory(app.static_folder,'index.html')"""
+    return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/api/', methods=['GET', 'POST'])
 def home():
