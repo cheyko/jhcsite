@@ -60,7 +60,7 @@
   "devDependencies": {
     "gh-pages": "^3.2.3"
   },
-  "proxy": "http://jhcsite.herokuapp.com/",
+  "proxy": "https://jhcsite.herokuapp.com/",
   "engines": {
     "node": "14.17.3",
     "npm": "6.14.13",
