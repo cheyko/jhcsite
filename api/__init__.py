@@ -2,7 +2,8 @@ import time
 import json
 import os
 
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, redirect
+from urllib.parse import quote_plus
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
 from flask_migrate import Migrate
@@ -269,3 +270,9 @@ def sendMessage():
         body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage))
         sendEmail(contactEmail ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
+
+@app.errorhandler(404)
+def handle_404(e):
+    if request.method == 'GET':
+        return redirect(f'/?request_path={quote_plus(request.path)}')
+    return e

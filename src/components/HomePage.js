@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,15 +8,31 @@ import withContext from "../withContext";
 import HorizontalCard from "./HorizontalCard";
 import PostingItem from "./PostingItem";
 import Alerts from "./Alerts";
+import $ from 'jquery';
+
 
 const HomePage = props => {
 
   //const [postings, setPostings] = useState(null);
 
-  useEffect(() => {
+  /*useEffect(() => {
     //window.scrollTo(0, 0);
     //setPostings(props.context.postings);
-  }, /*[props.context.postings]*/);
+  }, /*[props.context.postings]);*/
+
+  let history = useHistory();
+  
+  useEffect(() => {
+    // find if server refresh needs history
+    const $request_path = $('input[name=request_path]');
+    const val = $request_path.val();
+    if (val) {
+        $request_path.val("");
+        history.push(val);
+        return;
+    }
+} , []);
+
 
   const settings = {
     dots: true,
