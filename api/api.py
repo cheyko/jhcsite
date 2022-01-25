@@ -16,7 +16,7 @@ from email.mime.multipart import MIMEMultipart
 from flask_restful import Api, Resource, reqparse
 
 
-app = Flask(__name__,static_folder='/build',static_url_path='/')
+app = Flask(__name__,static_folder='../build',static_url_path='')
 api = Api(app)
 
 app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
