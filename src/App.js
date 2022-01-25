@@ -100,13 +100,11 @@ export default class App extends Component {
   
   login = async (email, password) => {
     
-    const res = await axios.post(
-      '/api/login',
-      { email, password },
-    ).catch((res) => {
-      //return { status: 401, message: 'Unauthorized' }
-      console.log(res);
-    })
+    const res = await axios.post("/api/login",{email,password}).catch(
+      (res) => { 
+        if (res.status !== 200) { return { status: res.status, message: 'Not successful' } }
+      }
+    )
 
     /*const res = await axios.get("/api/loginnow").catch((res) => {
       //return { status: 401, message: 'Unauthorized' }
