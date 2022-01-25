@@ -2,7 +2,7 @@ import time
 import json
 import os
 
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask import request, jsonify
 from flask_migrate import Migrate
@@ -167,6 +167,12 @@ class Posting(db.Model):
 
     def __repr__(self):
         return '<House %r>' %  self.title
+
+@app.route("/", defaults={'path':''})
+@app.route('/index')
+@cross_origin()
+def serve(path):
+    return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/api/', methods=['GET', 'POST'])
 def home():
