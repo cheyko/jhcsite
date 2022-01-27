@@ -45,27 +45,27 @@ const GeneralInfo = props => {
                                 <ul>
                                   <span className="box info-link">
                                     <li> <Link to="/covid19" className="subtitle"> What is COVID-19 ? </Link> </li>
-                                    <li style={{marginLeft:"3rem"}}> The coronavirus disease 2019 (COVID-19) is a 
+                                    <li> The coronavirus disease 2019 (COVID-19) is a 
                                     new strain of the coronavirus that has not been previously identified in humans. </li>
-                                    <li style={{marginLeft:"3rem"}}><Link to="/covid19"><span style={{color:"blue"}}>Read more ...</span></Link> </li>
+                                    <li><Link to="/covid19"><span style={{color:"blue"}}>Read more ...</span></Link> </li>
                                     </span>
                                     <span className="box info-link">
                                     <li> <Link to="/covidja" className="subtitle"> COVID-19 in Jamaica </Link> </li>
-                                    <li style={{marginLeft:"3rem"}}> The Government of Jamaica has developed “<a style={{color:"hotpink"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
+                                    <li> The Government of Jamaica has developed “<a style={{color:"hotpink"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
                                       for tourism. Visitors should expect their movement around the island 
                                       to be limited. Also as well, Large gatherings are restricted; there are limits on the number 
                                       of attendees for funerals and weddings. Wearing mask in public is mandatory in Jamaica and other Covid protocols are well observed.
                                       For information on Quarantine in Jamaica, view <a style={{color:"green"}}  href="https://jamcovid19.moh.gov.jm/safety-measures.html"> Safety Measures</a> imposed 
                                       by the Jamaican Health Authorities. </li>
-                                    <li style={{marginLeft:"3rem"}}><Link to="/covidja"><span style={{color:"blue"}}>Read more ...</span></Link> </li>
+                                    <li ><Link to="/covidja"><span style={{color:"blue"}}>Read more ...</span></Link> </li>
                                     </span>
                                     <span className="box info-link">
                                     <li> <Link to="/covidwa" className="subtitle"> COVID-19 in West Africa </Link> </li>    
-                                    <li style={{marginLeft:"3rem"}}> The Covid-19 pandemic continues to rage across the World. Africa was the last continent 
+                                    <li> The Covid-19 pandemic continues to rage across the World. Africa was the last continent 
                                 to be hit by the virus and has not experienced as much devestation as other continents. 
                                 Meanwhile many countries are currently experiencing the second wave of the outbreak and 
                                 a new variant called the 'Delta Variant'. </li>  
-                                    <li style={{marginLeft:"3rem"}}><Link to="/covidwa"><span style={{color:"blue"}}>Read more ...</span></Link> </li>                                 
+                                    <li ><Link to="/covidwa"><span style={{color:"blue"}}>Read more ...</span></Link> </li>                                 
                                     </span>
                                 </ul>
                             </div>
@@ -85,7 +85,7 @@ const GeneralInfo = props => {
                                 <ul>
                                 <span className="box info-link">
                                     <li> <Link to="/businessja" className="subtitle"> Doing Business in Jamaica </Link> </li>
-                                    <li style={{marginLeft:"3rem"}}> JAMPRO is an Agency of the Government of Jamaica’s Ministry of Industry, 
+                                    <li > JAMPRO is an Agency of the Government of Jamaica’s Ministry of Industry, 
                                     Investment and Commerce that promotes business opportunities in export and investment to the local and international private sector. </li>
                                     </span>
                                     <span className="box info-link">

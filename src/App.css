@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color:white;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .banner{
@@ -77,10 +78,6 @@
 
 .navbar-item .is-tab:focus .navbar-link:not(.is-arrowless)::after, .navbar-item .is-tab:hover .navbar-link:not(.is-arrowless)::after{
   border-color: black !important;
-}
-
-.navbar-item, .navbar-link {
-  padding: 0.25rem 0.5rem !important;
 }
 
 .yellowbkgn{
@@ -335,7 +332,7 @@
   }
 
   .navbar-item, .navbar-link{
-    padding: 0.1rem 0.3rem !important;
+    padding: 0.1rem 1rem !important;
     text-align: left;
     margin: 0 auto;
   }
@@ -465,4 +462,8 @@
 
 .navbar-link:not(.is-arrowless)::after {
   right: 0em !important;
+}
+
+.dropdown-trigger{
+  padding: 0 !important;
 }

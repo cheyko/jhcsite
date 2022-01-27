@@ -58,7 +58,7 @@ const Covid19 = props => {
                                 <br/>
                                 <p> According to The World Health Organization;</p>
                                 <br/>
-                                <ul style={{listStyleType:"circle",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"circle"}}>
                                     <li> Most people infected with the COVID-19 virus will recover without requiring 
                                         special treatment after experiencing mild to moderate respiratory illness. 
                                         Older people, and those with underlying medical problems like cardiovascular 
@@ -97,7 +97,7 @@ const Covid19 = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p> COVID-19 Symptoms include :</p>
-                                <ul style={{listStyleType:"square",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"square"}}>
                                     <li>Congestion or runny nose</li>
                                     <li>Cough</li>
                                     <li>Diarrhea</li>
@@ -121,7 +121,7 @@ const Covid19 = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p> To prevent infection and to slow transmission of COVID-19, do the following:</p>
-                                <ul style={{listStyleType:"disc",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"disc"}}>
                                     <li>Avoid touching your face.</li>
                                     <li>Cover your mouth and nose when coughing or sneezing.</li>
                                     <li>Maintain at least 1 metre distance between you and people coughing or sneezing.</li>
@@ -130,7 +130,7 @@ const Covid19 = props => {
                                     <li>Stay home if you feel unwell.</li>
                                 </ul>
                                 <span style={{marginLeft:"1rem"}}>and</span>
-                                <ul style={{listStyleType:"disc",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"disc"}}>
                                     <li style={{fontWeight:"bold"}}>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub.</li>
                                 </ul>
                             </div>

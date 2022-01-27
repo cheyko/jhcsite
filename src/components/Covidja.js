@@ -44,7 +44,7 @@ const Covidja = props => {
                                 <p>Overview</p>
                             </div>
                             <div className="message-body has-text-left">
-                                <ul style={{listStyleType:"circle",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"circle"}}>
                                 <li> A Travel Authorisation document is required for all persons Travelling to Jamaica.
                                   This Travel Authorisation is NOT required to book your flight, however it is required
                                   for check-in and boarding the flight. To obtain a Travel Authorisation document, persons 

@@ -73,7 +73,7 @@ const CitizenPage = props => {
                           <li> <strong> <Link to="/test/1">Citizen Application - Marriage</Link> </strong> </li>
                           <li> <strong> <Link to="/test/0">Citizen Application - Descent</Link> </strong> </li>
                           <li> <strong> <Link to="/general">Covid Updates and Information</Link> </strong> </li>
-                          <li> <strong> <span>Returning Residents</span> </strong> </li>
+                          <li> <strong> <a href="https://www.jacustoms.gov.jm/service/returning-resident"><span>Returning Residents</span> </a></strong> </li>
                         </ul>
                     </div>
                     </article>

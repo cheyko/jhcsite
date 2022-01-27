@@ -63,6 +63,7 @@ const SideBar  = props => {
                     </div>
                     <div className="message-body">
                       <ul style={{listStyleType:"circle"}}>
+                        <li> <strong><a href="https://apps2.rgd.gov.jm/web/birth/lay_birthApplication.cfm"> Birth Certificate </a></strong></li>
                         <li> <strong><a href="https://www.pica.gov.jm/"> Passport, Citizenship and Identity</a></strong></li>
                         <li> <strong><a href="https://www.jamaicatax.gov.jm/"> Motor Vehicle Services</a></strong></li>
                         <li> <strong><a href="https://www.jamaicatax.gov.jm/"> Taxes, Paying Fines and Bills</a></strong></li>

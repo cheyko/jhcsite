@@ -9,17 +9,22 @@ import { faInbox} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 import Map from "./Map";
+import { send } from "process";
 
 const initState = {
   contactName : "", 
   contactEmail : "", 
-  nationality : "", 
+  nationality : "Nigerian", 
+  category : "General",
   contactSubject : "", 
-  contactMessage : ""
+  contactMessage : "",
+  otherText: false,
+  otherNation: "",
+  nation: ""
 }
 
-const countries = ["Nigerian", "Jamaican", "Ghanian", "Cameroonian", "Sierra Leonean", "Senegalese"];
-  
+const countries = ["Nigerian", "Jamaican", "Ghanian", "Cameroonian", "Sierra Leonean", "Senegalese", "Other"];
+const categories = ["General","Consular", "Diplomatic"];
 class ContactPage extends Component {
 
   constructor(props){
@@ -28,19 +33,26 @@ class ContactPage extends Component {
     window.scrollTo(0,0);
   }
 
-  handleChange = (e) => {this.setState({[e.target.name]: e.target.value, error: ""})}
+  handleChange = (e) => {
+    if(e.target.name === "nationality" && e.target.value === "Other"){
+      this.setState({otherText: true,[e.target.name]: e.target.value, error: ""});
+    }else{
+      this.setState({[e.target.name]: e.target.value,otherText: false, error: ""});
+    }
+  }
 
   sendMessage = async (e) => {
     e.preventDefault();
     this.setState({ flash:null });
     
-    const {contactName, contactEmail, nationality, contactSubject, contactMessage } = this.state;
-    console.log(contactName);
+    const {contactName, contactEmail, nationality, contactSubject, contactMessage, category, otherNation } = this.state;
+   
 
-    if(contactName !== " " && contactEmail !== " " && nationality !== " " && contactSubject !== " " && contactMessage !== " " ){
-      const res = await axios.get(
+    if(contactName !== " " && contactEmail !== " " && nationality !== " " && contactSubject !== " " && contactMessage !== " " && category !== " " ){
+
+      const res = await axios.post(
         '/api/message',
-        {contactName, contactEmail, nationality, contactSubject, contactMessage },
+        {contactName, contactEmail, nationality, contactSubject, contactMessage, otherNation, category },
         ).catch(
           (res) => { console.log(res) }
       )
@@ -52,21 +64,23 @@ class ContactPage extends Component {
       }
     }else{
       if (contactName === ""){
-        this.setState({flash:{ status: 'is-warning', msg: 'Please enter your contact name' }})
+        this.setState({flash:{ status: 'is-warning', msg: 'Please enter your contact name.' }})
       }else if(contactEmail === ""){
-        this.setState({flash:{ status: 'is-warning', msg: 'Enter a valid email address' }})
+        this.setState({flash:{ status: 'is-warning', msg: 'Enter a valid email address.' }})
       }else if(nationality === ""){
-        this.setState({flash:{ status: 'is-warning', msg: 'Select your nationality' }})
+        this.setState({flash:{ status: 'is-warning', msg: 'Select your nationality.' }})
       }else if(contactSubject === ""){
-        this.setState({flash:{ status: 'is-warning', msg: 'Message requires a subject to be sent' }})
+        this.setState({flash:{ status: 'is-warning', msg: 'Message requires a subject to be sent.' }})
       }else if(contactMessage === ""){
-        this.setState({flash:{ status: 'is-warning', msg: 'Place your query inside the message field' }})
+        this.setState({flash:{ status: 'is-warning', msg: 'Place your query inside the message field.' }})
+      }else if(category === ""){
+        this.setState({flash:{ status: 'is-warning', msg: 'Category was not selected.' }})
       }
     }
   }
 
   render(){
-    const {contactName, contactEmail, nationality, contactSubject, contactMessage } = this.state;
+    const {contactName, contactEmail, nationality, contactSubject, contactMessage, category, otherText, otherNation } = this.state;
     return (
       <>
         <div className="hero">
@@ -117,7 +131,7 @@ class ContactPage extends Component {
                           <br/><br/>
                           <h3> <strong style={{textDecoration:"underline"}}> Email </strong> </h3>
                           <dl>
-                            <dd>info-nig@mfaft.gov.jm</dd>
+                            <dd>info-jhcnig@mfaft.gov.jm</dd>
                           </dl>
                         </div>
                       </div> 
@@ -160,7 +174,7 @@ class ContactPage extends Component {
                   <br /><br /><br />
                   <form onSubmit={this.sendMessage}>
                       <div className="columns is-mobile is-centered">
-                        <div className="column box contactForm is-two-thirds">
+                        <div className="column box contactForm is-two-thirds-desktop">
                           <h1 className="title"> Send Direct Message</h1>
                           <div className="has-text-left" style={{marginBottom:"3rem"}}>
                             <div className="field">
@@ -188,6 +202,16 @@ class ContactPage extends Component {
                                     <option key={index} value={option}>{option}</option>
                                   ))}
                               </select>
+                              {otherText && 
+                                <input
+                                  className="input"
+                                  type="text"
+                                  name="otherNation"
+                                  value={otherNation}
+                                  onChange={this.handleChange}
+                                  required
+                                />
+                              }
                             </div>
                             <div className="field">
                               <label className="label">Email (required)</label>
@@ -199,6 +223,21 @@ class ContactPage extends Component {
                                 onChange={this.handleChange}
                                 required
                               />
+                            </div>
+                            <div className="field">
+                              <label className="label">Category (required) </label>
+                              <select
+                                  className="select form-select"
+                                  name="category"
+                                  id="category"
+                                  value={category}
+                                  onChange={this.handleChange}
+                                  required
+                                  >
+                                  {categories.map((option,index) => (
+                                    <option key={index} value={option}>{option}</option>
+                                  ))}
+                              </select>
                             </div>
                             <div className="field">
                               <label className="label">Subject (required)</label>

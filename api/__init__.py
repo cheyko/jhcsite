@@ -26,18 +26,17 @@ app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-app.config['GMAIL_PASSWORD'] = "@MamaWill93" #change this
+app.config['GMAIL_PASSWORD'] = "@0813keke" #change this
 app.config['GMAIL_PORT'] = 465 
 app.config['GMAIL_SERVER'] = "smtp.gmail.com" 
-app.config['GMAIL_SENDER'] = "thakkb.2021@gmail.com"  #change this
-app.config['GMAIL_JHC'] = "thakkb.2021@gmail.com"  #change this
+app.config['GMAIL_SENDER'] = "webjhcnig@gmail.com"  #change this
+app.config['GMAIL_JHC'] = "webjhcnig@gmail.com"  #change this
 app.url_map.strict_slashes = False
 
 jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
 
 #change
 text = """\
@@ -50,50 +49,74 @@ Visit url for more information or call 0813 606 3356.
 #change
 EmailTemp = """\
     <html>
-        <body style="background-color:darkseagreen;padding:3rem">
-            <h1 style="color:crimson;font-family:fantasy"> This email was a message sent from JHC Website </h1>
+        <body style="background-color:white;padding:1rem;color:black">
+            <div style="text-align:center;background-color:yellow">
+                <h1 style="color:black;font-family:Georgia"> This email was a message sent from the Jamaican High Commission in Abuja, Nigeria Website </h1>
+            </div>
+            
             <br>
-            <b style="color:chocolate;text-decoration:underline"> Name of Sender </b>
+            
+            <div style="background-color:green;padding:1rem">
+                <b style="color:white;text-decoration:underline"> Name of Sender </b>
+                <div style="padding-inline:1rem;font-style:italic">
+                    {0}
+                </div>
+            </div>
+            
             <br>
-            <p style="color:black;padding:1rem;font-style:italic">
-                {0}
-            </p>
+            
+            <div style="background-color:green;padding:1rem">
+                <b style="color:white;text-decoration:underline"> Email of Sender </b>
+                <div style="padding-inline:1rem;font-style:italic">
+                    {1}
+                </div>
+            </div>
+             
             <br>
-            <b style="color:chocolate;text-decoration:underline"> Email of Sender </b>
+            
+            <div style="background-color:green;padding:1rem">
+                <b style="color:white;text-decoration:underline"> Nationality of Sender </b>
+                <div style="padding-inline:1rem;font-style:italic">
+                    {2}
+                </div>
+            </div>
+
             <br>
-            <p style="color:black;padding:1rem;font-style:italic">
-                {1}
-            </p>
+
+            <div style="background-color:green;padding:1rem">
+                <b style="color:white;text-decoration:underline"> Subject of Sender </b>
+                <div style="padding-inline:1rem;font-style:italic">
+                    {3}
+                </div>
+            </div>
+
             <br>
-            <b style="color:chocolate;text-decoration:underline"> Nationality of Sender </b>
+
+            <div style="background-color:green;padding:1rem">
+                <b style="color:white;text-decoration:underline"> Message of Sender </b>
+                <div style="padding-inline:1rem;font-style:italic">
+                    {4}
+                </div>
+            </div>
+
             <br>
-            <p style="color:black;padding:1rem;font-style:italic">
-                {2}
-            </p>
-            <br>
-            <b style="color:chocolate;text-decoration:underline"> Subject of Sender </b>
-            <br>
-            <p style="color:black;padding:1rem;font-style:italic">
-                {3}
-            </p>
-            <br>
-            <b style="color:chocolate;text-decoration:underline"> Message of Sender </b>
-            <br>
-            <p style="color:black;padding:1rem;font-style:italic">
-                {4}
-            </p>
-            <small> Copyright &copy; 2022. </small>
+
+            <div style="background-color:black;color:white;text-align:center;padding:1rem">
+                <hr style="border-color:yellow" /> 
+                    <small> Copyright &copy; 2022. </small>
+                <hr style="border-color:yellow" /> 
+            </div>
         </body>
     </html>
     """
 
 plainEmail = MIMEText(text, "plain")
 
-def sendEmail(contactEmail, subject, emailTemp):
+def sendEmail(sendTo, subject, emailTemp):
     message = MIMEMultipart("alternative")
     message["Subject"] = subject
-    message["From"] = contactEmail
-    message["To"] = app.config['GMAIL_JHC']  
+    message["From"] = app.config['GMAIL_JHC']  
+    message["To"] = sendTo
 
     message.attach(plainEmail)
     message.attach(emailTemp)
@@ -101,7 +124,7 @@ def sendEmail(contactEmail, subject, emailTemp):
     context = ssl.create_default_context() 
     with smtplib.SMTP_SSL(app.config['GMAIL_SERVER'], app.config['GMAIL_PORT'], context=context) as server:
         server.login(app.config['GMAIL_SENDER'], app.config['GMAIL_PASSWORD'])
-        server.sendmail(app.config['GMAIL_SENDER'], app.config['GMAIL_JHC'] , message.as_string())
+        server.sendmail(app.config['GMAIL_SENDER'], sendTo , message.as_string())
 
 class User(db.Model):
     # You can use this to change the table name. The default convention is to use
@@ -182,23 +205,6 @@ def home():
 def get_current_time():
     return {'time': time.time()}
 
-@app.route('/api/loginnow', methods=['GET'])
-def loginnow():
-    user = User.query.first()
-    print(user)
-    if user is not None:           
-        access_token = create_access_token(identity=user.email)
-        refresh_token = create_refresh_token(identity=user.email)
-        return {
-            'id' : user.id,
-            'firstname' : user.first_name,
-            'lastname' : user.last_name,
-            'access_token': access_token,
-            'refresh_token': refresh_token,
-            'access_rights': user.is_admin
-        }
-    return jsonify({"msg": "Incorrect email or password"}), 400
-    
 @app.route('/api/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':   
@@ -265,10 +271,22 @@ def sendMessage():
         nationality = request.json.get('nationality', None) 
         contactSubject =  request.json.get('contactSubject', None)
         contactMessage = request.json.get('contactMessage', None)
+        category = request.json.get('category', None)
+        otherNation = request.json.get('otherNation', None)
 
+        if (nationality == "Other"):
+            nationality = otherNation
+
+        if (category == "Consular"):
+            sendTo = "consul-jhcnig@mfaft.gov.jm"
+        elif (category == "Diplomatic"):
+            sendTo = "counsellor-jhcnig@mfaft.gov.jm"
+        elif(category == "General"):
+            sendTo = "info-jhcnig@mfaft.gov.jm"
+    
         #sending email message
-        body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage))
-        sendEmail(contactEmail ,contactSubject,body)
+        body = MIMEText(EmailTemp.format(contactName, contactEmail, nationality, contactSubject, contactMessage),"html")
+        sendEmail(sendTo ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
 
 @app.errorhandler(404)

@@ -29,6 +29,7 @@ import Businessja from "./components/Businessja";
 import Businesswa from "./components/Businesswa";
 import Terms from "./components/Terms";
 import Test from "./components/Test";
+import Staff from "./components/Staff";
 
 //const cors = require('cors');
 
@@ -54,7 +55,7 @@ export default class App extends Component {
     const postings = await axios.get("/api/postings");
     //console.log(postings);
     user = user ? JSON.parse(user) : null;
-    this.setState({ user, postings});
+    this.setState({ user, postings:postings.data});
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -193,7 +194,7 @@ export default class App extends Component {
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-                <small style={{fontSize:"x-small"}}>menu</small>
+                <b>menu</b>
               </label>
             </div>
               <div className={`navbar-menu ${
@@ -241,6 +242,7 @@ export default class App extends Component {
                 <span> <i className="fa fa-globe"></i> News Articles <br className="wrap-text"/> and Notices</span>
                 </Link>
 
+
                 <div className="dropdown navbar-item is-tab is-hoverable">
                     <div className="dropdown-trigger navbar-link is-expanded is-tab">
                       <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/about" className="custom-nav" style={{paddingTop:"0"}}>
@@ -252,7 +254,7 @@ export default class App extends Component {
                         <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" className="navbar-item is-expanded is-tab">
                           The Commissioner
                         </Link>
-                        <Link to="/about" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
+                        <Link to="/staff" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
                           The General Staff
                         </Link>
                         <a style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://mfaft.gov.jm/jm/" className="navbar-item is-expanded is-tab">
@@ -308,6 +310,7 @@ export default class App extends Component {
               <Route exact path="/view-posting/:id" component={ViewPosting} />
               <Route exact path="/contact" component={ContactPage} />
               <Route exact path="/test/:id" component={Test} />
+              <Route exact path="/staff" component={Staff} />
             </Switch>
             <Footer />
           </div>

@@ -5,7 +5,7 @@ const ExternalItem = (props) => {
     console.log(link);
     return(
         <div className="hero">
-            <div className="card custom-card">
+            <div className="card">
                 <div className="card-image">
                     <a href={link.path}>
                         <figure className="image is-256x256">

@@ -63,6 +63,8 @@ const Footer = props => {
                                 <dd><a href="https://www.tradeboard.gov.jm/"><span> Trade Board</span></a></dd>
                                 <br />
                                 <dd><a href="https://www.jamaicatax.gov.jm/"><span> Tax Administration Jamaica</span></a></dd>
+                                <br />
+                                <dd><a href="https://www.rgd.gov.jm/"><span> Registrar General's Department</span></a></dd>
                             </dl>
                         </div>
                     </div>

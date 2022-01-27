@@ -21,7 +21,7 @@ const HomePage = props => {
   }, /*[props.context.postings]);*/
 
   let history = useHistory();
-  
+
   useEffect(() => {
     // find if server refresh needs history
     const $request_path = $('input[name=request_path]');
@@ -112,7 +112,7 @@ const HomePage = props => {
         </div>      
         <br></br>
         <br></br>
-        <div className="flag-card" style={{width:"50%", margin:"3rem auto"}}>
+        <div className="flag-card" style={{ margin:"3rem auto" }}>
           <article>
             <div className="" style={{backgroundColor:"rgb(0,0,0,0)"}}>
               {/*<div className="message-header">

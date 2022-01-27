@@ -44,7 +44,7 @@ const Businessja = props => {
                                 <p>Overview</p>
                             </div>
                             <div className="message-body has-text-left">
-                                <ul style={{listStyleType:"circle",marginLeft:"3rem"}}>
+                                <ul style={{listStyleType:"circle"}}>
                                     <li> The World Banks's doing business platform has ranked Jamaica 6th amongst 190 countries
                                         in the topic of Starting a Business and 15th in getting credit. The business climate in Jamaica
                                         is suited for International Trade and Investment.
