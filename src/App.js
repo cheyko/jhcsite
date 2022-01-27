@@ -55,7 +55,7 @@ export default class App extends Component {
     const postings = await axios.get("/api/postings");
     //console.log(postings);
     user = user ? JSON.parse(user) : null;
-    this.setState({ user, postings:postings.data});
+    this.setState({ user, postings:postings.data.postings});
     window.scrollTo(0, 0);
     window.addEventListener('scroll', this.handleScroll);
   }

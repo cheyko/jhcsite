@@ -241,7 +241,10 @@ def postings():
         for posting in result:
             post = {"id":posting.id,"title":posting.title, "category":posting.category, "author":posting.author, "date":str(posting.date), "description":posting.description, "body":posting.body, "numOfPics":posting.numOfPics }
             postings.append(post)
-        return json.dumps(postings)
+        response = jsonify({'postings': postings})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+        #return json.dumps(postings)
     else:
         result = request.form
         photos = request.files.getlist("photos")
