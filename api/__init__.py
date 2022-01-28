@@ -180,7 +180,7 @@ class Posting(db.Model):
     author = db.Column(db.String(80))
     date = db.Column(db.DateTime)
     description = db.Column(db.String(255))
-    body = db.Column(db.String(255))
+    body = db.Column(db.String(2048))
     numOfPics = db.Column(db.Integer)
 
     def __init__(self, title, category, author, date, description, body, numOfPics ):
@@ -268,7 +268,7 @@ def postings():
             filename = "img" + str(index) + ".jpg"
             pic.save(os.path.join(app.config['UPLOAD_FOLDER'] + prefix, filename))
         db.session.commit()
-        return jsonify({"msg": "added successfully","id":newPost.id}), 200
+        return jsonify({"msg": "added successfully","id":newPost.id, "numOfPics":numOfPics}), 200
 
 @app.route('/api/message', methods=['POST'])
 def sendMessage():
