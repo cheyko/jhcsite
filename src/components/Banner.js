@@ -26,7 +26,7 @@ const Banner = props => {
                         </div>
                         <div className="column is-two-fifths">
                             <figure className="image is-2by1">
-                                <img src={process.env.PUBLIC_URL + "/images/consulate_office.jpg"} alt="Placeholder" />
+                                <img src={process.env.PUBLIC_URL + "/images/consulate/consulate_office.jpg"} alt="Placeholder" />
                             </figure>
                         </div>
                     </div>
