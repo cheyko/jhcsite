@@ -30,9 +30,10 @@ const PostingItem = props => {
             <div className="card-content">
               <div className="content">
                 <b className="posting-title" style={{ textTransform: "capitalize"}}>
-                  {posting.title}{" "}
+                  {posting.title} 
                 </b>
-                
+                <br />
+                <span className="tag">{posting.date.split(" ")[0]}</span>
               </div>
 
             </div>

@@ -1,6 +1,7 @@
 import time
 import json
 import os
+import jwt
 
 from flask import Flask, send_from_directory, redirect
 from urllib.parse import quote_plus
@@ -15,6 +16,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask_restful import Api, Resource, reqparse
+from functools import wraps
 import pathlib
 
 app = Flask(__name__, static_url_path='', static_folder='../build')
@@ -36,7 +38,7 @@ app.config['GMAIL_SENDER'] = "webjhcnig@gmail.com"  #change this
 app.config['GMAIL_JHC'] = "webjhcnig@gmail.com"  #change this
 app.url_map.strict_slashes = False
 
-jwt = JWTManager(app)
+#jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 CORS(app, headers='Content-Type')
@@ -115,6 +117,26 @@ EmailTemp = """\
     """
 
 plainEmail = MIMEText(text, "plain")
+
+def authenticate_token(t):
+    @wraps(t)
+    def decorated_func(*args, **kwargs):
+        auth = request.headers.get('Authorization', None)
+
+        if not auth:
+            return jsonify({'error': 'Access Denied : No Token Found'}), 401
+        else:
+            try:
+                result = jwt.decode(auth, app.config['SECRET_KEY'])
+                print(result)
+            except jwt.exceptions.InvalidSignatureError as e:
+                print(e)
+                return jsonify({'error':'Invalid Token'})
+            except jwt.exceptions.DecodeError as e:
+                print(e)
+                return jsonify({'error': 'Invalid Token'})
+            return t(*args, **kwargs)
+    return decorated_func
 
 def sendEmail(sendTo, subject, emailTemp):
     message = MIMEMultipart("alternative")
@@ -206,6 +228,7 @@ def home():
     return "ok"
 
 @app.route('/api/time', methods=['GET', 'POST'])
+@authenticate_token
 def get_current_time():
     return {'time': time.time()}
 

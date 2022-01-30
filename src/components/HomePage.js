@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {Link, useHistory} from "react-router-dom";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import withContext from "../withContext";
 import HorizontalCard from "./HorizontalCard";
 import PostingItem from "./PostingItem";
 import Alerts from "./Alerts";
 import $ from 'jquery';
+import SideBar from "./SideBar";
+import ExternalWebsites from "./ExternalWebsites";
 
 
 const HomePage = props => {
@@ -55,43 +55,38 @@ const HomePage = props => {
 
   const slides = [
       {
-          id : 0, info : "test0", path : "/images/consulate1.JPG"
+          id : 0, info : "test0", path : "/images/consulate/consulate1.JPG"
       },
       {
-          id : 1, info : "test1", path : "/images/consulate2.jpg"
+          id : 1, info : "test1", path : "/images/consulate/consulate2.jpg"
       },
       {
-          id : 2, info : "test2", path : "/images/consulate3.JPG"
-      },
-      {
-          id : 3, info : "test3", path : "/images/image4.jpg"
-      },
-      {
-          id : 4, info : "test4", path : "/images/image5.jpg"
-      },
-      {
-          id : 5, info : "test5", path : "/images/image6.jpg"
-      },
-      {
-          id : 6, info : "test6", path : "/images/image7.jpg"
+          id : 2, info : "test2", path : "/images/consulate/consulate3.JPG"
       },
   ];
   const CommissionerName = "H. E. Esmond Reid";
   const CommissionerTitle = "High Commissioner For The Jamaican High Commission in Nigeria.";
-  const CommissionerBio = " His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... " ;
+  const CommissionerBio =  `His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, 
+                            Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, 
+                            is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to 
+                            Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... ` ;
 
   const CardTitle = "Opening Remarks";
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
-  const CardBody = "Opening remarks ..... "
+  const CardBody = `His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, 
+  Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, 
+  is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to 
+  Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... ` ;
+
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
   const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  console.log(postings);
   
   return (
     <>
       <div>
-        <div className="hero slideshow" style={{marginBottom:"1rem"}}> 
+        
+        <div className="hero slideshow"> 
               <div className="slick-wrapper">
                 <Slider {...settings}>
                   {slides.map((slide) => 
@@ -106,43 +101,74 @@ const HomePage = props => {
           </div>
         
         <br></br>
-        
-        <div className="hero commissioner-card">
-           <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio}/>
-        </div>      
-        <br></br>
-        <br></br>
-        <div className="flag-card" style={{ margin:"3rem auto" }}>
-          <article>
-            <div className="" style={{backgroundColor:"rgb(0,0,0,0)"}}>
-              {/*<div className="message-header">
-                  <p>The Jamaican Flag</p>
-                  </div>*/}
-              <div className="">
-                <figure className="image is-4x3">
-                  <img className="flag-card" src={process.env.PUBLIC_URL + "/images/flag3d.jpg"} alt="The Jamaican Flag" style={{height:"50%",width:"50%",margin:"0 auto"}} />
-                </figure>
-              </div>
-            </div>
-          </article>
+        <div className="hero remarks">
+          <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
         </div>
+  
         <br></br>
         <hr />
         <br />
-        <br></br>
+        <div className="box hero-body">
+          <div className="columns">
+            <div className="column">
+              <figure className="image is-3x1">
+                <img className="card" src={process.env.PUBLIC_URL + "/images/image7.jpg"} alt="The Jamaican Flag" />
+                <figcaption className="tag caption-tag">The Jamaican Coat of Arms</figcaption>
+              </figure>
+            </div>
+            <div className="column">
+              <figure className="image is-3x1">
+                <img className="card" src={process.env.PUBLIC_URL + "/images/flag3d.jpg"} alt="The Jamaican Flag"   />
+                <figcaption className="tag caption-tag">The National Flag of Jamaica</figcaption>
+              </figure>
+            </div>
+          </div>
 
-        <div className="hero remarks">
-          <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} />
+          <div className="commissioner-card">
+            <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
+          </div> 
+          <br />
+          <div className="governance columns">
+            <div className="column">
+              <figure className="image is-3x1">
+                <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
+                <figcaption className="caption-tag">Governor General</figcaption>
+              </figure>
+              <div>His Excellency, The Most Honourable <br /> <span className="official"> SIR PATRICK ALLEN </span> <br /> ON, GCMG, CD, KST.J </div>
+            </div>
+            <div className="column">
+              <figure className="image is-3x1">
+                <img className="card flag-card" src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                <figcaption className="caption-tag">Prime Minister</figcaption>
+              </figure>
+              <div>The Most Honourable <br /> <span className="official"> ANDREW HOLNESS </span> <br /> ON, MP </div>
+              
+            </div>
+            <div className="column">
+              <figure className="image is-3x1">
+                <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
+                <figcaption className="caption-tag">Minister of Foreign Affairs <br/> and Foreign Trade</figcaption>
+                </figure>
+                <div>Senator, The Honourable <br /> <span className="official"> KAMINA JOHNSON SMITH </span> </div>
+            </div>
+          </div>
+
+          <Link to="/jamaica">
+            <div><h1 className="button yellowbkgn subtitle has-text-weight-bold">ABOUT JAMAICA &nbsp;<i className="fa fa-mouse-pointer"></i></h1></div>
+          </Link>
         </div>
-
+        <br></br>
+        <hr />
+       
         <br></br>
         <br></br>
+         
 
         <div className="hero latest-news">
           <div className="card yellowbkgn home-page-card-horizontal">
                <div className="container">
                  <div className="hero-body">
-                    <b className="is-size-4">Latest News</b>
+                    <b className="is-size-4">Latest News from Consulate</b>
                     <br></br>
                     <br></br>
                     <div className="columns is-multiline is-mobile">
@@ -186,7 +212,7 @@ const HomePage = props => {
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image" style={{backgroundColor:"skyblue"}}>
                     <figure className="image is-4x3">
-                      <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/image1.jpg"} alt="Placeholder" />
+                      <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/passport.jpeg"} alt="Placeholder" />
                     </figure>
                   </div>
                   <div className="card-header">
@@ -206,11 +232,11 @@ const HomePage = props => {
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
-                      <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/visit_jamaica.jpg"} alt="Placeholder" />
+                      <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/visa.jpeg"} alt="Placeholder" />
                     </figure>
                   </div>
                   <div className="card-header">
-                    <div className="card-header-title is-centered"> Visas </div>
+                    <div className="card-header-title is-centered"> Jamaican Visa Application </div>
                   </div>
                   <div className="card-content">
                     <p> The Jamaican High Commission is here to facilitate Your Visa Applications and Inquires. 
@@ -251,7 +277,7 @@ const HomePage = props => {
                     </figure>
                   </div>
                   <div className="card-header">
-                    <div className="card-header-title is-centered">Visit Jamaica</div>
+                    <div className="card-header-title is-centered">Vacationing in Jamaica</div>
                   </div>
                   <div className="card-content">
                     <p> Make Jamaica your next holiday destination
@@ -272,8 +298,17 @@ const HomePage = props => {
         <hr />
         <br></br>
         
-        <div style={{marginInline:'3rem'}}>
-          <Alerts />
+        <div className="columns" style={{marginInline:"1rem"}}>
+          <div className="column is-three-quarters">
+            <Alerts />
+
+            <br></br>
+            <ExternalWebsites />
+            <br></br>
+          </div>
+          <div className="no-map column is-one-quarter">
+            <SideBar />
+          </div>
         </div>
         
 

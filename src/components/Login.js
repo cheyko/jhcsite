@@ -11,8 +11,8 @@ class Login extends Component {
     };
   }
   
-  componentDidUpdate(){
-    window.scrollTo(0, 0);
+  componentDidMount(){
+    window.scrollTo(0, 210);
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value, error: "" });

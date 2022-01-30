@@ -1,8 +1,8 @@
-"""added postings class
+"""empty message
 
-Revision ID: fec6e31edeb0
-Revises: a56aa56a31b6
-Create Date: 2021-08-06 17:46:29.027382
+Revision ID: 39e4f73cc305
+Revises: 
+Create Date: 2022-01-28 20:06:38.146155
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'fec6e31edeb0'
-down_revision = 'a56aa56a31b6'
+revision = '39e4f73cc305'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -25,7 +25,8 @@ def upgrade():
     sa.Column('author', sa.String(length=80), nullable=True),
     sa.Column('date', sa.DateTime(), nullable=True),
     sa.Column('description', sa.String(length=255), nullable=True),
-    sa.Column('body', sa.String(length=255), nullable=True),
+    sa.Column('body', sa.String(length=2048), nullable=True),
+    sa.Column('numOfPics', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

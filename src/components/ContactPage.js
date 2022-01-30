@@ -144,7 +144,7 @@ class ContactPage extends Component {
                           <h3><strong style={{textDecoration:"underline"}}> Our Address </strong> </h3>
                           <dl>
                             <dd>The Jamaican High Commission</dd>
-                            <dd>13 Hassan Usman Katsina Street</dd>
+                            <dd>13 Hassan Musa Katsina Street</dd>
                             <dd>Asokoro, Abuja</dd>
                             <dd>Federal Republic of Nigeria</dd>
                           </dl>

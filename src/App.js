@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
+
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import HomePage from './components/HomePage';
 import CitizenPage from './components/CitizenPage';
 import VisitorPage from './components/VisitorPage';
@@ -22,6 +26,8 @@ import Context from "./Context";
 
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
+import jwt_encode from 'jwt-encode';
+
 import Covid19 from "./components/Covid19";
 import Covidja from "./components/Covidja";
 import Covidwa from "./components/Covidwa";
@@ -30,9 +36,19 @@ import Businesswa from "./components/Businesswa";
 import Terms from "./components/Terms";
 import Test from "./components/Test";
 import Staff from "./components/Staff";
+import Jamaica from "./components/Jamaica";
+import WestAfrica from "./components/WestAfrica";
 
 //const cors = require('cors');
-
+const sign = require('jwt-encode');
+const secret = 'some$3cretKey';
+const data = {
+  token : 'token'
+};
+/*const cors = require('cors');
+const express = require('express');
+const app = express();
+app.use(cors());*/
 
 export default class App extends Component {
   constructor(props) {
@@ -46,14 +62,33 @@ export default class App extends Component {
     this.routerRef = React.createRef();
   }
 
+  
   async componentDidMount() {
-    const time = await axios.get("/api/time");
+    const jwt = sign(data,secret);
+    const time = await axios.get('/api/time',{
+      headers: {
+        'Authorization' : jwt
+      }
+    });
+
+    /*const response = await axios.get('https://jamaica-gleaner.com/feed/rss.xml', {
+      //mode: '*cors',
+      //withCredentials: true,
+      headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length',
+      'Access-Control-Allow-Credentials':true
+      //'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    }).then(data => {
+        console.log(data);
+    });*/
+
     const testVar = await axios.get("/api/");
-    //console.log(time);
-    //console.log(testVar);
     let user = localStorage.getItem("user");
     const postings = await axios.get("/api/postings");
-    //console.log(postings);
     user = user ? JSON.parse(user) : null;
     this.setState({ user, postings:postings.data.postings});
     window.scrollTo(0, 0);
@@ -171,7 +206,7 @@ export default class App extends Component {
           <Banner />
           <nav
             id="navbar"
-            className="navbar is-size-6"
+            className="navbar"
             role="navigation"
             aria-label="main navigation"
           >
@@ -208,6 +243,12 @@ export default class App extends Component {
                     </div>
                     <div className="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
                       <div className="dropdown-content standardLook ">                      
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/jamaica" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
+                          About Jamaica
+                        </Link>
+                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/westafrica" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
+                          About West Africa 
+                        </Link>
                         <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covid19" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
                           General COVID-19 Information
                         </Link>
@@ -265,7 +306,7 @@ export default class App extends Component {
                   </div>
                 
                 {this.state.user && this.state.user.accessLevel > 0 && (
-                  <Link to="/add-posting" className="navbar-item is-expanded is-tab">
+                  <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/add-posting" className="navbar-item is-expanded is-tab">
                     <span> <i className="fa fa-plus"></i> Add <br className="wrap-text"/> Post</span>
                   </Link>
                 )}
@@ -311,6 +352,8 @@ export default class App extends Component {
               <Route exact path="/contact" component={ContactPage} />
               <Route exact path="/test/:id" component={Test} />
               <Route exact path="/staff" component={Staff} />
+              <Route exact path="/jamaica" component={Jamaica} />
+              <Route exact path="/westafrica" component={WestAfrica} />
             </Switch>
             <Footer />
           </div>

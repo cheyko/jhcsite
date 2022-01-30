@@ -12,7 +12,7 @@ const SideBar  = props => {
                     <div className="message-body">
                           <dl style={{textAlign:"left"}}>
                                 <dd>The Jamaican High Commission</dd>
-                                <dd>13 Hassan Usman Katsina Street</dd>
+                                <dd>13 Hassan Musa Katsina Street</dd>
                                 <dd>Asokoro, Abuja</dd>
                                 <dd>Federal Republic of Nigeria</dd>
                                 <br></br>
@@ -74,7 +74,7 @@ const SideBar  = props => {
                     </div>
                   </article>
                     <br />
-                  <article className="message" style={{backgroundColor:"rgb(0,0,0,0)"}}>
+                  <article className="message map-box" style={{backgroundColor:"rgb(0,0,0,0)"}}>
                     <div className="message-header">
                       <p>Map of Jamaica</p>
                     </div>

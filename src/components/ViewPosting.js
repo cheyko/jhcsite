@@ -74,7 +74,7 @@ const ViewPosting = props => {
                         </div>
                       </div>
 
-                      <p className="is-size-5 p-format">
+                      <p className="is-size-5 p-format para">
                       {posting.body}
                       </p>
 
