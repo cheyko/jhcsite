@@ -53,7 +53,7 @@ const CommissionerPage = props => {
                           {openImage && (
                             <Lightbox
                               imageTitle="Jamaican High Comissioner"
-                              mainSrc={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"}
+                              mainSrc={process.env.PUBLIC_URL + "/images/consulate/high_commissioner.jpg"}
                               onCloseRequest={() => setOpen(false)}
                             />
                           )}
