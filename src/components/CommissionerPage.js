@@ -49,7 +49,7 @@ const CommissionerPage = props => {
                     <div className="message-body">
                       <div className="box grnBkgn" style={{width:"75%",margin:"0 auto"}}>
                         <figure className="image is-4x3">
-                          <img alt="High Commissioner" onClick={imgControl} src={process.env.PUBLIC_URL + "/images/high_commissioner.jpg"} />
+                          <img alt="High Commissioner" onClick={imgControl} src={process.env.PUBLIC_URL + "/images/consulate/high_commissioner.jpg"} />
                           {openImage && (
                             <Lightbox
                               imageTitle="Jamaican High Comissioner"
