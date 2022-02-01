@@ -90,7 +90,7 @@ const Jamaica = props => {
     const [val, setVal] = useState(0);
 
     return(
-        <div className="hero">
+        <div className="hero about-jamaica">
            
             <div className="slideshow"> 
               <div className="slick-wrapper">
