@@ -61,12 +61,16 @@ const ExternalWebsites = props => {
             breakpoint: 480,
             settings: {
                 slidesToShow: 1,
+                dots: true,
+                arrows: false,
             }
           },
           {
             breakpoint: 600,
             settings: {
                 slidesToShow: 1,
+                dots: true,
+                arrows: false
             }
           },
           {
@@ -87,9 +91,9 @@ const ExternalWebsites = props => {
                 <div className="message-body info-link has-text-left">
                     <div className="slider-wrapper governance">
                         <div className="thumbnail thumbnail-slider-wrap"> 
-                            {<Slider {...settingsThumbs}>
+                            <Slider {...settingsThumbs}>
                                 {carousel}
-                            </Slider>}
+                            </Slider>
                         </div>
                     </div>
 

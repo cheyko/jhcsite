@@ -9,6 +9,17 @@
   background-color: yellow;
 }
 
+.is-pink-coral{
+  background-color: #ec008c !important;
+}
+.is-pink-coral .message-header, .is-pink-coral .box{
+  background-color: blanchedalmond;
+  color: #ec008c;
+}
+
+.is-pink-coral .message-body{
+  color: white;
+}
 .blkYellow, .footer-container hr{
   background-color: yellow;
   color: black;
@@ -129,6 +140,7 @@
   padding: 1rem;
   margin: 3rem 1rem;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -252,7 +264,12 @@
   border: #00f solid 2px;
 }
 
-.commissionerPic:hover{
+.commissionerPic .image img:hover{
+  border: solid 3px blue;
+  cursor: pointer;
+}
+
+.remarks .image img:hover{
   border: solid 3px blue;
   cursor: pointer;
 }
@@ -283,7 +300,8 @@
   }
 
   .thumbnail .slick-slide {
-    margin-inline: 0.5rem;
+    margin-inline: 0rem;
+    padding: 5px;
   }
 
  .thumbnail .slick-next, .thumbnail .slick-prev {
@@ -317,10 +335,7 @@
   margin-block: 1rem;
 }*/
 
-.remarks a.link-to{
-  pointer-events: none !important;
-  cursor: default;
-}
+
 
 .message-body ul li{
   margin: 1rem;
@@ -442,6 +457,15 @@
   color: white !important;
 }
 
+.news-box .image img{
+  height: 9rem !important;
+  width: 12rem !important;
+}
+
+.news-box .thumbnail .slick-next, .news-box  .thumbnail .slick-prev {
+  margin-top: 5rem !important;
+}
+
 @media screen and (max-width: 425px){
   .governance img{
     height: 15rem !important;
@@ -460,7 +484,7 @@
   }
 
   .message-body{
-    padding:0 ;
+    padding: 1rem ;
   }
 }
 
@@ -485,11 +509,15 @@
   }*/
 
   .hero article ul{
-    margin: 0 !important;
+    margin: 1rem !important;
   }
 
+  .message{
+    padding: 3rem;
+    margin: 1rem;
+  }
   .message-body{
-    padding: 1rem !important;
+    padding: 3rem !important;
     text-align: left !important;
   }
 

@@ -37,7 +37,7 @@ const Businessja = props => {
                 <div className="column is-three-quarters">
                     <article>
                         <h1 className="title"> Trade and Investment </h1>
-                        <p style={{color:"black"}} className="has-text-left"> Last Updated : August 6, 2021</p>
+                        <p style={{color:"black"}} className="has-text-left"> {/* Last Updated : August 6, 2021*/}</p>
                         <br />
                         <div className="message is-info">
                             <div className="message-header">

@@ -15,6 +15,7 @@ const ExternalItem = (props) => {
                     </a>
                 </div>
             </div>
+            <br /><br />
         </div>
     )
 }
