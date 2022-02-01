@@ -178,7 +178,7 @@
 }
 
 .nav-span{
-  padding: 1rem;
+  padding-inline: 1rem;
 }
 
 .navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {
@@ -446,7 +446,7 @@
 }
 
 .governance {
-  height: 20rem !important;
+  height: auto !important;
 }
 .official{
   color: green;
@@ -464,6 +464,10 @@
 
 .news-box .thumbnail .slick-next, .news-box  .thumbnail .slick-prev {
   margin-top: 5rem !important;
+}
+
+.row{
+  padding-inline: 1rem ;
 }
 
 @media screen and (max-width: 425px){
@@ -486,6 +490,7 @@
   .message-body{
     padding: 1rem ;
   }
+ 
 }
 
 @media screen and (max-width: 770px) and (min-width: 426px){
@@ -540,14 +545,15 @@
     width: 100%;
   }
   .governance img{
-    height: 30rem !important;
+    height: 12rem !important;
   }
   .governance{
     height: auto !important;
   }
+  
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1025px){
   .container:not(.is-max-desktop):not(.is-max-widescreen) {
       max-width: 100% !important;
   }
@@ -567,9 +573,22 @@
     width: 50%;
     margin: 0 auto;
   }
+  .governance img{
+    height: 15rem !important;
+    margin: 0 auto !important;
+  }
+  .home-page .governance img{
+    height: 18rem !important;
+    margin: 0 auto !important;
+  }
+
+  .governance{
+    height: auto !important;
+  }
+  
 }
 
-@media screen and (max-width: 1025px) and (min-width: 770px){
+@media screen and (max-width: 1024px) and (min-width: 770px){
   
   .banner-column{
     margin-block: 10%;
@@ -590,7 +609,9 @@
     width: 50%;
     margin: 0 auto;
   }
-  
+  .governance img{
+    height: 12rem !important;
+  }
 }
 
 

@@ -9,7 +9,7 @@ import Alerts from "./Alerts";
 import $ from 'jquery';
 import SideBar from "./SideBar";
 import ExternalWebsites from "./ExternalWebsites";
-
+import Lightbox from "react-image-lightbox";
 
 const HomePage = props => {
 
@@ -81,10 +81,12 @@ const HomePage = props => {
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
   const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  
+  const [openImage, setOpen] = useState(false);
+  const [val, setVal] = useState(0);
+
   return (
     <>
-      <div>
+      <div className="home-page">
         
         <div className="hero slideshow"> 
               <div className="slick-wrapper">
@@ -105,9 +107,9 @@ const HomePage = props => {
           <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
         </div>
   
-        <br></br>
+        
         <hr />
-        <br />
+     
         <div className="box hero-body">
           <div className="columns">
             <div className="column">
@@ -131,14 +133,30 @@ const HomePage = props => {
           <div className="governance columns">
             <div className="column">
               <figure className="image is-3x1">
-                <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
+                <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
+                {openImage && val === 1 && (
+                    <Lightbox
+                        imageTitle={`SIR PATRICK ALLEN`}
+                        mainSrc={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"}
+                        onCloseRequest={() => setOpen(false)}
+                        
+                    />
+                )}
                 <figcaption className="caption-tag">Governor General</figcaption>
               </figure>
               <div>His Excellency, The Most Honourable <br /> <span className="official"> SIR PATRICK ALLEN </span> <br /> ON, GCMG, CD, KST.J </div>
             </div>
             <div className="column">
               <figure className="image is-3x1">
-                <img className="card flag-card" src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                <img className="card flag-card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                {openImage && val === 2 && (
+                    <Lightbox
+                        imageTitle={`ANDREW HOLNESS`}
+                        mainSrc={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"}
+                        onCloseRequest={() => setOpen(false)}
+                        
+                    />
+                )}
                 <figcaption className="caption-tag">Prime Minister</figcaption>
               </figure>
               <div>The Most Honourable <br /> <span className="official"> ANDREW HOLNESS </span> <br /> ON, MP </div>
@@ -146,7 +164,15 @@ const HomePage = props => {
             </div>
             <div className="column">
               <figure className="image is-3x1">
-                <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
+                <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
+                {openImage && val === 3 && (
+                    <Lightbox
+                        imageTitle={`KAMINA JOHNSON SMITH`}
+                        mainSrc={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"}
+                        onCloseRequest={() => setOpen(false)}
+                        
+                    />
+                )}
                 <figcaption className="caption-tag">Minister of Foreign Affairs <br/> and Foreign Trade</figcaption>
                 </figure>
                 <div>Senator, The Honourable <br /> <span className="official"> KAMINA JOHNSON SMITH </span> </div>
@@ -157,12 +183,8 @@ const HomePage = props => {
             <div><h1 className="button yellowbkgn subtitle has-text-weight-bold">ABOUT JAMAICA &nbsp;<i className="fa fa-mouse-pointer"></i></h1></div>
           </Link>
         </div>
-        <br></br>
-        <hr />
-       
-        <br></br>
-        <br></br>
          
+        <hr />
 
         <div className="hero latest-news">
           <div className="card yellowbkgn home-page-card-horizontal">
@@ -199,12 +221,9 @@ const HomePage = props => {
                </div>
           </div>
         </div>
-        
-        <br></br>
-        <br></br>
 
         <hr />
-        <br></br>
+     
         <div className="hero site-features">
           <div className="hero-body">
             <div className="columns is-multiline is-mobile">
@@ -293,10 +312,10 @@ const HomePage = props => {
             </div>
           </div>
         </div>
-        <br></br>
+     
 
         <hr />
-        <br></br>
+   
         
         <div className="columns" style={{marginInline:"1rem"}}>
           <div className="column is-three-quarters">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import withContext from "../withContext";
 import Slider from "react-slick";
 import {Link} from "react-router-dom";
@@ -8,11 +8,17 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ExternalItem from "./ExternalItem";
 import axios from "axios";
+import Lightbox from "react-image-lightbox";
 
 const Jamaica = props => {
 
+    const [firstload, setLoad] = useState(true);
+
     useEffect( () => {
-        window.scrollTo(0,0);
+        if (firstload){ 
+            window.scrollTo(0,0);
+            setLoad(false);
+        }
     });
 
     const settings = {
@@ -80,6 +86,9 @@ const Jamaica = props => {
           console.log(data); // JSON data parsed by `data.json()` call
         });*/
 
+    const [openImage, setOpen] = useState(false);
+    const [val, setVal] = useState(0);
+
     return(
         <div className="hero">
            
@@ -127,8 +136,15 @@ const Jamaica = props => {
                                         <div className="rows">
                                             <div className="row">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/doctor-bird.jpeg"} alt="The Jamaican National Bird" />
-                                                    
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/doctor-bird.jpeg"} alt="The Jamaican National Bird" />
+                                                    {openImage && val === 1 && (
+                                                        <Lightbox
+                                                            imageTitle={`Swallowtail Hummingbird Bird - The Jamaican National Bird`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/doctor-bird.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                         The Swallowtail Hummingbird Bird - 'Doctor Bird' : The Jamaican National Bird
@@ -137,8 +153,15 @@ const Jamaica = props => {
                                             <br/>
                                             <div className="row">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/Lignum-vitae.jpeg"} alt="The Jamaican National Flower" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Lignum-vitae.jpeg"} alt="The Jamaican National Flower" />
+                                                    {openImage && val === 2 && (
+                                                        <Lightbox
+                                                            imageTitle={`Lignum Vitae - The Jamaican National Flower`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Lignum-vitae.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                         Lignum Vitae : The Jamaican National Flower
@@ -147,8 +170,15 @@ const Jamaica = props => {
                                             <br/>
                                             <div className="row">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/ackee-tree.jpeg"} alt="The Jamaican National Fruit" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/ackee-tree.jpeg"} alt="The Jamaican National Fruit" />
+                                                    {openImage && val === 3 && (
+                                                        <Lightbox
+                                                            imageTitle={`Ackee - The Jamaican National Fruit`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/ackee-tree.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                         Ackee : The Jamaican National Fruit
@@ -216,8 +246,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/Nanny.jpeg"} alt="Nanny of the Maroons" />
-                                                    
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Nanny.jpeg"} alt="Nanny of the Maroons" />
+                                                    {openImage && val === 4 && (
+                                                        <Lightbox
+                                                            imageTitle={`Nanny of the Maroons`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Nanny.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     Nanny of the Maroons - One of the most feared Maroon chiefs by the English during the Maroon Wars.
@@ -248,8 +285,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/marcus-garvey.webp"} alt="Marcus Garvey" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(5);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/marcus-garvey.jpeg"} alt="Marcus Garvey" />
+                                                    {openImage && val === 5 && (
+                                                        <Lightbox
+                                                            imageTitle={`Marcus Garvey`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/marcus-garvey.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     Marcus Garvey - First National Hero and Founder of UNIA
@@ -277,8 +321,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                             <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/sam-sharpe.jpeg"} alt="Sam Sharpe" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(6);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/sam-sharpe.jpeg"} alt="Sam Sharpe" />
+                                                    {openImage && val === 6 && (
+                                                        <Lightbox
+                                                            imageTitle={`Sam Sharpe`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/sam-sharpe.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     Sam Sharpe - Baptist Leader and main instigator of the Christmas Rebillion.
@@ -306,8 +357,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/paul-bogle.jpeg"} alt="Paul Bogle" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(7);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/paul-bogle.jpeg"} alt="Paul Bogle" />
+                                                    {openImage && val === 7 && (
+                                                        <Lightbox
+                                                            imageTitle={`Paul Bogle`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/paul-bogle.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     Paul Bogle - One of the Spearheads of the Morant Bay Rebillion
@@ -335,8 +393,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/george-william-gordon.jpeg"} alt="George William Gordon" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(8);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/george-william-gordon.jpeg"} alt="George William Gordon" />
+                                                    {openImage && val === 8 && (
+                                                        <Lightbox
+                                                            imageTitle={`George William Gordon`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/george-william-gordon.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     George William Gordon - Mixed race politician whom supported the Morant Bay Rebillion. 
@@ -365,8 +430,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/alexander-bustamante.jpg"} alt="Alexander Bustamante" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(9);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/alexander-bustamante.jpg"} alt="Alexander Bustamante" />
+                                                    {openImage && val === 9 && (
+                                                        <Lightbox
+                                                            imageTitle={`Alexander Bustamante`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/alexander-bustamante.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                     Alexander Bustamante - First Prime Minister, Founder of the Bustamante Industrial Trade Union (BITU) and Founding Member of the Jamaica Labour Party.
@@ -394,8 +466,15 @@ const Jamaica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/Norman-Manley.jpeg"} alt="Norman Manley" />
-                                                   
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(10);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Norman-Manley.jpeg"} alt="Norman Manley" />
+                                                    {openImage && val === 10 && (
+                                                        <Lightbox
+                                                            imageTitle={`Norman Manley`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Norman-Manley.jpeg"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
                                                 </figure>
                                                 <figcaption>
                                                         Norman Washington Manley - First Political leader under Universal Adult Sufferage, Founding member of the Trade Union Congress (TUC) and the People's National Party.
@@ -423,6 +502,7 @@ const Jamaica = props => {
                                     </div>
                                 </div>   
                             </TabPanel>
+
                             <TabPanel>
                                 <div className="history message is-content">
                                     <div className="message-header">
@@ -430,167 +510,79 @@ const Jamaica = props => {
                                     </div>    
                                     <div className="message-body has-text-left">
                                     <div className="box grnBkgn has-text-centered"><b> <Link to="https://jis.gov.jm/information/jamaican-history/" className="subtitle" style={{color:"yellow"}}> Jamaica's Timeline </Link> </b></div> 
-                                               
-                                    
-                                    <div className="columns">
-                                       <div className="column">
-                                                                        
-                                        <ul>
-                                                
-                                                <span className="box info-link">
-                                                    <li><b>Inhabitants</b></li>
-                                                    <li> Jamaica was first inhabited by Tainos; people of Arawak Ethinicity. It is beleived that these
-                                                        individuals migrated centries ago from south america to the island and gave it the name 'Xaymaca'
-                                                        which in their language meant "land of wood and water". A generally peaceful people even though they
-                                                        had tribal conflicts with the Kalinagoes (caribs) from other neighbouring islands.
-                                                        <br /><br />
-                                                        For their way of life, the dis farming were they grew casava, sweet potatoes, maize(corn), fruits,
-                                                        vegetables, cotton and tobacco. Tobacco was planted on a large scale as smoking was a popular pasttime in 
-                                                        their culture. They built villages all over the island logistically doing so near rivers and by the coastline 
-                                                        as fishing was also a means of finding food.
-                                                </li>
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Inhabitants</b></li>
+                                                        <li> Jamaica was first inhabited by Tainos; people of Arawak Ethinicity. It is beleived that these
+                                                            individuals migrated centries ago from south america to the island and gave it the name 'Xaymaca'
+                                                            which in their language meant "land of wood and water". A generally peaceful people even though they
+                                                            had tribal conflicts with the Kalinagoes (caribs) from other neighbouring islands.
+                                                            <br /><br />
+                                                            For their way of life, the dis farming were they grew casava, sweet potatoes, maize(corn), fruits,
+                                                            vegetables, cotton and tobacco. Tobacco was planted on a large scale as smoking was a popular pasttime in 
+                                                            their culture. They built villages all over the island logistically doing so near rivers and by the coastline 
+                                                            as fishing was also a means of finding food.
+                                                    </li>
+                                                            
                                                         
-                                                    
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>European Arrival</b></li>
-                                                    <li> The First set of Europeans to arrive in Jamaica were the Spanish in 1494 on May 5, when Christopher 
-                                                        Columbus landed on the Island on his famous second voyage. Columbus mission to the Caribbean original was 
-                                                        to find a new trade route to East India and as well as for any typical explorer; to discove new treasures of 
-                                                        gold and precious stones. After landing on the Island the Spaniards had to stave off hostilities from the Tainos
-                                                        whome were the first ihabitants of the land. Then subsequently after finding no gold on the island, Columbus went 
-                                                        back to the Spanish crown and proposed that the Spanish could gain control of the caribbean islands by having a dominion 
-                                                        over them using force and religious practises which were foreign to the Arawak people. 
-                                                    </li>
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>Spanish Colony</b></li>
-                                                    <li> The Spanish saw Columbus's voyages as a new means of expanding its empire 
-                                                        and impose a system upon the island called 'encomienda'. This system proved to be very 
-                                                        detrimental to the population of the indigineous people as they were not acostomed to the hard
-                                                        large and mal treatment from the Spanish. Consequently, this saw a drastic reduction in the 
-                                                        population of the Tainos on the island as many died of Exuastion, Fatique and Diseases. This led
-                                                        to the Start of the African Slave Trade as the spanish had desires to expand its empire by building 
-                                                        Colonies used to generate income for its coffers.   </li>
-                                                </span>
-                                                
-                                                <span className="box info-link">
-                                                    <li><b>Capture by The British</b></li>
-                                                    <li> 
-                                                        Durng the Anglo-Spanish wars in the 17th Century, under the Rule of Oliver Cromwell; The British 
-                                                        Annexed Jamaica in 1655 as a part of Cromwell's plan known as the 'Western Design'. This expedition
-                                                        was headed by admiral penn and general venables, after their failure to sack havana, Cuba from the Spanish
-                                                        the english fleet subsequently attacked Santiago de la Vega, which was beleived to not be heavily defended 
-                                                        at the time. This led to the Spanish formally ceding Jamaica the English in 1670 with the Treaty of Madrid
-                                                        and the English renamed the capital Spanish Town. 
-                                                    </li>
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>Transatlantic Slave Trade</b></li>
-                                                    <li> The British continued with the practise of slavery as it was seen as a lucrative means
-                                                        of gaining a labour force; neglecting the human rights of the people of mainly west african 
-                                                        ethnicity. The Slaves were supplied from the african continent and transported by ships to the Caribbean
-                                                        were in Jamaica, they worked on plantations growing crops which were cultivated and transported by said ships
-                                                        to England. These plantations grew at commencement Tobacco, indigo and cocoa, then sugar was introduced and 
-                                                        became what was called a 'cash crop' and the main product for export along its by-products rum and molasses. 
-                                                        This process of Slaves to the Caribbean,Raw materials and crops to Europe, and European goods and money back 
-                                                        to africa was known as the 'Middle Passage'. 
-                                                        <br /><br />
-                                                        Slavery lasted for several decades and face tumultuous challenges as slaves were treated very harshly and face severe punishment
-                                                        for showing any form of neglect of duties or deceit. This led to several rebillions and revolts across even in other
-                                                        european terittories across the caribbean. These revolts saw tremendous destruction to commercial and 
-                                                        residential entites of the Slaves Master and the Crown at large. And also as well; Slave rebellion came with 
-                                                        severe injuries and loss of life for the Slaves whome were also seen as property, hence deemed losses financially 
-                                                        for the Plantation owners. Former slaves of the spanish whom still resided on the island called maroons led by Chiefs such as
-                                                        National Heroin Nanny, Tacky, Coffee, Cudjoe; also had
-                                                        conflicts with the english known as maroon wars, resulting in the signing of peace treaties. Each Treaty had several terms of 
-                                                        agreement and were seen as a necessity due to the extents of the conflicts. 
-
-                                                        </li>
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>Emancipation & Indentureship</b></li>
-                                                    <li> Slavery was abolished on the Island in 1834 and an apprentiseship period took place over fours years.
-                                                        During this apprentiseship; former slaves were given the option of returning to working on the plantations 
-                                                        for a small salary while others were given the option to go a live in rural settlements called free villages were 
-                                                        they were given land and encouraged to start trading crops among themselves. This apprentiseship period was accessed and 
-                                                        proved not to be too benefitial to most parties; as former slaves were not to content in working on plantations for
-                                                        psycological reasons, the owners of the plantations were not pleased with the profit margins as output was reduced and now
-                                                        they had to be having a payroll. This led to Full Emancipation in 1838, a commencement of a new system which ironically saw
-                                                        the Asians which Columbus was seeking to find on his voyages, coming to the caribbean as indentured workers. 
-                                                        <br /><br />
-                                                        These Indentured workers came from India and China and they were to replace africans as the new workers on the 
-                                                        plantations. These same indentured workers found the requirements often too difficult hence seeing some opting
-                                                        to persue other means of gaining income. These generally included the creation of their own small businesses. Some started
-                                                        Techinical Trades along with some post slaves which formed a section of the countries labor force that was responsible for 
-                                                        construction and engineering. The years post slavery proved very challenging especially for post slaves and the country faced numerous setbacks caused 
-                                                        by local uprings; the most famous of which was the 1865 Morant Bay Rebillion which led by National Heroes Paul Bogle
-                                                        and George William Gordon. International conflicts often caused a reduce in supplies to the Island which at times had dire
-                                                        consequencies.   </li>
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>Pre and Post Independence</b></li>
-                                                    <li> The Years preceding Independence saw a sense of nationalism being experienced. Major events such as the formering of Black movements
-                                                        led by National Hero Marcus Garvey, Trade unions which were formed National Heroes Alexander Bustamante and Norman Manley along with 
-                                                        several icons Nation Building and The General Acheivements of those residenting on the island; inspired a call for Independence. Not to mention
-                                                        a belief that the Colonial system was not a true reflection of the affairs of the general population.
-                                                        <br /><br />
-                                                        In 1938 a royal commission was appointed to investigate the
-                                                        working conditions as well as other political and social conditions that were affecting the society. The investigations and
-                                                        reports led to the crafting and adoption of a new constitution
-                                                        on November 20, 1944 which ensured universal franchise for
-                                                        all Jamaicans regardless of race and class. 
-                                                        With the creation of a local political system, the forming of political parties and electorial events
-                                                        led to the Nation creating its own form of government. Elections Pre Independence resulted in a premier 
-                                                        being elected; First of which was Norman Manley. A Step taken to build regionalism; was seen with the creation
-                                                        of the West Indies Federation. 
-                                                        <br /><br />
-                                                        Jamaica gained Independence in on August 6, 1962. A constitution was drafted and a request sent to the crown which resulted
-                                                        in independence being granted ended over three centuries of colonial rule. The Monarch still remains as the Head of State, 
-                                                        A Governor General acts as a representative for the crown. The People elect a Prime Minister which is regarded as the head of 
-                                                        Government which comprises of ministers and senators. 
-                                                        The Country has steadily developed over the years with major changes in infrastructure, a way of conducting business,
-                                                        adaptation and contributions to new developments in Science and Technology and a large catalouge of media content. Jamaica is a member 
-                                                        of CARICOM, an organisation instituded to fulfil the former ambitions
-                                                        of the West Indies Federation as well as to cultivate new ways of region building.
-
-                                                        </li>
-                                                </span>
-
-                                                <span className="box info-link">
-                                                    <li><b>Today</b></li>
-                                                    <li>Jamaica, has generated a strong culture, prescribing to the motto of The Country 'Out of Many, One People', A culture; unique, 
-                                                        bold and strong. A culture; of great cuisine, of strong admiration for create artistic style, of great music, of wonderful entertainment, Excellence in academia,
-                                                        passion for sports and just a general 
-                                                        love for the Nation. A Testiment to the saying 'wi Tallawah'; the Island Nation has developed a firm resilience to the 
-                                                        challenges it faced. Even after the most natural of disasters such as Hurricanes and Earthquakes
-                                                        pounced upon The Island, The Country and its people manage to persevere through the roughest of times. </li>
-                                                </span>
-                                            </ul>
-                                        
-                                
-                                        </div>
-                                        <div className="column is-one-third">
-                                            <div className="rows">
+                                                    </span>
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
                                                 <div className="row">
+
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-girl.jpg"} alt="A Beautiful Taino Female" />
-                                                        
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(11);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-girl.jpg"} alt="A Beautiful Taino Female" />
+                                                        {openImage && val === 11 && (
+                                                            <Lightbox
+                                                                imageTitle={`A Beautiful Taino Female`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/taino-girl.jpg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         Taino Female
                                                     </figcaption>
+
                                                 </div>
-                                                <br/>
+                                                
+                                            </div>
+                                        </div>
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>European Arrival</b></li>
+                                                        <li> The First set of Europeans to arrive in Jamaica were the Spanish in 1494 on May 5, when Christopher 
+                                                            Columbus landed on the Island on his famous second voyage. Columbus mission to the Caribbean original was 
+                                                            to find a new trade route to East India and as well as for any typical explorer; to discove new treasures of 
+                                                            gold and precious stones. After landing on the Island the Spaniards had to stave off hostilities from the Tainos
+                                                            whome were the first ihabitants of the land. Then subsequently after finding no gold on the island, Columbus went 
+                                                            back to the Spanish crown and proposed that the Spanish could gain control of the caribbean islands by having a dominion 
+                                                            over them using force and religious practises which were foreign to the Arawak people. 
+                                                        </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"} alt="The Taino way of life" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(12);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"} alt="The Taino way of life" />
+                                                        {openImage && val === 12 && (
+                                                            <Lightbox
+                                                                imageTitle={`A depiction of taino life`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                             Taino Way of Life
@@ -598,62 +590,173 @@ const Jamaica = props => {
                                                 </div>
                                                 <br/>
                                                 <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/christopher-columbus.jpeg"} alt="Christopher Columbus" />
-                                                    
-                                                    </figure>
-                                                    <figcaption>
-                                                        Christopher Columbus
-                                                    </figcaption>
-                                                </div>
-                                            
-                                                <br/>
+                                                        <figure className="image is-256x256">
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(13);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/christopher-columbus.jpeg"} alt="Christopher Columbus" />
+                                                            {openImage && val === 13 && (
+                                                                <Lightbox
+                                                                    imageTitle={`Christopher Columbus`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/christopher-columbus.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
+                                                        </figure>
+                                                        <figcaption>
+                                                            Christopher Columbus
+                                                        </figcaption>
+                                                    </div>  
+                                            </div>
+                                        </div> 
+                                        
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Spanish Colony</b></li>
+                                                        <li> The Spanish saw Columbus's voyages as a new means of expanding its empire 
+                                                            and impose a system upon the island called 'encomienda'. This system proved to be very 
+                                                            detrimental to the population of the indigineous people as they were not acostomed to the hard
+                                                            large and mal treatment from the Spanish. Consequently, this saw a drastic reduction in the 
+                                                            population of the Tainos on the island as many died of Exuastion, Fatique and Diseases. This led
+                                                            to the Start of the African Slave Trade as the spanish had desires to expand its empire by building 
+                                                            Colonies used to generate income for its coffers.   </li>
+                                                    </span>
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/the-spanish.jpeg"} alt="The Spanish in Jamaica" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(14);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/the-spanish.jpeg"} alt="The Spanish in Jamaica" />
+                                                        {openImage && val === 14 && (
+                                                            <Lightbox
+                                                                imageTitle={`The Spanish in Jamaica`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/the-spanish.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         The Spanish in Jamaica
                                                     </figcaption>
                                                 </div>
-                                            
-                                                <br/>
+                                                <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/the-british.jpeg"} alt="The Anglo-Spanish War." />
-                                                    
-                                                    </figure>
-                                                    <figcaption>
-                                                        The Anglo-Spanish War.
-                                                    </figcaption>
-                                                </div>
-                                            
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-captured.jpeg"} alt="The Capture of Slaves in Africa" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(15);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-captured.jpeg"} alt="The Capture of Slaves in Africa" />
+                                                        {openImage && val === 15 && (
+                                                            <Lightbox
+                                                                imageTitle={`The Capture of Slaves in Africa`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-captured.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         The Capture of Slaves in Africa
                                                         </figcaption>
                                                 </div>
-                                                <br/>
+                                            </div>
+                                        </div>     
+                                        
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Capture by The British</b></li>
+                                                        <li> 
+                                                            Durng the Anglo-Spanish wars in the 17th Century, under the Rule of Oliver Cromwell; The British 
+                                                            Annexed Jamaica in 1655 as a part of Cromwell's plan known as the 'Western Design'. This expedition
+                                                            was headed by admiral penn and general venables, after their failure to sack havana, Cuba from the Spanish
+                                                            the english fleet subsequently attacked Santiago de la Vega, which was beleived to not be heavily defended 
+                                                            at the time. This led to the Spanish formally ceding Jamaica the English in 1670 with the Treaty of Madrid
+                                                            and the English renamed the capital Spanish Town. 
+                                                        </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.webp"} alt="The Jamaican National Flower" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(16);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/the-british.jpeg"} alt="The Anglo-Spanish War." />
+                                                        {openImage && val === 16 && (
+                                                            <Lightbox
+                                                                imageTitle={`A depiction of the Anglo-Spanish War`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/the-british.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
-                                                            Slaves being transported via ships to the Caribbean.
-                                                        </figcaption>
+                                                        A depiction of the Anglo-Spanish War.
+                                                    </figcaption>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Transatlantic Slave Trade</b></li>
+                                                        <li> The British continued with the practise of slavery as it was seen as a lucrative means
+                                                            of gaining a labour force; neglecting the human rights of the people of mainly west african 
+                                                            ethnicity. The Slaves were supplied from the african continent and transported by ships to the Caribbean
+                                                            were in Jamaica, they worked on plantations growing crops which were cultivated and transported by said ships
+                                                            to England. These plantations grew at commencement Tobacco, indigo and cocoa, then sugar was introduced and 
+                                                            became what was called a 'cash crop' and the main product for export along its by-products rum and molasses. 
+                                                            This process of Slaves to the Caribbean,Raw materials and crops to Europe, and European goods and money back 
+                                                            to africa was known as the 'Middle Passage'. 
+                                                            <br /><br />
+                                                            Slavery lasted for several decades and face tumultuous challenges as slaves were treated very harshly and face severe punishment
+                                                            for showing any form of neglect of duties or deceit. This led to several rebillions and revolts across even in other
+                                                            european terittories across the caribbean. These revolts saw tremendous destruction to commercial and 
+                                                            residential entites of the Slaves Master and the Crown at large. And also as well; Slave rebellion came with 
+                                                            severe injuries and loss of life for the Slaves whome were also seen as property, hence deemed losses financially 
+                                                            for the Plantation owners. Former slaves of the spanish whom still resided on the island called maroons led by Chiefs such as
+                                                            National Heroin Nanny, Tacky, Coffee, Cudjoe; also had
+                                                            conflicts with the english known as maroon wars, resulting in the signing of peace treaties. Each Treaty had several terms of 
+                                                            agreement and were seen as a necessity due to the extents of the conflicts. 
+
+                                                            </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
+                                                <div className="row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(17);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"} alt="The Jamaican National Flower" />
+                                                        {openImage && val === 17 && (
+                                                            <Lightbox
+                                                                imageTitle={`Slaves being transported via ships to the Caribbean.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        Slaves being transported via ships to the Caribbean.
+                                                    </figcaption>
                                                 </div>
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-auction.jpeg"} alt="A display of slaves being auctioned" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(18);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-auction.jpeg"} alt="A display of slaves being auctioned" />
+                                                        {openImage && val === 18 && (
+                                                            <Lightbox
+                                                                imageTitle={`Slaves being transported via ships to the Caribbean.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                     A display of slaves being auctioned
@@ -662,18 +765,62 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-in-field.jpeg"} alt="Picture of Slaves taken in the Field." />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(19);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-in-field.jpeg"} alt="Picture of Slaves taken in the Field." />
+                                                        {openImage && val === 19 && (
+                                                            <Lightbox
+                                                                imageTitle={`Picture of Slaves taken in the Field.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-in-field.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         Picture of Slaves taken in the Field.
                                                     </figcaption>
                                                 </div>
-                                                <br/>
+                                            </div>
+                                        
+                                        </div>  
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Emancipation & Indentureship</b></li>
+                                                        <li> Slavery was abolished on the Island in 1834 and an apprentiseship period took place over fours years.
+                                                            During this apprentiseship; former slaves were given the option of returning to working on the plantations 
+                                                            for a small salary while others were given the option to go a live in rural settlements called free villages were 
+                                                            they were given land and encouraged to start trading crops among themselves. This apprentiseship period was accessed and 
+                                                            proved not to be too benefitial to most parties; as former slaves were not to content in working on plantations for
+                                                            psycological reasons, the owners of the plantations were not pleased with the profit margins as output was reduced and now
+                                                            they had to be having a payroll. This led to Full Emancipation in 1838, a commencement of a new system which ironically saw
+                                                            the Asians which Columbus was seeking to find on his voyages, coming to the caribbean as indentured workers. 
+                                                            <br /><br />
+                                                            These Indentured workers came from India and China and they were to replace africans as the new workers on the 
+                                                            plantations. These same indentured workers found the requirements often too difficult hence seeing some opting
+                                                            to persue other means of gaining income. These generally included the creation of their own small businesses. Some started
+                                                            Techinical Trades along with some post slaves which formed a section of the countries labor force that was responsible for 
+                                                            construction and engineering. The years post slavery proved very challenging especially for post slaves and the country faced numerous setbacks caused 
+                                                            by local uprings; the most famous of which was the 1865 Morant Bay Rebillion which led by National Heroes Paul Bogle
+                                                            and George William Gordon. International conflicts often caused a reduce in supplies to the Island which at times had dire
+                                                            consequencies.   </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/indentured-workers.jpeg"} alt="Indentured Workers on Plantation" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(20);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/indentured-workers.jpeg"} alt="Indentured Workers on Plantation" />
+                                                        {openImage && val === 20 && (
+                                                            <Lightbox
+                                                                imageTitle={`A representation of Indentured Workers on Plantation.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/indentured-workers.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                     A representation of Indentured Workers on Plantation.
@@ -682,8 +829,15 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/morant-bay-rebellion.jpeg"} alt="Morant Bay Rebellion" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(21);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/morant-bay-rebellion.jpeg"} alt="Morant Bay Rebellion" />
+                                                        {openImage && val === 21 && (
+                                                            <Lightbox
+                                                                imageTitle={`Morant Bay Rebellion, 1865.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/morant-bay-rebellion.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                             Morant Bay Rebellion, 1865
@@ -692,8 +846,71 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/colonial-flag.jpeg"} alt="Colonial & Former Flag of Jamaica" />
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(22);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-parade.jpeg"} alt="A parade held when jamaica was under colonial government." />
+                                                        {openImage && val === 22 && (
+                                                            <Lightbox
+                                                                imageTitle={`A parade held when jamaica was under colonial government.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-parade.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        A parade held when jamaica was under colonial government.
+                                                    </figcaption>
+                                                </div>
                                                     
+                                            </div>
+                                        
+                                        </div>  
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                    <span className="box info-link">
+                                                        <li><b>Pre and Post Independence</b></li>
+                                                        <li> The Years preceding Independence saw a sense of nationalism being experienced. Major events such as the formering of Black movements
+                                                            led by National Hero Marcus Garvey, Trade unions which were formed National Heroes Alexander Bustamante and Norman Manley along with 
+                                                            several icons Nation Building and The General Acheivements of those residenting on the island; inspired a call for Independence. Not to mention
+                                                            a belief that the Colonial system was not a true reflection of the affairs of the general population.
+                                                            <br /><br />
+                                                            In 1938 a royal commission was appointed to investigate the
+                                                            working conditions as well as other political and social conditions that were affecting the society. The investigations and
+                                                            reports led to the crafting and adoption of a new constitution
+                                                            on November 20, 1944 which ensured universal franchise for
+                                                            all Jamaicans regardless of race and class. 
+                                                            With the creation of a local political system, the forming of political parties and electorial events
+                                                            led to the Nation creating its own form of government. Elections Pre Independence resulted in a premier 
+                                                            being elected; First of which was Norman Manley. A Step taken to build regionalism; was seen with the creation
+                                                            of the West Indies Federation. 
+                                                            <br /><br />
+                                                            Jamaica gained Independence in on August 6, 1962. A constitution was drafted and a request sent to the crown which resulted
+                                                            in independence being granted ended over three centuries of colonial rule. The Monarch still remains as the Head of State, 
+                                                            A Governor General acts as a representative for the crown. The People elect a Prime Minister which is regarded as the head of 
+                                                            Government which comprises of ministers and senators. 
+                                                            The Country has steadily developed over the years with major changes in infrastructure, a way of conducting business,
+                                                            adaptation and contributions to new developments in Science and Technology and a large catalouge of media content. Jamaica is a member 
+                                                            of CARICOM, an organisation instituded to fulfil the former ambitions
+                                                            of the West Indies Federation as well as to cultivate new ways of region building.
+
+                                                            </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
+                                                <div className="row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(23);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/colonial-flag.jpeg"} alt="Colonial & Former Flag of Jamaica" />
+                                                        {openImage && val === 23 && (
+                                                            <Lightbox
+                                                                imageTitle={`Union Jack - Colonial & Former Flag of Jamaica.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/colonial-flag.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         Union Jack - Colonial & Former Flag of Jamaica
@@ -702,8 +919,15 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/princess-margret.jpeg"} alt="Princess Margret Visits Jamaica for independence celebrations" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(24);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/princess-margret.jpeg"} alt="Princess Margret Visits Jamaica for independence celebrations." />
+                                                        {openImage && val === 24 && (
+                                                            <Lightbox
+                                                                imageTitle={`Princess Margret Visits Jamaica for independence celebrations.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/princess-margret.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         Princess Margret - Sister of Queen Elizabeth, Visits Jamaica for independence celebrations
@@ -712,28 +936,77 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-kingston.webp"} alt="Kingston Jamaica" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(25);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/independence.jpeg"} alt="Jamaica showing jubilation for Independence" />
+                                                        {openImage && val === 25 && (
+                                                            <Lightbox
+                                                                imageTitle={`Jamaica showing jubilation for Independence.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/independence.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
-                                                            Aerial View of Kingston, Jamaica - Jamaica's Capital
-                                                        </figcaption>
+                                                        Jamaica showing jubilation for Independence.
+                                                    </figcaption>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>  
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
+                                                
+                                                    <span className="box info-link">
+                                                        <li><b>Today</b></li>
+                                                        <li>Jamaica, has generated a strong culture, prescribing to the motto of The Country 'Out of Many, One People', A culture; unique, 
+                                                            bold and strong. A culture; of great cuisine, of strong admiration for create artistic style, of great music, of wonderful entertainment, Excellence in academia,
+                                                            passion for sports and just a general 
+                                                            love for the Nation. A Testiment to the saying 'wi Tallawah'; the Island Nation has developed a firm resilience to the 
+                                                            challenges it faced. Even after the most natural of disasters such as Hurricanes and Earthquakes
+                                                            pounced upon The Island, The Country and its people manage to persevere through the roughest of times. </li>
+                                                    </span>
+
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <br />
+                                                <div className="row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(26);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-kingston.jpeg"} alt="Kingston Jamaica" />
+                                                        {openImage && val === 26 && (
+                                                            <Lightbox
+                                                                imageTitle={`Aerial View of Kingston, Jamaica - Jamaica's Capital.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-kingston.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        Aerial View of Kingston, Jamaica - Jamaica's Capital
+                                                    </figcaption>
                                                 </div>
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/mobay-view.jpeg"} alt="A View of a section of Montego-Bay" />
-                                                    
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(27);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/mobay-view.jpeg"} alt="A View of a section of Montego-Bay" />
+                                                        {openImage && val === 27 && (
+                                                            <Lightbox
+                                                                imageTitle={`A View of a section of Montego-Bay, St.James - Second Largest City in the Country.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/mobay-view.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         A View of a section of Montego-Bay, St.James - Second Largest City in the Country.
                                                     </figcaption>
                                                 </div>
-                                            
                                             </div>
-                                        </div>
                                         
-                                    </div>
+                                        </div>  
 
                                     </div>
                                 </div> 
@@ -748,10 +1021,17 @@ const Jamaica = props => {
                                         <div className=" columns">
                                             <div className="column is-one-third">
                                                 <div className="rows">
-                                                    <div className="row">
+                                                    <div className="governance row">
                                                         <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/political-leaders.jpeg"} alt="Norman Manley and Alexander Bustmante in England" />
-                                                        
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(28);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/political-leaders.jpeg"} alt="Norman Manley and Alexander Bustmante in England." />
+                                                            {openImage && val === 28 && (
+                                                                <Lightbox
+                                                                    imageTitle={`Norman Manley and Alexander Bustmante in England.`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/political-leaders.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
                                                         </figure>
                                                         <figcaption>
                                                             Jamaican Premier Norman Manley and then Opposition Leader Sir Alexander Bustamante appeared at the Jamaica Independence Conference in Lancaster House, London, on February 9, 1962.
@@ -760,8 +1040,15 @@ const Jamaica = props => {
                                                     <br />
                                                     <div className="governance row">
                                                         <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/Queen-Elizabeth.jpeg"} alt="Oueen Elizabeth Visiting Jamaica" />
-                                                        
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(29);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Queen-Elizabeth.jpeg"} alt="Oueen Elizabeth Visiting Jamaica" />
+                                                            {openImage && val === 29 && (
+                                                                <Lightbox
+                                                                    imageTitle={`The Head of State of Jamaica - Queen Elizabeth the 2nd on one of her visits to the Island.`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Queen-Elizabeth.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
                                                         </figure>
                                                         <figcaption>
                                                             The Head of State of Jamaica - Queen Elizabeth the 2nd on one of her visits to the Island.
@@ -771,31 +1058,52 @@ const Jamaica = props => {
                                                     <br />
                                                     <div className="governance row">
                                                         <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
-                                                        
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(30);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
+                                                            {openImage && val === 30 && (
+                                                                <Lightbox
+                                                                    imageTitle={`Sir Patrick Allen - The Governor General of Jamaica.`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
                                                         </figure>
                                                         <figcaption>
-                                                        Sir Patrick Allen - The Governor General of Jamaica.
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
-                                                        
-                                                        </figure>
-                                                        <figcaption>
-                                                        Andrew Holness - The Prime Minister of Jamaica.
+                                                            Sir Patrick Allen - The Governor General of Jamaica.
                                                         </figcaption>
                                                     </div>
                                                     <br />
                                                     <div className="governance row">
                                                         <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/mark-golding.jpeg"} alt="Mark Golding" />
-                                                        
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(31);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
+                                                            {openImage && val === 31 && (
+                                                                <Lightbox
+                                                                    imageTitle={`Andrew Holness - The Prime Minister of Jamaica.`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
                                                         </figure>
                                                         <figcaption>
-                                                        Mark Golding - The Opposition Leader in Jamaica .
+                                                            Andrew Holness - The Prime Minister of Jamaica.
+                                                        </figcaption>
+                                                    </div>
+                                                    <br />
+                                                    <div className="governance row">
+                                                        <figure className="image is-256x256">
+                                                            <img className="card" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"} alt="Mark Golding" />
+                                                            {openImage && val === 32 && (
+                                                                <Lightbox
+                                                                    imageTitle={`Mark Golding - The Opposition Leader in Jamaica.`}
+                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"}
+                                                                    onCloseRequest={() => setOpen(false)}
+                                                                    
+                                                                />
+                                                            )}
+                                                        </figure>
+                                                        <figcaption>
+                                                            Mark Golding - The Opposition Leader in Jamaica .
                                                         </figcaption>
                                                     </div>
 
@@ -872,6 +1180,31 @@ const Jamaica = props => {
                                                             visitors to the Island.  </li>
 
                                                     </span>
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <div className="governance row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(33);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/blue-hole.jpeg"} alt="Blue Hole" />
+                                                        {openImage && val === 33 && (
+                                                            <Lightbox
+                                                                imageTitle={`Blue Hole in Portland Jamaica.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/blue-hole.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        Blue Hole in Portland Jamaica
+                                                    </figcaption>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div className="columns">
+                                            <div className="column">
+                                                <ul>
                                                     <span className="box info-link">
                                                         <li><b>The Begining</b></li>
                                                         <li> Tourism can be traced to the very unset of the colonial period as the wealthy europeans such as those in the Upper
@@ -883,7 +1216,32 @@ const Jamaica = props => {
                                                             easier using means of aviation.
                                                         </li>
                                                     </span>
-
+                                                </ul>
+                                            </div>
+                                            <div className="column is-one-third">
+                                                <div className="governance row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(35);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/myrtle-bank-hotel.jpeg"} alt="Myrtle Bank Hotel." />
+                                                        {openImage && val === 35 && (
+                                                            <Lightbox
+                                                                imageTitle={`Myrtle Bank Hotel - Kingston Jamaica.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/myrtle-bank-hotel.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        Myrtle Bank Hotel - Kingston Jamaica.
+                                                    </figcaption>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div className="columns">
+         
+                                            <div className="column">
+                                                <ul>
                                                     <span className="box info-link">
                                                         <li><b>Developed Industry</b></li>
                                                         
@@ -893,50 +1251,28 @@ const Jamaica = props => {
                                                         This has resulted in tourism being one of the major contributor to the economy in Jamaica. As a result, every sector in Jamaica 
                                                         benefits to some extent from tourism activities. Tourism is a significant contributer to the jamaican workforce.
                                                         </li>
-                                                    </span>
-
-                                                    <li className="box has-text-centered" style={{backgroundColor:"skyblue"}}><b className="title" style={{color:"yellow"}}> Some Notable Attractions in Jamaica <br /><i className="fa fa-arrow-down"></i></b></li> 
-                                                        
+                                                    </span> 
                                                 </ul>
-                                    
                                             </div>
                                             <div className="column is-one-third">
-                                                <div className="rows">
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/blue-hole.jpeg"} alt="Blue Hole" />
-                                                        
-                                                        </figure>
-                                                        <figcaption>
-                                                        Blue Hole in Portland Jamaica
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/myrtle-bank-hotel.jpeg"} alt="Myrtle Bank Hotel." />
-                                                        
-                                                        </figure>
-                                                        <figcaption>
-                                                        Myrtle Bank Hotel - Kingston Jamaica.
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/waterfalls.jpeg"} alt="Scene in cockpit country of waterfalls." />
-                                                        
-                                                        </figure>
-                                                        <figcaption>
-                                                            A waterfall scenery in cockpit country.
-                                                        </figcaption>
-                                                    </div>
-
+                                                
+                                                <div className="governance row">
+                                                    <figure className="image is-256x256">
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(36);}}  src={process.env.PUBLIC_URL + "/images/about-jamaica/waterfalls.jpeg"} alt="Scene in cockpit country of waterfalls." />
+                                                        {openImage && val === 36 && (
+                                                            <Lightbox
+                                                                imageTitle={` A waterfall scenery in cockpit country.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/waterfalls.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
+                                                    </figure>
+                                                    <figcaption>
+                                                        A waterfall scenery in cockpit country.
+                                                    </figcaption>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -956,7 +1292,14 @@ const Jamaica = props => {
                                                 <div className="governance row">
                                                     <figure className="image is-256x256">
                                                         <img className="card" src={process.env.PUBLIC_URL + "/images/JAMPRO.jpeg"} alt="JAMPRO Building" />
-                                                    
+                                                        {openImage && val === 37 && (
+                                                            <Lightbox
+                                                                imageTitle={`JAMPRO Building in New Kingston, Jamaica.`}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/JAMPRO.jpeg"}
+                                                                onCloseRequest={() => setOpen(false)}
+                                                                
+                                                            />
+                                                        )}
                                                     </figure>
                                                     <figcaption>
                                                         JAMPRO Building in New Kingston, Jamaica.

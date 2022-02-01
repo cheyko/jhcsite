@@ -155,12 +155,12 @@ const jamaicaToday = [
             <a href="https://boj.org.jm">
                 <div className="message-body">
                     <div className="columns is-multiline">
-                        <div className="column">
-                          <figure className="image is-128x128">
+                        <div className="column is-full">
+                          <figure className="image is-256x256" style={{margin:"0 auto"}}>
                                 <img src={process.env.PUBLIC_URL + "/images/jamaican-dollars.jpg"} alt="Placeholder" />
                           </figure>
                         </div>
-                        <div className="column">
+                        <div className="column is-full">
                           <p className="title is-4">FX | Rates</p>
                           <p className="subtitle is-4">Bank of Jamaica</p>
                         </div>

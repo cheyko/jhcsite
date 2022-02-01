@@ -10,7 +10,7 @@ const HorizontalCard = props => {
                
                 <div className="columns">
                   <div className="column is-one-quarter commissionerPic" >
-                    <Link className="governance link-to" to="/commissioner">
+                    <Link className="link-to" to="/commissioner">
                       <figure className="image is-1by1">
                         <img style={{width:"100%",height:"100%",margin:"0 auto"}} className="card" src={process.env.PUBLIC_URL + "/images/consulate/high_commissioner.jpg"} alt="Placeholder" />
                       </figure>

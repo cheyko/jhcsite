@@ -1,9 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
 import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
+import Lightbox from 'react-image-lightbox';
 
 const ViewPosting = props => {
 
@@ -13,11 +14,11 @@ const ViewPosting = props => {
 
   let posting = localStorage.getItem("posting");
   const theID = props.match.params.id;
-  console.log(theID);
+ 
   const result = props.context.getPost(theID);
   posting = (result === undefined) ? JSON.parse(posting) : result;
   localStorage.setItem("posting", JSON.stringify(posting));
-  console.log(posting);
+  const [openImage, setOpen] = useState(false);
 
   return (
 <>
@@ -48,7 +49,15 @@ const ViewPosting = props => {
                       <div> 
                         {posting.numOfPics > 0 ? (
                           <figure className="image is-4x3">
-                            <img alt="view post" style={{height:"30rem"}} src={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/img0.jpg`} />
+                            <img alt="view post" onClick={e => setOpen(true)} src={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/img0.jpg`} />
+                            {openImage && (
+                              <Lightbox
+                                  imageTitle={`${posting.title}`}
+                                  mainSrc={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/img0.jpg`}
+                                  onCloseRequest={() => setOpen(false)}
+                                  
+                              />
+                            )}
                           </figure>
                         ):(
                           <figure className="image is-4x3">

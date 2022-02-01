@@ -4,6 +4,7 @@ import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'react-image-lightbox/style.css';
 
 import HomePage from './components/HomePage';
 import CitizenPage from './components/CitizenPage';
