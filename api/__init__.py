@@ -38,7 +38,7 @@ app.config['GMAIL_SENDER'] = "webjhcnig@gmail.com"  #change this
 app.config['GMAIL_JHC'] = "webjhcnig@gmail.com"  #change this
 app.url_map.strict_slashes = False
 
-#jwt = JWTManager(app)
+jwt = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 CORS(app, headers='Content-Type')
