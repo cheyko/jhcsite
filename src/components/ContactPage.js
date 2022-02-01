@@ -11,6 +11,13 @@ import axios from 'axios';
 import Map from "./Map";
 import { send } from "process";
 
+const sign = require('jwt-encode');
+const secret = 'some$3cretKey';
+const algorithm= 'HS256' ;
+const data = {
+  token : 'token'
+};
+
 const initState = {
   contactName : "", 
   contactEmail : "", 
@@ -43,6 +50,7 @@ class ContactPage extends Component {
 
   sendMessage = async (e) => {
     e.preventDefault();
+    const jwt = sign(data,secret,algorithm);
     this.setState({ flash:null });
     
     const {contactName, contactEmail, nationality, contactSubject, contactMessage, category, otherNation } = this.state;
@@ -52,8 +60,11 @@ class ContactPage extends Component {
 
       const res = await axios.post(
         '/api/message',
-        {contactName, contactEmail, nationality, contactSubject, contactMessage, otherNation, category },
-        ).catch(
+        {contactName, contactEmail, nationality, contactSubject, contactMessage, otherNation, category },{
+          headers: {
+            'Authorization' : jwt
+          }
+        }).catch(
           (res) => { console.log(res) }
       )
 

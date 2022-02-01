@@ -38,7 +38,7 @@ app.config['GMAIL_SENDER'] = "webjhcnig@gmail.com"  #change this
 app.config['GMAIL_JHC'] = "webjhcnig@gmail.com"  #change this
 app.url_map.strict_slashes = False
 
-jwt = JWTManager(app)
+jwtmanager = JWTManager(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 CORS(app, headers='Content-Type')
@@ -127,13 +127,10 @@ def authenticate_token(t):
             return jsonify({'error': 'Access Denied : No Token Found'}), 401
         else:
             try:
-                result = jwt.decode(auth, app.config['SECRET_KEY'])
-                print(result)
+                result = jwt.decode(auth, app.config['SECRET_KEY'],algorithms=['HS256'])
             except jwt.exceptions.InvalidSignatureError as e:
-                print(e)
                 return jsonify({'error':'Invalid Token'})
             except jwt.exceptions.DecodeError as e:
-                print(e)
                 return jsonify({'error': 'Invalid Token'})
             return t(*args, **kwargs)
     return decorated_func
@@ -224,8 +221,9 @@ def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
 @app.route('/api/', methods=['GET', 'POST'])
+@authenticate_token
 def home():
-    return "ok"
+    return "ok", 200
 
 @app.route('/api/time', methods=['GET', 'POST'])
 @authenticate_token
@@ -233,11 +231,11 @@ def get_current_time():
     return {'time': time.time()}
 
 @app.route('/api/login', methods=['GET', 'POST'])
+@authenticate_token
 def login():
     if request.method == 'POST':   
         email = request.json.get('email', None)
         password = request.json.get('password', None)
-        print("test")
         if not email:
             return jsonify({"msg": "Missing username parameter"}), 400
         if not password:
@@ -260,6 +258,7 @@ def login():
         return jsonify({"msg": "There was an error"}), 400
 
 @app.route('/api/postings', methods=['GET', 'POST'])
+@authenticate_token
 def postings():
     if request.method == 'GET':
         result = Posting.query.all()
@@ -294,6 +293,7 @@ def postings():
         return jsonify({"msg": "added successfully","id":newPost.id, "numOfPics":numOfPics}), 200
 
 @app.route('/api/message', methods=['POST'])
+@authenticate_token
 def sendMessage():
     if request.method == "POST":
         contactName = request.json.get('contactName', None)

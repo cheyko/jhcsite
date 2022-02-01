@@ -42,8 +42,9 @@ import WestAfrica from "./components/WestAfrica";
 //const cors = require('cors');
 const sign = require('jwt-encode');
 const secret = 'some$3cretKey';
+const algorithm = 'HS256';
 const data = {
-  token : 'token'
+  token : 'Required'
 };
 /*const cors = require('cors');
 const express = require('express');
@@ -64,7 +65,12 @@ export default class App extends Component {
 
   
   async componentDidMount() {
-    const jwt = sign(data,secret);
+    const jwt = sign(data,secret, algorithm);
+    const checkApi = await axios.get("/api/",{
+      headers: {
+        'Authorization' : jwt
+      }
+    });
     const time = await axios.get('/api/time',{
       headers: {
         'Authorization' : jwt
@@ -86,9 +92,12 @@ export default class App extends Component {
         console.log(data);
     });*/
 
-    const testVar = await axios.get("/api/");
     let user = localStorage.getItem("user");
-    const postings = await axios.get("/api/postings");
+    const postings = await axios.get("/api/postings",{
+      headers: {
+        'Authorization' : jwt
+      }
+    });
     user = user ? JSON.parse(user) : null;
     this.setState({ user, postings:postings.data.postings});
     window.scrollTo(0, 0);
@@ -135,8 +144,12 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    
-    const res = await axios.post("/api/login",{email,password}).catch(
+    const jwt = sign(data,secret);
+    const res = await axios.post("/api/login",{email,password},{
+      headers: {
+        'Authorization' : jwt
+      }
+    }).catch(
       (res) => { 
         if (res.status !== 200) { return { status: res.status, message: 'Not successful' } }
       }
