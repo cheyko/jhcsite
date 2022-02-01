@@ -589,7 +589,7 @@ const Jamaica = props => {
                                                 <br/>
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/Taino-life.jpeg"} alt="The Taino way of life" />
+                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"} alt="The Taino way of life" />
                                                     
                                                     </figure>
                                                     <figcaption>
