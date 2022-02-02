@@ -21,7 +21,7 @@ const PostingList = props => {
     window.scrollTo(0, 300);
   };
   slice = postings ? postings.slice(offset, offset + perPage) : []; 
-  console.log(slice[0]);
+  //console.log(slice[0]);
 
   return (
     <>

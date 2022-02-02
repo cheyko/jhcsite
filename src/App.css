@@ -178,7 +178,7 @@
 }
 
 .nav-span{
-  padding-inline: 1rem;
+  padding: 1rem;
 }
 
 .navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {

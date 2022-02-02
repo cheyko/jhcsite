@@ -43,25 +43,29 @@ const Staff = props => {
                                             <span className="box info-link">
                                                 <li> 
                                                     <b>Mrs. Marva E. Campbell</b>
-                                                    <span>Head of Chancery/Counsellor/Consul</span>
-                                                    <a>counsellor-jhcnig@mfaft.gov.jm</a> 
-                                                    <p>or</p>
-                                                    <a>consul-jhcnig@mfaft.gov.jm</a> 
-                                                    <span>Mobile - +234 703 180 5081</span>
+                                                    <p>Head of Chancery/Counsellor/Consul</p>
+                                                    <br />
+                                                    <a href="counsellor-jhcnig@mfaft.gov.jm" type="email">counsellor-jhcnig@mfaft.gov.jm</a> 
+                                                     &nbsp; or &nbsp;
+                                                    <a href="consul-jhcnig@mfaft.gov.jm" type="email">consul-jhcnig@mfaft.gov.jm</a> 
+                                                    <br />
+                                                    <p>Mobile - +234 703 180 5081</p>
                                                 </li>
                                             </span>
                                             <span className="box info-link">
                                                 <li> 
                                                     <b>Mr. Shane Sharpe</b>
-                                                    <span>First Secretary (Finance & Accounting) & Vice Consul </span>
-                                                    <a>attache-jhcnig@mfaft.gov.jm</a> 
+                                                    <p>First Secretary (Finance & Accounting) & Vice Consul </p>
+                                                    <br />
+                                                    <a href="counsellor-jhcnig@mfaft.gov.jm" type="email">attache-jhcnig@mfaft.gov.jm</a> 
                                                 </li>
                                             </span>
                                             <span className="box info-link">
                                                 <li> 
                                                     <b>Ms. Ann-Marie Reid</b>
-                                                    <span>Executive Assistant to the High Commissioner & Vice Consul </span>
-                                                    <a>admin-jhcnig@mfaft.gov.jm</a> 
+                                                    <p>Executive Assistant to the High Commissioner & Vice Consul </p>
+                                                    <br />
+                                                    <a href="counsellor-jhcnig@mfaft.gov.jm" type="email">admin-jhcnig@mfaft.gov.jm</a> 
                                                 </li>
                                             </span>
                                         </ul>

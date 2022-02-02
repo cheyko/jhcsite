@@ -86,6 +86,17 @@ const AboutPage = props => {
                       </div>
                       
                     </article>
+                    
+                    <article className="message commissioner is-content is-size-5">
+                      <div className="message-header">
+                        <p> Consulate Highlights </p>
+                      </div>
+                      <div className="message-body">
+
+                      </div>
+                    </article>
+                    <br></br>
+
                     <br></br>
                     <article className="message commissioner is-content is-size-5">
                       <div className="message-header">
@@ -97,15 +108,7 @@ const AboutPage = props => {
                     </article>
                     <br></br>
 
-                    <article className="message commissioner is-content is-size-5">
-                      <div className="message-header">
-                        <p> Consulate Highlights </p>
-                      </div>
-                      <div className="message-body">
 
-                      </div>
-                    </article>
-                    <br></br>
                     <Alerts />
                     
                     <br></br> 
