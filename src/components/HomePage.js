@@ -20,7 +20,7 @@ const HomePage = props => {
     //setPostings(props.context.postings);
   }, /*[props.context.postings]);*/
 
-  let history = useHistory();
+  /*let history = useHistory();
 
   useEffect(() => {
     // find if server refresh needs history
@@ -32,7 +32,7 @@ const HomePage = props => {
         return;
     }
   } , []);
-
+  */
 
   const settings = {
     dots: true,

@@ -38,7 +38,7 @@
   width: 100% !important;
 }*/
 
-.navbar-item span{
+.navbar-item span, .navbar-item{
   margin: 0 auto !important;
   font-weight: bold;
   font-size: small;
@@ -178,7 +178,12 @@
 }
 
 .nav-span{
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+.navbar-burger{
+  margin-right: 0.5rem !important;
+  margin-block: 0.5rem !important;
 }
 
 .navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {
@@ -534,7 +539,7 @@
     margin-bottom: 3rem !important;
   }
 
-  .navbar-item, .navbar-link{
+  .navbar-item{
     padding: 0.1rem 1rem !important;
     text-align: left;
     margin: 0 auto;
@@ -550,7 +555,7 @@
   .governance{
     height: auto !important;
   }
-  
+
 }
 
 @media screen and (min-width: 1025px){
