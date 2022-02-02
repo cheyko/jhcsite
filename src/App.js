@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, Link, useHistory, BrowserRouter as Router } from "react-router-dom";
+//import {IndexRoute} from "react-router";
 
 import './App.css';
 import "slick-carousel/slick/slick.css";
@@ -54,6 +55,8 @@ const express = require('express');
 const app = express();
 app.use(cors());*/
 
+let browserHistroy = useHistory;
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +71,7 @@ export default class App extends Component {
 
   
   async componentDidMount() {
-    const jwt = sign(data,secret, algorithm);
+    const jwt = sign(data, secret, algorithm);
     const checkApi = await axios.get("/api/",{
       headers: {
         'Authorization' : jwt
@@ -201,7 +204,7 @@ export default class App extends Component {
     e.preventDefault();
     this.setState({ showQues3: !this.state.showQues3 });
   };
-  
+
   render() {
     return (
       <Context.Provider
@@ -216,7 +219,7 @@ export default class App extends Component {
           getTargetPhotos:this.getTargetPhotos,
         }}
       >
-        <Router ref={this.routerRef}>
+        <Router ref={this.routerRef} history={browserHistroy}>
           {/*style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/images/jhc_wallpaper.jpg'})`,backgroundPositionX:'center',backgroundSize:'contain'}} */}
         <div className="App" >
           <Banner />
@@ -227,7 +230,7 @@ export default class App extends Component {
             aria-label="main navigation"
           >
             <div className="navbar-brand">
-              <b className="nav-span"><Link to="/" style={{color:"black"}}>
+              <b className="nav-span"><Link to="/home" style={{color:"black"}}>
                   <span className="is-size-6"> JHC Nigeria <br className="wrap-text"></br> <i className="fa fa-home"> </i> Home </span>
                 </Link></b>
               <label
@@ -348,9 +351,8 @@ export default class App extends Component {
               </div>
             </nav>
             
-            <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/jhcsite" component={HomePage} />
+              <Route exact path="/home" component={HomePage} />
               <Route exact path="/general" component={GeneralInfo} />
               <Route exact path="/covid19" component={Covid19} />
               <Route exact path="/covidja" component={Covidja} />
@@ -375,7 +377,7 @@ export default class App extends Component {
               <Route exact path="/westafrica" component={WestAfrica} />
               <Route exact path="/gallery" component={Gallery} />
               <Route exact path="/attractions" component={Attractions} />
-            </Switch>
+          
             <Footer />
           </div>
         </Router>

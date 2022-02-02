@@ -319,8 +319,11 @@ def sendMessage():
         sendEmail(sendTo ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
 
+"""
 @app.errorhandler(404)
 def handle_404(e):
     if request.method == 'GET':
         return redirect(f'/?request_path={quote_plus(request.path)}')
     return e
+
+"""
