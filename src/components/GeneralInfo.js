@@ -71,10 +71,9 @@ const GeneralInfo = props => {
                             </div>
                         </div>
                     </article>
-                    <br />
+                
                     <hr />
-                    <br />
-                    
+          
                     <article>
                         <h1 className="subtitle is-size-3"> Trade and Investment</h1>
                         <div className="message is-content">
@@ -97,9 +96,10 @@ const GeneralInfo = props => {
                             </div>
                         </div>
                     </article>
-                    <br />
+                     
                     <hr />
-                    <br />
+                
+                    {/*
                     <article>
                         <h1 className="subtitle is-size-3"> Frequently Asked Questions</h1>
                         <div className="message is-content">
@@ -133,9 +133,8 @@ const GeneralInfo = props => {
                             </div>
                         </div>
                     </article>
-                    
                     <br></br> 
-                    <br></br>
+                    */}
                     <ExternalWebsites />
                     <br></br>
                 </div>

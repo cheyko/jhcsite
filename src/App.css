@@ -265,17 +265,17 @@
 }
 
 .posting-item-card:hover {
-  color: #00f !important;
-  border: #00f solid 2px;
+  color: green !important;
+  border: green solid 2px;
 }
 
 .commissionerPic .image img:hover{
-  border: solid 3px blue;
+  border: solid 3px green;
   cursor: pointer;
 }
 
 .remarks .image img:hover{
-  border: solid 3px blue;
+  border: solid 3px green;
   cursor: pointer;
 }
 

@@ -287,7 +287,7 @@ def postings():
         prefix = "post" + str(newPost.id)
         os.makedirs(app.config['UPLOAD_FOLDER'] + prefix)   
         for index, pic in enumerate(photos):
-            filename = "img" + str(index) + ".jpg"
+            filename = "upload" + str(index)  
             pic.save(os.path.join(app.config['UPLOAD_FOLDER'] + prefix, filename))
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id, "numOfPics":numOfPics}), 200

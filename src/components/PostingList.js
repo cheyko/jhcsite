@@ -30,14 +30,14 @@ const PostingList = props => {
         <div className="header">
           <div className="hero blkYellow page-header" >
             <div className="page-header-body container">
-              <h4 className="title">News Articles and Notices</h4>
+              <h4 className="title">News Articles, Notices and Albums</h4>
             </div>
           </div>
           <br />
           <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li className="is-active"><span aria-current="page">&nbsp;News Articles and Notices</span></li>
+              <li className="is-active"><span aria-current="page">&nbsp;News Articles, Notices and Albums</span></li>
             </ul>
           </nav>
         </div>

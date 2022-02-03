@@ -11,9 +11,16 @@ const initState = {
   date: "",
   description: "",
   body: "",
-  categories : ["Article","Notice"],
+  categories : ["Article","Notice","Album"],
   photos : [],
   urls: []
+};
+
+const sign = require('jwt-encode');
+const secret = 'some$3cretKey';
+const algorithm = 'HS256';
+const data = {
+  token : 'Required'
 };
 
 class AddPosting extends Component {
@@ -35,8 +42,8 @@ class AddPosting extends Component {
   save = async (e) => {
     e.preventDefault();
     const { title, category, author, description, body, photos } = this.state;
-    console.log(photos);
-    if (title && body && category) {
+
+    if (title && category) {
       //const id = Math.random().toString(36).substring(2) + Date.now().toString(36);
       const date = this.FormatDate(new Date());
       const formData = new FormData();
@@ -50,13 +57,14 @@ class AddPosting extends Component {
         formData.append('photos',photo);
       });
 
-      
+      const jwt = sign(data,secret,algorithm);
       const res = await axios.post(
         '/api/postings',
         formData, 
         {
           headers: {
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
+          'Authorization' : jwt
         }
       }).catch((res) => {
         //return { status: 401, message: 'Unauthorized' }
@@ -88,7 +96,7 @@ class AddPosting extends Component {
 
   render() {
     const date = this.FormatDate(new Date());
-    const { title, author, description, body, categories, photos, urls } = this.state;
+    const { title, author, category, description, body, categories, photos, urls } = this.state;
     const { user } = this.props.context;
 
     var settings = {
@@ -104,7 +112,7 @@ class AddPosting extends Component {
       <div className="hero-body">
         <div className="hero blkYellow">
           <div className="hero-body container">
-            <h4 className="title">Add Article or Notice</h4>
+            <h4 className="title">Add Article or Notice or Album</h4>
           </div>
         </div>
         <br />
@@ -185,6 +193,7 @@ class AddPosting extends Component {
         <form onSubmit={this.save}>
           <div className="columns is-mobile is-centered">
             <div className="column is-one-third-desktop">
+
               <div className="field">
                 <label className="label">Title Of Post: </label>
                 <input
@@ -211,42 +220,46 @@ class AddPosting extends Component {
                   
                   ))}
               </div>
-              <div className="field">
-              <label className="label">Author Of Post: </label>
-                <input
-                  className="input"
-                  type="text"
-                  name="author"
-                  value={author}
-                  onChange={this.handleChange}
-                  
-                />
-              </div>
-              <div className="field">
-                <label className="label">Description: </label>
-                <textarea
-                  className="textarea"
-                  type="text"
-                  rows="3"
-                  style={{ resize: "none"}}
-                  name="description"
-                  value={description}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="field body">
-                <label className="label">Body / Content : </label>
-                <textarea
-                  className="textarea"
-                  type="text"
-                  rows="6"
-                  maxlength="1024"
-                  style={{ resize: "block"}}
-                  name="body"
-                  value={body}
-                  onChange={this.handleChange}
-                />
-              </div>
+              {(category === "Article" || category === "Notice") && 
+                <div>
+                  <div className="field">
+                  <label className="label">Author Of Post: </label>
+                    <input
+                      className="input"
+                      type="text"
+                      name="author"
+                      value={author}
+                      onChange={this.handleChange}
+                      
+                    />
+                  </div>
+                  <div className="field">
+                    <label className="label">Description: </label>
+                    <textarea
+                      className="textarea"
+                      type="text"
+                      rows="3"
+                      style={{ resize: "none"}}
+                      name="description"
+                      value={description}
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                  <div className="field body">
+                  <label className="label">Body / Content : </label>
+                  <textarea
+                    className="textarea"
+                    type="text"
+                    rows="6"
+                    maxlength="1024"
+                    style={{ resize: "block"}}
+                    name="body"
+                    value={body}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                </div>
+              }
               <div className="field">
                 <label className="label">Photos: </label>
                 <input 

@@ -199,7 +199,7 @@ const Jamaica = props => {
                                                     of an archipelagic state by the Maritime Areas Act, Jamaica's territory extends beyond its coastline
                                                     to comprise some 66 islands, rocks and cays.
                                                     <br /> <br />
-                                                    the Island consist of a total of 14 parishes; Kingston, St. Andrew, St. Catherine, Clarendon, Manchester,
+                                                    The Island consist of a total of 14 parishes; Kingston, St. Andrew, St. Catherine, Clarendon, Manchester,
                                                     St. Elizabeth, Westmoreland, Hanover, St. James, Trelawny, St. Ann, St. Mary, Portland and St. Thomas spread 
                                                     across three counties; Cornwall, Middlesex and Surrey. The Capital City Kingston is located on the South Coast,
                                                     while on the North Coast lies the Second largest City; Montego Bay. The Country has a population of 

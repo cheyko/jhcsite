@@ -40,8 +40,8 @@ import Test from "./components/Test";
 import Staff from "./components/Staff";
 import Jamaica from "./components/Jamaica";
 import WestAfrica from "./components/WestAfrica";
-import Gallery from "./components/Gallery";
 import Attractions from "./components/Attractions";
+import Fees from "./components/Fees";
 
 //const cors = require('cors');
 const sign = require('jwt-encode');
@@ -150,7 +150,7 @@ export default class App extends Component {
   };
   
   login = async (email, password) => {
-    const jwt = sign(data,secret);
+    const jwt = sign(data,secret,algorithm);
     const res = await axios.post("/api/login",{email,password},{
       headers: {
         'Authorization' : jwt
@@ -299,7 +299,7 @@ export default class App extends Component {
                 <span> <i className="fa fa-plane"></i> Visiting <br className="wrap-text"/> Jamaica </span>
                 </Link>
                 <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/postings" className="navbar-item is-expanded is-tab">
-                <span> <i className="fa fa-globe"></i> News Articles <br className="wrap-text"/> and Notices</span>
+                <span> <i className="fa fa-globe"></i> News Articles, <br className="wrap-text"/> Notices and Gallery</span>
                 </Link>
 
 
@@ -311,6 +311,9 @@ export default class App extends Component {
                     </div>
                     <div className="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
                       <div className="dropdown-content standardLook is-size-6">                      
+                        <Link to="/fees" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
+                          Fees
+                        </Link>
                         <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" className="navbar-item is-expanded is-tab">
                           The Commissioner
                         </Link>
@@ -320,9 +323,6 @@ export default class App extends Component {
                         <a style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://mfaft.gov.jm/jm/" className="navbar-item is-expanded is-tab">
                           Ministry of Foreign Affairs and Foreign Trade Jamaica
                         </a>
-                        <Link to="/gallery" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
-                          Gallery
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -375,9 +375,8 @@ export default class App extends Component {
               <Route exact path="/staff" component={Staff} />
               <Route exact path="/jamaica" component={Jamaica} />
               <Route exact path="/westafrica" component={WestAfrica} />
-              <Route exact path="/gallery" component={Gallery} />
               <Route exact path="/attractions" component={Attractions} />
-          
+              <Route exact path="/fees" component={Fees} />
             <Footer />
           </div>
         </Router>

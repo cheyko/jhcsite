@@ -52,16 +52,29 @@ const HomePage = props => {
       }
     ]
   };
+  let images;
+  let titles;
+
+  var total = props.context.postings.length;
+  if (total > 3){
+    titles = [props.context.postings[total-1].title,props.context.postings[total-2].title,props.context.postings[total-3].title];
+    images = [`${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
+              `${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
+              `${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`];
+  }else{
+    titles = [0,1,2].map((val,inx) => "Jamaican High Commission");
+    images = ["/images/consulate/consulate1.JPG", "/images/consulate/consulate2.JPG","/images/consulate/consulate3.JPG"];
+  }
 
   const slides = [
       {
-          id : 0, info : "test0", path : "/images/consulate/consulate1.JPG"
+          id : 0, info : titles[0], path : images[0] 
       },
       {
-          id : 1, info : "test1", path : "/images/consulate/consulate2.jpg"
+          id : 1, info : titles[1], path : images[1] 
       },
       {
-          id : 2, info : "test2", path : "/images/consulate/consulate3.JPG"
+          id : 2, info : titles[2], path : images[2] 
       },
   ];
   const CommissionerName = "H. E. Esmond Reid";
@@ -96,6 +109,7 @@ const HomePage = props => {
                           <img className="slick-slide-image customSlide" 
                             name={slide.id} alt={slide.info} src={process.env.PUBLIC_URL + slide.path}>
                           </img>
+                          <figcaption className="slide-label">{slide.info}</figcaption>
                       </div>
                   )}
                 </Slider>
@@ -226,6 +240,11 @@ const HomePage = props => {
      
         <div className="hero site-features">
           <div className="hero-body">
+            <div className="box">
+              <Link to="/fees">
+                <div className="button is-primary subtitle has-text-weight-bold"><h1 className="subtitle"> VIEW FEES &nbsp;<i className="fa fa-mouse-pointer"></i></h1></div>
+              </Link>
+            </div>
             <div className="columns is-multiline is-mobile">
               <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
