@@ -402,6 +402,19 @@ const WestAfrica = props => {
                                                     <ul> 
                                                         <li><b>Republic of Ghana</b></li>
                                                         <li> 
+                                                            Known as the Black Star of Africa, Ghana; the Land of Gold is one of 
+                                                            Africa's most stable and succesful coutries. Ghana is one of the first 
+                                                            West African Nations to gain independence, this on March 6, 1957 and then 
+                                                            becoming a republic on the First of July 1960. This is sometimes attributed with the success of
+                                                            Ghana's economy and political stability as the country has managed to create a very progressive country. Ghana is 
+                                                            appreciate for its rich history, evergreen forestry, abundant wildlife,
+                                                            and miles of sandy beaches. The country got its name from the medieval
+                                                            trading empire which was inhabited the region northwest of the current 
+                                                            state. Originally, these inhabitants commenced trading gold with the European Nations
+                                                            of Portugal, England, the Netherlands, etc. During this period of Commerce
+                                                            the european authorities were able to build forts and other establishments to 
+                                                            protect their trading interest. Thereafter, The Slave trade was started and the focus
+                                                            was shifted to this means of trading as it was more lucrative. 
 
                                                         <br /><br />
                                                                                                                     

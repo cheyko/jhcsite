@@ -55,8 +55,8 @@ const Fees = props => {
                         <br />
                         <thead>
                             <tr>
-                            <th>Citizenship </th>
                             <th> </th>
+                            <th> Citizenship </th>
                             <th> </th>
                             </tr>
                         </thead>
