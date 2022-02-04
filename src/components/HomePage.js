@@ -55,7 +55,7 @@ const HomePage = props => {
   let images;
   let titles;
 
-  var total = props.context.postings.length;
+  var total = 1;//props.context.postings.length;
   if (total > 3){
     titles = [props.context.postings[total-1].title,props.context.postings[total-2].title,props.context.postings[total-3].title];
     images = [`${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
