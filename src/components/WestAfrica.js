@@ -62,22 +62,8 @@ const WestAfrica = props => {
     const [val, setVal] = useState(0);
 
     return(
-        <div className="hero about-jamaica">
+        <div className="hero about-westafrica">
            
-            <div className="slideshow"> 
-              <div className="slick-wrapper">
-                <Slider {...settings}>
-                  {slides.map((slide,index) => 
-                      <figure key={index}>
-                          <img className="slick-slide-image customSlide" 
-                            name={slide.id} alt={slide.info} src={process.env.PUBLIC_URL + slide.path}>
-                          </img>
-                          <figcaption className="slide-label">{slide.label}</figcaption>
-                      </figure>
-                  )}
-                </Slider>
-              </div>
-            </div>
             <div className="header">
                 <div className="hero blkYellow page-header" >
                     <div className="page-header-body container">
@@ -103,62 +89,8 @@ const WestAfrica = props => {
                                 <p>ABOUT WEST AFRICA</p>
                             </div>
                             <div className="message-body has-text-left">
-                                <div className="columns">
-                                    <div className="column is-one-third">
-                                        <div className="rows">
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/labadi-beach.jpeg"} alt="Labadi Beach" />
-                                                    {openImage && val === 1 && (
-                                                        <Lightbox
-                                                            imageTitle={`Labadi Beach located in Accra, Ghana.`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/labadi-beach.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Labadi Beach - Located in Accra, Nigeria.
-                                                </figcaption>
-                                            </div>
-                                            <br/>
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/african-renaissance.jpeg"} alt="African Renaissance Monument" />
-                                                    {openImage && val === 2 && (
-                                                        <Lightbox
-                                                            imageTitle={`49m tall bronze statue located on top of one of the twin hills known as Collines des Mamelles.`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/african-renaissance.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    African Renaissance Monument - Outside Dakar, Senegal
-                                                </figcaption>
-                                            </div>
-                                            <br/>
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/idanre-hills.jpeg"} alt="Idanre Hill" />
-                                                    {openImage && val === 3 && (
-                                                        <Lightbox
-                                                            imageTitle={`Idanre Hill`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/idanre-hills.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Idanre Hill located in Nigeria.
-                                                </figcaption>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="column">
+                                <div className="box">
+                                    <div className="hero">
                                         <ul>
                                             <span className="box info-link">
                                                 <li> <Link to="https://www.ecowas.int/" className="subtitle"> From the Gold Coast to the Sahara; From the Canary Islands to the Center of the African Continent ! </Link> </li>

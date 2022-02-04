@@ -20,47 +20,6 @@ const Jamaica = props => {
             setLoad(false);
         }
     });
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        lazyload: 'progressive',
-        autoplay: true,
-        autoplayspeed: 3000,
-        responsive:[
-        {
-            breakpoint: 700,
-            settings: {
-                arrows: false,
-            }
-        }
-        ]
-    };
-
-    const slides = [
-        {
-            id : 0, info : "test0", path : "/images/brand-jamaica/negril-resorts.jpeg", label : "7 Miles of Beautiful White Sand Beach; located in western jamaica"
-        },
-        {
-            id : 1, info : "test1", path : "/images/brand-jamaica/sangster.jpeg", label : "Sangster International Airport; the busiest airport in Jamaica. "
-        },
-        {
-            id : 2, info : "test2", path : "/images/brand-jamaica/portland.jpeg", label : "Parish of Portland; epitome of Jamaica's Beauty."
-        },
-        {
-            id : 3, info : "test3", path : "/images/brand-jamaica/appleton.jpeg", label : "Appleton Estate; One of Jamaica's Signiture Brands."
-        },
-        {
-            id : 4, info : "test4", path : "/images/brand-jamaica/holland-bamboo.png", label : "4 Kilometres long of beautifully arched and shaded arrangement of bamboos."
-        },
-        {
-            id : 5, info : "test5", path : "/images/brand-jamaica/port-royal.jpeg", label : "Port Royal, Once called the ' richest and `wickedest` ' city in the world."
-        },
-    ];
-
      
 
         /*const response = axios.get('https://jamaica-gleaner.com/feed/rss.xml', {
@@ -91,21 +50,6 @@ const Jamaica = props => {
 
     return(
         <div className="hero about-jamaica">
-           
-            <div className="slideshow"> 
-              <div className="slick-wrapper">
-                <Slider {...settings}>
-                  {slides.map((slide,index) => 
-                      <figure key={index}>
-                          <img className="slick-slide-image customSlide" 
-                            name={slide.id} alt={slide.info} src={process.env.PUBLIC_URL + slide.path}>
-                          </img>
-                          <figcaption className="slide-label">{slide.label}</figcaption>
-                      </figure>
-                  )}
-                </Slider>
-              </div>
-            </div>
             <div className="header">
                 <div className="hero blkYellow page-header" >
                     <div className="page-header-body container">
@@ -132,60 +76,6 @@ const Jamaica = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <div className="columns">
-                                    <div className="column is-one-third">
-                                        <div className="rows">
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/doctor-bird.jpeg"} alt="The Jamaican National Bird" />
-                                                    {openImage && val === 1 && (
-                                                        <Lightbox
-                                                            imageTitle={`Swallowtail Hummingbird Bird - The Jamaican National Bird`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/doctor-bird.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                        The Swallowtail Hummingbird Bird - 'Doctor Bird' : The Jamaican National Bird
-                                                    </figcaption>
-                                            </div>
-                                            <br/>
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Lignum-vitae.jpeg"} alt="The Jamaican National Flower" />
-                                                    {openImage && val === 2 && (
-                                                        <Lightbox
-                                                            imageTitle={`Lignum Vitae - The Jamaican National Flower`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Lignum-vitae.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                        Lignum Vitae : The Jamaican National Flower
-                                                    </figcaption>
-                                            </div>
-                                            <br/>
-                                            <div className="row">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/ackee-tree.jpeg"} alt="The Jamaican National Fruit" />
-                                                    {openImage && val === 3 && (
-                                                        <Lightbox
-                                                            imageTitle={`Ackee - The Jamaican National Fruit`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/ackee-tree.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                        Ackee : The Jamaican National Fruit
-                                                    </figcaption>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div className="column">
                                         <ul>
                                             <span className="box info-link">
@@ -243,25 +133,8 @@ const Jamaica = props => {
                                         Recipient's of the Order of National Hero
                                     </div>    
                                     <div className="message-body has-text-left">
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Nanny.jpeg"} alt="Nanny of the Maroons" />
-                                                    {openImage && val === 4 && (
-                                                        <Lightbox
-                                                            imageTitle={`Nanny of the Maroons`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Nanny.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Nanny of the Maroons - One of the most feared Maroon chiefs by the English during the Maroon Wars.
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                             <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -282,25 +155,8 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(5);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/marcus-garvey.jpeg"} alt="Marcus Garvey" />
-                                                    {openImage && val === 5 && (
-                                                        <Lightbox
-                                                            imageTitle={`Marcus Garvey`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/marcus-garvey.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Marcus Garvey - First National Hero and Founder of UNIA
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -318,25 +174,8 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                            <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(6);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/sam-sharpe.jpeg"} alt="Sam Sharpe" />
-                                                    {openImage && val === 6 && (
-                                                        <Lightbox
-                                                            imageTitle={`Sam Sharpe`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/sam-sharpe.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Sam Sharpe - Baptist Leader and main instigator of the Christmas Rebillion.
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -354,25 +193,8 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(7);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/paul-bogle.jpeg"} alt="Paul Bogle" />
-                                                    {openImage && val === 7 && (
-                                                        <Lightbox
-                                                            imageTitle={`Paul Bogle`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/paul-bogle.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Paul Bogle - One of the Spearheads of the Morant Bay Rebillion
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -390,25 +212,8 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(8);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/george-william-gordon.jpeg"} alt="George William Gordon" />
-                                                    {openImage && val === 8 && (
-                                                        <Lightbox
-                                                            imageTitle={`George William Gordon`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/george-william-gordon.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    George William Gordon - Mixed race politician whom supported the Morant Bay Rebillion. 
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -427,25 +232,8 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(9);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/alexander-bustamante.jpg"} alt="Alexander Bustamante" />
-                                                    {openImage && val === 9 && (
-                                                        <Lightbox
-                                                            imageTitle={`Alexander Bustamante`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/alexander-bustamante.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                    Alexander Bustamante - First Prime Minister, Founder of the Bustamante Industrial Trade Union (BITU) and Founding Member of the Jamaica Labour Party.
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
@@ -463,24 +251,7 @@ const Jamaica = props => {
                                             </div>
                                         </div>
                                         <br />
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(10);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Norman-Manley.jpeg"} alt="Norman Manley" />
-                                                    {openImage && val === 10 && (
-                                                        <Lightbox
-                                                            imageTitle={`Norman Manley`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Norman-Manley.jpeg"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                        Norman Washington Manley - First Political leader under Universal Adult Sufferage, Founding member of the Trade Union Congress (TUC) and the People's National Party.
-                                                    </figcaption>
-                                                
-                                            </div>
+                                        <div className="box">
                                             <div className="column">
                                                 
                                                 <span className="box info-link">
@@ -510,8 +281,8 @@ const Jamaica = props => {
                                     </div>    
                                     <div className="message-body has-text-left">
                                     <div className="box grnBkgn has-text-centered"><b> <Link to="https://jis.gov.jm/information/jamaican-history/" className="subtitle" style={{color:"yellow"}}> Jamaica's Timeline </Link> </b></div> 
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Inhabitants</b></li>
@@ -530,31 +301,9 @@ const Jamaica = props => {
                                                     </span>
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(11);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-girl.jpg"} alt="A Beautiful Taino Female" />
-                                                        {openImage && val === 11 && (
-                                                            <Lightbox
-                                                                imageTitle={`A Beautiful Taino Female`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/taino-girl.jpg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Taino Female
-                                                    </figcaption>
-
-                                                </div>
-                                                
-                                            </div>
                                         </div>
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>European Arrival</b></li>
@@ -570,46 +319,10 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(12);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"} alt="The Taino way of life" />
-                                                        {openImage && val === 12 && (
-                                                            <Lightbox
-                                                                imageTitle={`A depiction of taino life`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/taino-life.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                            Taino Way of Life
-                                                        </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(13);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/christopher-columbus.jpeg"} alt="Christopher Columbus" />
-                                                            {openImage && val === 13 && (
-                                                                <Lightbox
-                                                                    imageTitle={`Christopher Columbus`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/christopher-columbus.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            Christopher Columbus
-                                                        </figcaption>
-                                                    </div>  
-                                            </div>
                                         </div> 
                                         
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Spanish Colony</b></li>
@@ -623,46 +336,10 @@ const Jamaica = props => {
                                                     </span>
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(14);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/the-spanish.jpeg"} alt="The Spanish in Jamaica" />
-                                                        {openImage && val === 14 && (
-                                                            <Lightbox
-                                                                imageTitle={`The Spanish in Jamaica`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/the-spanish.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        The Spanish in Jamaica
-                                                    </figcaption>
-                                                </div>
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(15);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-captured.jpeg"} alt="The Capture of Slaves in Africa" />
-                                                        {openImage && val === 15 && (
-                                                            <Lightbox
-                                                                imageTitle={`The Capture of Slaves in Africa`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-captured.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        The Capture of Slaves in Africa
-                                                        </figcaption>
-                                                </div>
-                                            </div>
                                         </div>     
                                         
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Capture by The British</b></li>
@@ -678,28 +355,9 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(16);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/the-british.jpeg"} alt="The Anglo-Spanish War." />
-                                                        {openImage && val === 16 && (
-                                                            <Lightbox
-                                                                imageTitle={`A depiction of the Anglo-Spanish War`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/the-british.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        A depiction of the Anglo-Spanish War.
-                                                    </figcaption>
-                                                </div>
-                                            </div>
                                         </div>  
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Transatlantic Slave Trade</b></li>
@@ -727,63 +385,10 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(17);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"} alt="The Jamaican National Flower" />
-                                                        {openImage && val === 17 && (
-                                                            <Lightbox
-                                                                imageTitle={`Slaves being transported via ships to the Caribbean.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Slaves being transported via ships to the Caribbean.
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(18);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slave-auction.jpeg"} alt="A display of slaves being auctioned" />
-                                                        {openImage && val === 18 && (
-                                                            <Lightbox
-                                                                imageTitle={`Slaves being transported via ships to the Caribbean.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slave-trade.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                    A display of slaves being auctioned
-                                                        </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(19);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-in-field.jpeg"} alt="Picture of Slaves taken in the Field." />
-                                                        {openImage && val === 19 && (
-                                                            <Lightbox
-                                                                imageTitle={`Picture of Slaves taken in the Field.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/slaves-in-field.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Picture of Slaves taken in the Field.
-                                                    </figcaption>
-                                                </div>
-                                            </div>
-                                        
+                                            
                                         </div>  
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Emancipation & Indentureship</b></li>
@@ -808,64 +413,10 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(20);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/indentured-workers.jpeg"} alt="Indentured Workers on Plantation" />
-                                                        {openImage && val === 20 && (
-                                                            <Lightbox
-                                                                imageTitle={`A representation of Indentured Workers on Plantation.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/indentured-workers.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                    A representation of Indentured Workers on Plantation.
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(21);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/morant-bay-rebellion.jpeg"} alt="Morant Bay Rebellion" />
-                                                        {openImage && val === 21 && (
-                                                            <Lightbox
-                                                                imageTitle={`Morant Bay Rebellion, 1865.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/morant-bay-rebellion.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                            Morant Bay Rebellion, 1865
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(22);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-parade.jpeg"} alt="A parade held when jamaica was under colonial government." />
-                                                        {openImage && val === 22 && (
-                                                            <Lightbox
-                                                                imageTitle={`A parade held when jamaica was under colonial government.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-parade.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        A parade held when jamaica was under colonial government.
-                                                    </figcaption>
-                                                </div>
-                                                    
-                                            </div>
-                                        
+                                    
                                         </div>  
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Pre and Post Independence</b></li>
@@ -898,63 +449,9 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(23);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/colonial-flag.jpeg"} alt="Colonial & Former Flag of Jamaica" />
-                                                        {openImage && val === 23 && (
-                                                            <Lightbox
-                                                                imageTitle={`Union Jack - Colonial & Former Flag of Jamaica.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/colonial-flag.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Union Jack - Colonial & Former Flag of Jamaica
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(24);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/princess-margret.jpeg"} alt="Princess Margret Visits Jamaica for independence celebrations." />
-                                                        {openImage && val === 24 && (
-                                                            <Lightbox
-                                                                imageTitle={`Princess Margret Visits Jamaica for independence celebrations.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/princess-margret.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Princess Margret - Sister of Queen Elizabeth, Visits Jamaica for independence celebrations
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(25);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/independence.jpeg"} alt="Jamaica showing jubilation for Independence" />
-                                                        {openImage && val === 25 && (
-                                                            <Lightbox
-                                                                imageTitle={`Jamaica showing jubilation for Independence.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/independence.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Jamaica showing jubilation for Independence.
-                                                    </figcaption>
-                                                </div>
-                                            </div>
-                                        
                                         </div>  
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                 
                                                     <span className="box info-link">
@@ -969,43 +466,6 @@ const Jamaica = props => {
 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <br />
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(26);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-kingston.jpeg"} alt="Kingston Jamaica" />
-                                                        {openImage && val === 26 && (
-                                                            <Lightbox
-                                                                imageTitle={`Aerial View of Kingston, Jamaica - Jamaica's Capital.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/jamaica-kingston.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Aerial View of Kingston, Jamaica - Jamaica's Capital
-                                                    </figcaption>
-                                                </div>
-                                                <br/>
-                                                <div className="row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(27);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/mobay-view.jpeg"} alt="A View of a section of Montego-Bay" />
-                                                        {openImage && val === 27 && (
-                                                            <Lightbox
-                                                                imageTitle={`A View of a section of Montego-Bay, St.James - Second Largest City in the Country.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/mobay-view.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        A View of a section of Montego-Bay, St.James - Second Largest City in the Country.
-                                                    </figcaption>
-                                                </div>
-                                            </div>
-                                        
                                         </div>  
 
                                     </div>
@@ -1018,99 +478,8 @@ const Jamaica = props => {
                                         Caribbean Commonwealth 
                                     </div>    
                                     <div className="message-body has-text-left">
-                                        <div className=" columns">
-                                            <div className="column is-one-third">
-                                                <div className="rows">
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(28);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/political-leaders.jpeg"} alt="Norman Manley and Alexander Bustmante in England." />
-                                                            {openImage && val === 28 && (
-                                                                <Lightbox
-                                                                    imageTitle={`Norman Manley and Alexander Bustmante in England.`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/political-leaders.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            Jamaican Premier Norman Manley and then Opposition Leader Sir Alexander Bustamante appeared at the Jamaica Independence Conference in Lancaster House, London, on February 9, 1962.
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(29);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/Queen-Elizabeth.jpeg"} alt="Oueen Elizabeth Visiting Jamaica" />
-                                                            {openImage && val === 29 && (
-                                                                <Lightbox
-                                                                    imageTitle={`The Head of State of Jamaica - Queen Elizabeth the 2nd on one of her visits to the Island.`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/Queen-Elizabeth.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            The Head of State of Jamaica - Queen Elizabeth the 2nd on one of her visits to the Island.
-
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(30);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
-                                                            {openImage && val === 30 && (
-                                                                <Lightbox
-                                                                    imageTitle={`Sir Patrick Allen - The Governor General of Jamaica.`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            Sir Patrick Allen - The Governor General of Jamaica.
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(31);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
-                                                            {openImage && val === 31 && (
-                                                                <Lightbox
-                                                                    imageTitle={`Andrew Holness - The Prime Minister of Jamaica.`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            Andrew Holness - The Prime Minister of Jamaica.
-                                                        </figcaption>
-                                                    </div>
-                                                    <br />
-                                                    <div className="governance row">
-                                                        <figure className="image is-256x256">
-                                                            <img className="card" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"} alt="Mark Golding" />
-                                                            {openImage && val === 32 && (
-                                                                <Lightbox
-                                                                    imageTitle={`Mark Golding - The Opposition Leader in Jamaica.`}
-                                                                    mainSrc={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"}
-                                                                    onCloseRequest={() => setOpen(false)}
-                                                                    
-                                                                />
-                                                            )}
-                                                        </figure>
-                                                        <figcaption>
-                                                            Mark Golding - The Opposition Leader in Jamaica .
-                                                        </figcaption>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                 <span className="box info-link">
                                                     <li><b>The Constitution</b></li>
@@ -1168,9 +537,9 @@ const Jamaica = props => {
                                         The Sun, The Sea, The Cuisine, The Culture
                                     </div>    
                                     <div className="message-body has-text-left">
-                                        <div className="columns">
+                                        <div className="box">
          
-                                            <div className="column">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         
@@ -1182,28 +551,9 @@ const Jamaica = props => {
                                                     </span>
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <div className="governance row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(33);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/blue-hole.jpeg"} alt="Blue Hole" />
-                                                        {openImage && val === 33 && (
-                                                            <Lightbox
-                                                                imageTitle={`Blue Hole in Portland Jamaica.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/blue-hole.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Blue Hole in Portland Jamaica
-                                                    </figcaption>
-                                                </div>
-                                                
-                                            </div>
                                         </div>
-                                        <div className="columns">
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>The Begining</b></li>
@@ -1218,29 +568,9 @@ const Jamaica = props => {
                                                     </span>
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                <div className="governance row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(35);}} src={process.env.PUBLIC_URL + "/images/about-jamaica/myrtle-bank-hotel.jpeg"} alt="Myrtle Bank Hotel." />
-                                                        {openImage && val === 35 && (
-                                                            <Lightbox
-                                                                imageTitle={`Myrtle Bank Hotel - Kingston Jamaica.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/myrtle-bank-hotel.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        Myrtle Bank Hotel - Kingston Jamaica.
-                                                    </figcaption>
-                                                </div>
-                                                
-                                            </div>
                                         </div>
-                                        <div className="columns">
-         
-                                            <div className="column">
+                                        <div className="box">
+                                            <div className="hero">
                                                 <ul>
                                                     <span className="box info-link">
                                                         <li><b>Developed Industry</b></li>
@@ -1254,25 +584,6 @@ const Jamaica = props => {
                                                     </span> 
                                                 </ul>
                                             </div>
-                                            <div className="column is-one-third">
-                                                
-                                                <div className="governance row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(36);}}  src={process.env.PUBLIC_URL + "/images/about-jamaica/waterfalls.jpeg"} alt="Scene in cockpit country of waterfalls." />
-                                                        {openImage && val === 36 && (
-                                                            <Lightbox
-                                                                imageTitle={` A waterfall scenery in cockpit country.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/waterfalls.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        A waterfall scenery in cockpit country.
-                                                    </figcaption>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1285,31 +596,8 @@ const Jamaica = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <div className=" info-link">
-                                    <div className="columns">
-                                        <div className="column is-one-third">
-                                            <div className="rows">
-                                                <br />
-                                                <div className="governance row">
-                                                    <figure className="image is-256x256">
-                                                        <img className="card" src={process.env.PUBLIC_URL + "/images/JAMPRO.jpeg"} alt="JAMPRO Building" />
-                                                        {openImage && val === 37 && (
-                                                            <Lightbox
-                                                                imageTitle={`JAMPRO Building in New Kingston, Jamaica.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/about-jamaica/JAMPRO.jpeg"}
-                                                                onCloseRequest={() => setOpen(false)}
-                                                                
-                                                            />
-                                                        )}
-                                                    </figure>
-                                                    <figcaption>
-                                                        JAMPRO Building in New Kingston, Jamaica.
-                                                    </figcaption>
-                                                </div>
-                                                
-                                            </div>
-
-                                        </div>
-                                        <div className="column">
+                                    <div className="box">
+                                        <div className="hero">
                                             <ul style={{listStyleType:"circle"}}>
                                                 <li> The World Banks's doing business platform has ranked Jamaica 6th amongst 190 countries
                                                     in the topic of Starting a Business and 15th in getting credit. The business climate in Jamaica

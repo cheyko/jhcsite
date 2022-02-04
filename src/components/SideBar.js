@@ -42,17 +42,6 @@ const SideBar  = props => {
     ]
   };
 
-  const stateNews = [
-    {
-      id : 0, url:"/images/links/jis.jpeg", path : "https://jis.gov.jm/daily-news/", title : "", caption : "Jamaica Information Service."
-    },
-    {
-        id : 1, url:"/images/links/opm.jpeg", path : "https://opm.gov.jm/", title : "", caption : "Office of the Prime Minister"
-    },
-    {
-        id : 2, url:"/images/links/tvj.png", path : "https://www.televisionjamaica.com/", title : "", caption : "Television Jamaica"
-    }
-];
 
 const jamaicaToday = [
   {
@@ -63,6 +52,15 @@ const jamaicaToday = [
   },
   {
       id : 2, url:"/images/links/star.jpeg", path : "https://www.televisionjamaica.com/", title : "", caption : "The Star"
+  },
+  {
+    id : 3, url:"/images/links/jis.jpeg", path : "https://jis.gov.jm/daily-news/", title : "", caption : "Jamaica Information Service."
+  },
+  {
+      id : 4, url:"/images/links/opm.jpeg", path : "https://opm.gov.jm/", title : "", caption : "Office of the Prime Minister"
+  },
+  {
+      id : 5, url:"/images/links/tvj.png", path : "https://www.televisionjamaica.com/", title : "", caption : "Television Jamaica"
   }
 ];
     return (
@@ -102,30 +100,6 @@ const jamaicaToday = [
           <br />
           <article className="message is-normal">
             <div className="message-header">
-              <p> State News </p>
-            </div>
-         
-                <div className="message-body has-text-left">
-                    <div className="slide-wrapper">
-                      <div className="box news-box">
-                        <div className="thumbnail thumbnail-slider-wrap"> 
-                          {<Slider {...settings}>
-                            {stateNews.map((link,index) => (
-                                <div key={index} className="slick-slide">
-                                   <ExternalItem link={link} key={index} />
-                                   <br/>
-                                </div>
-                            ))}
-                            </Slider>}
-                        </div>
-                    </div>
-                  </div> 
-                </div>
-          
-          </article>
-          <br/>
-          <article className="message is-normal">
-            <div className="message-header">
               <p> Jamaica Today </p>
             </div>
                 <div className="message-body has-text-left">
@@ -135,8 +109,10 @@ const jamaicaToday = [
                         {<Slider {...settings}>
                             {jamaicaToday.map((link,index) => (
                                 <div key={index} className="slick-slide ">
-                                    <ExternalItem link={link} key={index} />
-                                    <br/>
+                                    <a href={link.path} className="card">
+                                      {link.caption}
+                                    </a>
+                                   
                                 </div>
                             ))}
                             </Slider>}

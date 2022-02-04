@@ -10,7 +10,7 @@ const Banner = props => {
                         <div className="column">
                             <div className="hero banner-column">
                                 <figure className="image is-4x3">
-                                    <img src={process.env.PUBLIC_URL + "/images/brand-jamaica/image1.jpg"} alt="Placeholder" />
+                                    <img src={process.env.PUBLIC_URL + "/images/image1.jpg"} alt="Placeholder" />
                                 </figure>
                             </div>
                         </div>
