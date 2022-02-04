@@ -152,11 +152,11 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="Lagos Nigeria" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`Lagos, Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />

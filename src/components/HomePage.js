@@ -117,36 +117,21 @@ const HomePage = props => {
           </div>
         
         <br></br>
-        <div className="hero remarks">
+
+        <div className="commissioner-card">
+            <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
+          </div> 
+        {/*<div className="hero remarks">
           <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
         </div>
-  
+                  */}
         
         <hr />
      
         <div className="box hero-body">
-          <div className="columns">
-            <div className="column">
-              <figure className="image is-3x1">
-                <img className="card" src={process.env.PUBLIC_URL + "/images/image7.jpg"} alt="The Jamaican Flag" />
-                <figcaption className="tag caption-tag">The Jamaican Coat of Arms</figcaption>
-              </figure>
-            </div>
-            <div className="column">
-              <figure className="image is-3x1">
-                <img className="card" src={process.env.PUBLIC_URL + "/images/flag3d.jpg"} alt="The Jamaican Flag"   />
-                <figcaption className="tag caption-tag">The National Flag of Jamaica</figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div className="commissioner-card">
-            <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
-          </div> 
-          <br />
           <div className="governance columns">
             <div className="column">
-              <figure className="image is-3x1">
+              <figure className="hero-body image is-3x1">
                 <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
                 {openImage && val === 1 && (
                     <Lightbox
@@ -161,7 +146,7 @@ const HomePage = props => {
               <div>His Excellency, The Most Honourable <br /> <span className="official"> SIR PATRICK ALLEN </span> <br /> ON, GCMG, CD, KST.J </div>
             </div>
             <div className="column">
-              <figure className="image is-3x1">
+              <figure className="hero-body image is-3x1">
                 <img className="card flag-card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
                 {openImage && val === 2 && (
                     <Lightbox
@@ -177,7 +162,7 @@ const HomePage = props => {
               
             </div>
             <div className="column">
-              <figure className="image is-3x1">
+              <figure className="hero-body image is-3x1">
                 <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
                 {openImage && val === 3 && (
                     <Lightbox
