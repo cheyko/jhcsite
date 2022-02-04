@@ -144,7 +144,7 @@ const WestAfrica = props => {
                             </TabList>
                             <br/>
                             <TabPanel>
-                                <div className="heroes message is-success">
+                                <div className="nigeria message is-success">
                                     <div className="message-header">
                                         'The Giant of Africa'
                                     </div>    
@@ -152,10 +152,10 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="The National Flag of Nigeria" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`Lagos, Nigeria`}
+                                                            imageTitle={`The National Flag of Nigeria`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
@@ -163,7 +163,7 @@ const WestAfrica = props => {
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                   Lagos, Nigeria - One of the most populous cities in Africa.
+                                                   The National Flag of Nigeria
                                                 </figcaption>
                                                 
                                             </div>
@@ -227,7 +227,7 @@ const WestAfrica = props => {
                             </TabPanel>
 
                             <TabPanel>
-                                <div className="heroes message is-success">
+                                <div className="cameroon message is-content">
                                     <div className="message-header">
                                         'The Indomitable Lions'
                                     </div>    
@@ -235,18 +235,18 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/cameroon.png"} alt="The National Flag of Cameroon" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`Lagos, Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"}
+                                                            imageTitle={`The National Flag of Cameroon`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/cameroon.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                   Lagos, Nigeria - One of the most populous cities in Africa.
+                                                    The National Flag of Cameroon
                                                 </figcaption>
                                                 
                                             </div>
@@ -305,7 +305,7 @@ const WestAfrica = props => {
                                 </div>   
                             </TabPanel>
                             <TabPanel>
-                                <div className="heroes message is-success">
+                                <div className="ghana message is-content">
                                     <div className="message-header">
                                         'The Land of Gold'
                                     </div>    
@@ -313,18 +313,18 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/ghana.png"} alt="Lagos Nigeria" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`Lagos, Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"}
+                                                            imageTitle={`The National Flag of Ghana`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/ghana.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                   Lagos, Nigeria - One of the most populous cities in Africa.
+                                                    The National Flag of Ghana
                                                 </figcaption>
                                                 
                                             </div>
@@ -388,7 +388,7 @@ const WestAfrica = props => {
                                 </div>   
                             </TabPanel>
                             <TabPanel>
-                                <div className="heroes message is-success">
+                                <div className="sierra-leone message is-content">
                                     <div className="message-header">
                                         'Leone Stars'
                                     </div>    
@@ -396,18 +396,18 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"} alt="The National Flag of Sierra Leone" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`Lagos, Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"}
+                                                            imageTitle={`The National Flag of Sierra Leone`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                   Lagos, Nigeria - One of the most populous cities in Africa.
+                                                    The National Flag of Sierra Leone
                                                 </figcaption>
                                                 
                                             </div>
@@ -462,7 +462,7 @@ const WestAfrica = props => {
                             </TabPanel>
 
                             <TabPanel>
-                                <div className="heroes message is-success">
+                                <div className="senegal message is-content">
                                     <div className="message-header">
                                         'Lions of Teranga'
                                     </div>    
@@ -470,18 +470,18 @@ const WestAfrica = props => {
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"} alt="Lagos Nigeria" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/senegal.png"} alt="The National Flag of Senegal" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`Lagos, Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/lagos-nigeria.jpeg"}
+                                                            imageTitle={`The National Flag of Senegal`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/senegal.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                   Lagos, Nigeria - One of the most populous cities in Africa.
+                                                    The National Flag of Senegal
                                                 </figcaption>
                                                 
                                             </div>
