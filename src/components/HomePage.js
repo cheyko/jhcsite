@@ -132,7 +132,7 @@ const HomePage = props => {
           <div className="columns">
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
+                <img className="container" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
                 {openImage && val === 1 && (
                     <Lightbox
                         imageTitle={`SIR PATRICK ALLEN`}
@@ -147,7 +147,7 @@ const HomePage = props => {
             </div>
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                <img className="container" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
                 {openImage && val === 2 && (
                     <Lightbox
                         imageTitle={`ANDREW HOLNESS`}
@@ -163,7 +163,7 @@ const HomePage = props => {
             </div>
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="card" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
+                <img className="container" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
                 {openImage && val === 3 && (
                     <Lightbox
                         imageTitle={`KAMINA JOHNSON SMITH`}
