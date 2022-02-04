@@ -656,7 +656,7 @@ const Jamaica = props => {
                                                         {openImage && val === 32 && (
                                                             <Lightbox
                                                                 imageTitle={`Mark Golding - The Opposition Leader in Jamaica.`}
-                                                                mainSrc={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"}
+                                                                mainSrc={process.env.PUBLIC_URL + "/images/consulate/Opposition-Leader.jpeg"}
                                                                 onCloseRequest={() => setOpen(false)}
                                                                 
                                                             />
