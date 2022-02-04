@@ -82,6 +82,7 @@ export default class App extends Component {
         'Authorization' : jwt
       }
     });
+    console.log(time);
 
     /*const response = await axios.get('https://jamaica-gleaner.com/feed/rss.xml', {
       //mode: '*cors',
