@@ -105,6 +105,7 @@ export default class App extends Component {
         'Authorization' : jwt
       }
     });
+    console.log(postings);
     user = user ? JSON.parse(user) : null;
     this.setState({ user, postings:postings.data.postings});
     window.scrollTo(0, 0);
