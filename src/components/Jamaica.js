@@ -616,7 +616,7 @@ const Jamaica = props => {
                                     <div className="message-body has-text-left">
                                         <div className=" columns">
                                             <div className="column is-one-third">
-                                                <div className="governance row">
+                                                <div className="row">
                                                     <figure className="image is-256x256">
                                                         <img className="card" onClick={() => {setOpen(true); setVal(30);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
                                                         {openImage && val === 30 && (
@@ -633,7 +633,7 @@ const Jamaica = props => {
                                                     </figcaption>
                                                 </div>
                                                 <br />
-                                                <div className="governance row">
+                                                <div className="row">
                                                     <figure className="image is-256x256">
                                                         <img className="card" onClick={() => {setOpen(true); setVal(31);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
                                                         {openImage && val === 31 && (
@@ -650,9 +650,9 @@ const Jamaica = props => {
                                                     </figcaption>
                                                 </div>
                                                 <br />
-                                                <div className="governance row">
+                                                <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/mark-golding.jpeg"} alt="Mark Golding" />
+                                                        <img className="card" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/Opposition-Leader.jpeg"} alt="Mark Golding" />
                                                         {openImage && val === 32 && (
                                                             <Lightbox
                                                                 imageTitle={`Mark Golding - The Opposition Leader in Jamaica.`}

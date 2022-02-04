@@ -129,7 +129,7 @@ const HomePage = props => {
         <hr />
      
         <div className="box hero-body">
-          <div className="governance columns">
+          <div className="columns">
             <div className="column">
               <figure className="hero-body image is-3x1">
                 <img className="card" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
@@ -147,7 +147,7 @@ const HomePage = props => {
             </div>
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="card flag-card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                <img className="card" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
                 {openImage && val === 2 && (
                     <Lightbox
                         imageTitle={`ANDREW HOLNESS`}

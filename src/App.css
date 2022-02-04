@@ -444,6 +444,7 @@
   background:	rgb(211,211,211, 0.7) !important;
   font-weight: bold;
   font-size: medium !important;
+  height: 3rem !important;
 }
 
 .governance img{
@@ -475,7 +476,13 @@
   padding-inline: 1rem ;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width:374px){
+  .governance img{
+    height: 13rem !important;
+  }
+}
+
+@media screen and (max-width: 425px) and (min-width:375px){
   .governance img{
     height: 15rem !important;
   }
@@ -550,7 +557,7 @@
     width: 100%;
   }
   .governance img{
-    height: 12rem !important;
+    height: 40rem !important;
   }
   .governance{
     height: auto !important;
