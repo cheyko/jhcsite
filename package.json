@@ -71,5 +71,10 @@
     "node": "14.17.3",
     "npm": "6.14.13",
     "yarn": "1.22.10"
-  }
+  },
+  "buildpacks": [
+    {
+      "url": "mars/create-react-app"
+    }
+  ]
 }
