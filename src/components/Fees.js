@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import withContext from "../withContext";
 
 const Fees = props => {
 
     const [firstload, setLoad] = useState(true);
-    
+
     useEffect( () => {
         if (firstload){ 
             window.scrollTo(0,0);

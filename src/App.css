@@ -6,7 +6,7 @@
 
 .banner{
   text-align: left;
-  background-color: yellow;
+  background-color: gold;
 }
 
 .is-pink-coral{
@@ -20,8 +20,8 @@
 .is-pink-coral .message-body{
   color: white;
 }
-.blkYellow, .footer-container hr{
-  background-color: yellow;
+.blkgold, .footer-container hr{
+  background-color: gold;
   color: black;
 }
 
@@ -47,7 +47,7 @@
 .map-button{
   background-color: black;
   cursor: pointer;
-  color: yellow;
+  color: gold;
   border: none;
 }
 
@@ -66,12 +66,12 @@
 }
 
 .navbar-brand.is-tab:focus, .navbar-brand.is-tab:hover {
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }
 
 .navbar-link.is-tab:focus, .navbar-link.is-tab:hover {
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }
 
@@ -84,7 +84,7 @@
 }
 
 /*.navbar-item .is-tab:focus .navbar-link, .navbar-item .is-tab:hover .navbar-link{
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }*/
 
@@ -92,8 +92,8 @@
   border-color: black !important;
 }
 
-.yellowbkgn{
-  background-color: yellow !important;
+.goldbkgn{
+  background-color: gold !important;
 }
 
 .grnBkgn{
@@ -101,7 +101,7 @@
 }
 
 .grnBkgn p {
-  color:yellow;
+  color:gold;
 }
 
 .home-page-card-horizontal .title, .home-page-card-horizontal .subtitle {
@@ -187,17 +187,17 @@
 }
 
 .navbar-item .is-tab:focus, .navbar-item .is-tab:hover, .navbar-item:hover, .navbar-item:focus {
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }
 
 .navbar-item .is-tab:focus .custom-nav, .navbar-item .is-tab:hover .custom-nav, .navbar-item:hover .custom-nav, .navbar-item:focus .custom-nav {
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }
 
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover{
-  background-color: yellow !important;
+  background-color: gold !important;
   color: black !important;
 }
 
@@ -257,7 +257,7 @@
 }
 
 .posting-title{
-  color:yellow;
+  color:gold;
 }
 
 .posting-author{
