@@ -84,7 +84,7 @@
 }
 
 /*.navbar-item .is-tab:focus .navbar-link, .navbar-item .is-tab:hover .navbar-link{
-  background-color: gold !important;
+  background-color: yellow !important;
   color: black !important;
 }*/
 
@@ -92,7 +92,7 @@
   border-color: black !important;
 }
 
-.goldbkgn{
+.yellowbkgn{
   background-color: gold !important;
 }
 
