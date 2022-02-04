@@ -125,10 +125,8 @@ const HomePage = props => {
           <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
         </div>
                   */}
-        
-        <hr />
      
-        <div className="officials box hero-body">
+        <div className="officials box">
           <div className="columns">
             <div className="column">
               <figure className="hero-body image is-3x1">
