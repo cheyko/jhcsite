@@ -62,7 +62,7 @@ const HomePage = props => {
               `${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
               `${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`];
   }else{
-    titles = [0,1,2].map((val,inx) => "Jamaican High Commission");
+    titles = [0,1,2].map((val,inx) => "Jamaican High Commission Highlights");
     images = ["/images/consulate/consulate1.JPG", "/images/consulate/consulate2.JPG","/images/consulate/consulate3.JPG"];
   }
 
