@@ -469,11 +469,15 @@
 }
 
 .news-box .thumbnail .slick-next, .news-box  .thumbnail .slick-prev {
-  margin-top: 5rem !important;
+  margin-top: 1rem !important;
 }
 
 .about-jamaica .row{
   padding-inline: 1rem ;
+}
+
+.images .container{
+  cursor: pointer;
 }
 
 @media screen and (max-width:374px){

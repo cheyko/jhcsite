@@ -609,7 +609,7 @@ const Jamaica = props => {
                                 </div> 
                             </TabPanel>
                             <TabPanel>
-                                <div className="message is-black">
+                                <div className="message is-content">
                                     <div className="message-header">
                                         Caribbean Commonwealth 
                                     </div>    
@@ -618,7 +618,7 @@ const Jamaica = props => {
                                             <div className="column is-one-third">
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(30);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
+                                                        <img className="container" onClick={() => {setOpen(true); setVal(30);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="Sir Patrick Allen" />
                                                         {openImage && val === 30 && (
                                                             <Lightbox
                                                                 imageTitle={`Sir Patrick Allen - The Governor General of Jamaica.`}
@@ -635,7 +635,7 @@ const Jamaica = props => {
                                                 <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(31);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
+                                                        <img className="container" onClick={() => {setOpen(true); setVal(31);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="Andrew Holness" />
                                                         {openImage && val === 31 && (
                                                             <Lightbox
                                                                 imageTitle={`Andrew Holness - The Prime Minister of Jamaica.`}
@@ -652,7 +652,7 @@ const Jamaica = props => {
                                                 <br />
                                                 <div className="row">
                                                     <figure className="image is-256x256">
-                                                        <img className="card" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/Opposition-Leader.jpeg"} alt="Mark Golding" />
+                                                        <img className="container" onClick={() => {setOpen(true); setVal(32);}} src={process.env.PUBLIC_URL + "/images/consulate/Opposition-Leader.jpeg"} alt="Mark Golding" />
                                                         {openImage && val === 32 && (
                                                             <Lightbox
                                                                 imageTitle={`Mark Golding - The Opposition Leader in Jamaica.`}

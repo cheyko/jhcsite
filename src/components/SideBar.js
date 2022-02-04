@@ -129,7 +129,7 @@ const jamaicaToday = [
                     <div className="columns is-multiline">
                         <div className="column is-full">
                           <figure className="image is-256x256" style={{margin:"0 auto"}}>
-                                <img src={process.env.PUBLIC_URL + "/images/jamaican-dollars.jpg"} alt="Placeholder" />
+                                <img src={process.env.PUBLIC_URL + "/images/boj-logo.jpeg"} alt="Placeholder" />
                           </figure>
                         </div>
                         <div className="column is-full">

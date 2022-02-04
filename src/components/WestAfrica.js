@@ -136,95 +136,16 @@ const WestAfrica = props => {
                         <Tabs>
                             
                             <TabList>
-                                <Tab>Nigeria</Tab>
+                                
                                 <Tab>Cameroon</Tab>
                                 <Tab>Ghana</Tab>
+                                <Tab>Nigeria</Tab>
                                 <Tab>Senegal</Tab>
                                 <Tab>Sierre Leone</Tab>
+                                
+                                
                             </TabList>
                             <br/>
-                            <TabPanel>
-                                <div className="nigeria message is-success">
-                                    <div className="message-header">
-                                        'The Giant of Africa'
-                                    </div>    
-                                    <div className="message-body has-text-left">
-                                        <div className="columns">
-                                            <div className="column is-one-third">
-                                                <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="The National Flag of Nigeria" />
-                                                    {openImage && val === 4 && (
-                                                        <Lightbox
-                                                            imageTitle={`The National Flag of Nigeria`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"}
-                                                            onCloseRequest={() => setOpen(false)}
-                                                            
-                                                        />
-                                                    )}
-                                                </figure>
-                                                <figcaption>
-                                                   The National Flag of Nigeria
-                                                </figcaption>
-                                                
-                                            </div>
-                                            <div className="column">
-                                                
-                                                <span className="box info-link">
-                                                    <ul> 
-                                                        <li><b>Federal Republic of Nigeria</b></li>
-                                                        <li> The Nation of Nigeria was named after the Niger River that flows through the country.
-                                                            Nigeria comprises 36 states and it is the most populous country in Africa, 
-                                                            with over 200 million people. With Chad to the Northeast, Cameroon to the east and Benin to
-                                                            the west, the federal republic spans an area almost 1 million square kilometres. The 
-                                                            captial city, Abuja is located in the center of the country while on the atlantic coastline sits
-                                                            the former capital and largest city and second largest in africa, Lagos. before colonialism,
-                                                            Nigeria consisted of many states and kingdoms with The Nok civilization is accredited with 
-                                                            acheiving the first iternal unification of the country; this in the 15th century.
-                                                            Officially Nigerians speak English however there are a great number of other languages which
-                                                            are native to the people. There are also many ethnic groups that Nigerians are apart of;
-                                                            Hausa, Yoruba and the Igbo ethnic groups are the largest in the subcontinent state, totaling
-                                                            more that half of the total population. The African Nation is home to a large group of muslims; 
-                                                            living in the North and christians residing in the South.
-                                                        <br /><br />
-                                                            Nigeria gained its independence from Britain on October 1, 1960 with Abubakar Tafawa Balewa as 
-                                                            its prime minister and the British Monarch, Elizabeth the 2nd as the Head of State. Subsequently
-                                                            three years later the Country became a Federal republic with Nnamdi Azikiwe as its First 
-                                                            President. During the later stages of the 1960's several coups and wars ensued due to perceived 
-                                                            corruption and a lack of trust of Government Officials. Following these conflicts however, Nigeria
-                                                            had major oil discoveries during the 1970's and as a result joined the Oganisation of 
-                                                            Petroleum Exporting Countries (OPEC). As expected, Oil brought massive revenues, however 
-                                                            it is beleived that the military government did not make galant attempts to imporve
-                                                            the standard of living for the general population. Thereafter over the years, other
-                                                            military fractions stages attempts to gain control over the country; some being successful while others
-                                                            proved futile. A second constitution was drafted in 1977 and this saw a return to civilian leadership
-                                                            and elctorial events fitting of a democracy. 
-                                                        <br /><br />
-                                                            Civilian rule was reverted in 1983, when key officers of the Nigerian military staged
-                                                            another coup; this on New Years Eve. This resulting in the creation of a third republic
-                                                            and promises were made to address the countries state of affairs. These intentions were
-                                                            not fulfilled and other military fractions took control of the State. It took the creation
-                                                            of a fourth republic on May 29, 1999 for nigeria to finally start fulfilling
-                                                            it potential as a great nation. Currently, Nigeria's Head of State and president is Muhammadu
-                                                            Buhari. He was one of the military leader who took control during the 80's however, 
-                                                            returned to politics at the Start of the 21st Century, as a democrat and beleiver in the 
-                                                            electorial process. Buhari has professed changes to the way of governing, has stated that he harbors
-                                                            regrets for the past and Nigeria is seeing signs of progress and prosperity. Nigeria has a large 
-                                                            agriculture sector, with vast numbers of people employed to it. Beans, sesame, cashew nuts, 
-                                                            casava, cocoa beans, groudnuts, gum arabic, kolanut, maize (corn), melon, millet, palm 
-                                                            kernels, palm oil, plantains, rice, rubber, sorghum, soybeans and yams are all cultivated in Nigeria.
-                                                            There are many sites and activities to undertake in nigeria, with lagos booasting strong and 
-                                                            vibrant nightlife culture.
-                                                        </li>
-                                                        
-                                                    </ul>   
-                                                        
-                                                </span>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>   
-                            </TabPanel>
 
                             <TabPanel>
                                 <div className="cameroon message is-content">
@@ -388,26 +309,26 @@ const WestAfrica = props => {
                                 </div>   
                             </TabPanel>
                             <TabPanel>
-                                <div className="sierra-leone message is-content">
+                                <div className="nigeria message is-success">
                                     <div className="message-header">
-                                        'Leone Stars'
+                                        'The Giant of Africa'
                                     </div>    
                                     <div className="message-body has-text-left">
                                         <div className="columns">
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
-                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"} alt="The National Flag of Sierra Leone" />
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="The National Flag of Nigeria" />
                                                     {openImage && val === 4 && (
                                                         <Lightbox
-                                                            imageTitle={`The National Flag of Sierra Leone`}
-                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"}
+                                                            imageTitle={`The National Flag of Nigeria`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
                                                     )}
                                                 </figure>
                                                 <figcaption>
-                                                    The National Flag of Sierra Leone
+                                                   The National Flag of Nigeria
                                                 </figcaption>
                                                 
                                             </div>
@@ -415,40 +336,49 @@ const WestAfrica = props => {
                                                 
                                                 <span className="box info-link">
                                                     <ul> 
-                                                        <li><b>Sierra Leone</b></li>
-                                                        <li> 
-                                                            The first European to sight and map freetown harbour was the Portugese Explorer Pedro de Sintra whom 
-                                                            is accredited with naming the country. The original Portugese name, Serra Lyoa (“Lion Mountains”) 
-                                                            is attributed to the range of hillsat surrounds the freetown harbour. This harbour is one of the world's
-                                                            largest natural harbours and is located in the atlantic occean. The country is boreder by Guinea to the north and by 
-                                                            liberia to the southeast. The terrain in the country is divised ranging from savana to rainforests and the 
-                                                            country spans an area of over 70,000 square kilometers. Freetown is the largest city and is also the larges
-                                                            capital of the west african nation. The country is divided into five administrative regions and further
-                                                            subdivided into sixteen districts. Sierre Leone was granted Independence from britain in April 27, 1961
-                                                            and became a Constitutional Republic on April 19, 1971.
-
-                                                            <br /><br />
-                                                            Sierre Leone has experinced an Internal conflict which began in the late 1980's and onwards spiral into
-                                                            into a brutal civil war which started in 1991 and lasted until 2002. After the was culminated, the leadership 
-                                                            of the country has undertaken the strenuous task of rebuilding the country’s physical and social infrastructure while fostering reconciliation.
-                                                            Generally Sierre leoneans practice subsistence farming, however the country has is also
-                                                            mining centre. A depiction of this is seen in many african thillmovie thrillers as the 
-                                                            land is blessed with natural resources such as gold, diamonds,bauxite and rutile (titanium dioxide).
-
-                                                            <br /><br />
-                                                            The Country can be divided into four distinct regions; a coastal swamp, the sierre leone 
-                                                            Peninsula, the interior plains and the interior mountainous region.
-                                                            Sierre Leone has nine major rivers, tidal streams and coastal creeks. The principal rivers 
-                                                            are the Great Scarcies, Little Scarcies, Rokel, Gbanbaia, Jong, Sewa, Waanje, Moa, And
-                                                            Mano. Sierre leone has a tropical climate and the country experiences a alternation 
-                                                            of rainy and dry seasons. The distribution of plants and animals has been influenced by factors such 
-                                                            as the climate, soil types and more importantly human behaviour. The Country is made up of
-                                                            18 ethnic groups all of which have similar characteristics. Similar features such as 
-                                                            secret soceities, chieftaincy, patrilineal descent and farming methods are traits of the 
-                                                            ethnic groups of sierre leone. Krio, a creole language formed from english is the native 
-                                                            tongue of the country; however english is the official language. Majority of Sierre leoneans
-                                                            are muslims while a quarter of the country practice christianity. Other religions include
-                                                            Baha'i, Hinduism and Judaism.  
+                                                        <li><b>Federal Republic of Nigeria</b></li>
+                                                        <li> The Nation of Nigeria was named after the Niger River that flows through the country.
+                                                            Nigeria comprises 36 states and it is the most populous country in Africa, 
+                                                            with over 200 million people. With Chad to the Northeast, Cameroon to the east and Benin to
+                                                            the west, the federal republic spans an area almost 1 million square kilometres. The 
+                                                            captial city, Abuja is located in the center of the country while on the atlantic coastline sits
+                                                            the former capital and largest city and second largest in africa, Lagos. before colonialism,
+                                                            Nigeria consisted of many states and kingdoms with The Nok civilization is accredited with 
+                                                            acheiving the first iternal unification of the country; this in the 15th century.
+                                                            Officially Nigerians speak English however there are a great number of other languages which
+                                                            are native to the people. There are also many ethnic groups that Nigerians are apart of;
+                                                            Hausa, Yoruba and the Igbo ethnic groups are the largest in the subcontinent state, totaling
+                                                            more that half of the total population. The African Nation is home to a large group of muslims; 
+                                                            living in the North and christians residing in the South.
+                                                        <br /><br />
+                                                            Nigeria gained its independence from Britain on October 1, 1960 with Abubakar Tafawa Balewa as 
+                                                            its prime minister and the British Monarch, Elizabeth the 2nd as the Head of State. Subsequently
+                                                            three years later the Country became a Federal republic with Nnamdi Azikiwe as its First 
+                                                            President. During the later stages of the 1960's several coups and wars ensued due to perceived 
+                                                            corruption and a lack of trust of Government Officials. Following these conflicts however, Nigeria
+                                                            had major oil discoveries during the 1970's and as a result joined the Oganisation of 
+                                                            Petroleum Exporting Countries (OPEC). As expected, Oil brought massive revenues, however 
+                                                            it is beleived that the military government did not make galant attempts to imporve
+                                                            the standard of living for the general population. Thereafter over the years, other
+                                                            military fractions stages attempts to gain control over the country; some being successful while others
+                                                            proved futile. A second constitution was drafted in 1977 and this saw a return to civilian leadership
+                                                            and elctorial events fitting of a democracy. 
+                                                        <br /><br />
+                                                            Civilian rule was reverted in 1983, when key officers of the Nigerian military staged
+                                                            another coup; this on New Years Eve. This resulting in the creation of a third republic
+                                                            and promises were made to address the countries state of affairs. These intentions were
+                                                            not fulfilled and other military fractions took control of the State. It took the creation
+                                                            of a fourth republic on May 29, 1999 for nigeria to finally start fulfilling
+                                                            it potential as a great nation. Currently, Nigeria's Head of State and president is Muhammadu
+                                                            Buhari. He was one of the military leader who took control during the 80's however, 
+                                                            returned to politics at the Start of the 21st Century, as a democrat and beleiver in the 
+                                                            electorial process. Buhari has professed changes to the way of governing, has stated that he harbors
+                                                            regrets for the past and Nigeria is seeing signs of progress and prosperity. Nigeria has a large 
+                                                            agriculture sector, with vast numbers of people employed to it. Beans, sesame, cashew nuts, 
+                                                            casava, cocoa beans, groudnuts, gum arabic, kolanut, maize (corn), melon, millet, palm 
+                                                            kernels, palm oil, plantains, rice, rubber, sorghum, soybeans and yams are all cultivated in Nigeria.
+                                                            There are many sites and activities to undertake in nigeria, with lagos booasting strong and 
+                                                            vibrant nightlife culture.
                                                         </li>
                                                         
                                                     </ul>   
@@ -532,6 +462,80 @@ const WestAfrica = props => {
                                     </div>
                                 </div>   
                             </TabPanel>
+                            <TabPanel>
+                                <div className="sierra-leone message is-success">
+                                    <div className="message-header">
+                                        'Leone Stars'
+                                    </div>    
+                                    <div className="message-body has-text-left">
+                                        <div className="columns">
+                                            <div className="column is-one-third">
+                                                <figure className="image is-256x256">
+                                                    <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"} alt="The National Flag of Sierra Leone" />
+                                                    {openImage && val === 4 && (
+                                                        <Lightbox
+                                                            imageTitle={`The National Flag of Sierra Leone`}
+                                                            mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"}
+                                                            onCloseRequest={() => setOpen(false)}
+                                                            
+                                                        />
+                                                    )}
+                                                </figure>
+                                                <figcaption>
+                                                    The National Flag of Sierra Leone
+                                                </figcaption>
+                                                
+                                            </div>
+                                            <div className="column">
+                                                
+                                                <span className="box info-link">
+                                                    <ul> 
+                                                        <li><b>Sierra Leone</b></li>
+                                                        <li> 
+                                                            The first European to sight and map freetown harbour was the Portugese Explorer Pedro de Sintra whom 
+                                                            is accredited with naming the country. The original Portugese name, Serra Lyoa (“Lion Mountains”) 
+                                                            is attributed to the range of hillsat surrounds the freetown harbour. This harbour is one of the world's
+                                                            largest natural harbours and is located in the atlantic occean. The country is boreder by Guinea to the north and by 
+                                                            liberia to the southeast. The terrain in the country is divised ranging from savana to rainforests and the 
+                                                            country spans an area of over 70,000 square kilometers. Freetown is the largest city and is also the larges
+                                                            capital of the west african nation. The country is divided into five administrative regions and further
+                                                            subdivided into sixteen districts. Sierre Leone was granted Independence from britain in April 27, 1961
+                                                            and became a Constitutional Republic on April 19, 1971.
+
+                                                            <br /><br />
+                                                            Sierre Leone has experinced an Internal conflict which began in the late 1980's and onwards spiral into
+                                                            into a brutal civil war which started in 1991 and lasted until 2002. After the was culminated, the leadership 
+                                                            of the country has undertaken the strenuous task of rebuilding the country’s physical and social infrastructure while fostering reconciliation.
+                                                            Generally Sierre leoneans practice subsistence farming, however the country has is also
+                                                            mining centre. A depiction of this is seen in many african thillmovie thrillers as the 
+                                                            land is blessed with natural resources such as gold, diamonds,bauxite and rutile (titanium dioxide).
+
+                                                            <br /><br />
+                                                            The Country can be divided into four distinct regions; a coastal swamp, the sierre leone 
+                                                            Peninsula, the interior plains and the interior mountainous region.
+                                                            Sierre Leone has nine major rivers, tidal streams and coastal creeks. The principal rivers 
+                                                            are the Great Scarcies, Little Scarcies, Rokel, Gbanbaia, Jong, Sewa, Waanje, Moa, And
+                                                            Mano. Sierre leone has a tropical climate and the country experiences a alternation 
+                                                            of rainy and dry seasons. The distribution of plants and animals has been influenced by factors such 
+                                                            as the climate, soil types and more importantly human behaviour. The Country is made up of
+                                                            18 ethnic groups all of which have similar characteristics. Similar features such as 
+                                                            secret soceities, chieftaincy, patrilineal descent and farming methods are traits of the 
+                                                            ethnic groups of sierre leone. Krio, a creole language formed from english is the native 
+                                                            tongue of the country; however english is the official language. Majority of Sierre leoneans
+                                                            are muslims while a quarter of the country practice christianity. Other religions include
+                                                            Baha'i, Hinduism and Judaism.  
+                                                        </li>
+                                                        
+                                                    </ul>   
+                                                        
+                                                </span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </TabPanel>
+
                         </Tabs>
                     </article>
 
