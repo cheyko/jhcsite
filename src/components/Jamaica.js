@@ -88,7 +88,7 @@ const Jamaica = props => {
                                                 />
                                             )}
                                         </figure>
-                                        <figcaption>
+                                        <figcaption >
                                             The Jamaican National Flag
                                         </figcaption>
                                         

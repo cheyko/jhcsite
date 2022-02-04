@@ -476,8 +476,12 @@
   padding-inline: 1rem ;
 }
 
-.images .container{
-  cursor: pointer;
+.governance .image img, .officials .image img{
+  cursor: pointer !important;
+}
+
+figcaption{
+  text-align: center !important;
 }
 
 @media screen and (max-width:374px){
@@ -509,7 +513,7 @@
  
 }
 
-@media screen and (max-width: 770px) and (min-width: 426px){
+@media screen and (max-width: 768px) and (min-width: 426px){
   .banner{
     text-align: center;
   }
@@ -561,12 +565,15 @@
     width: 100%;
   }
   .governance img{
-    height: 40rem !important;
+    height: 15rem !important;
   }
   .governance{
     height: auto !important;
   }
 
+  .home-page .officials, .home-page .commissioner-card{
+    padding-inline: 6rem !important;
+  }
 }
 
 @media screen and (min-width: 1025px){
@@ -604,7 +611,7 @@
   
 }
 
-@media screen and (max-width: 1024px) and (min-width: 770px){
+@media screen and (max-width: 1024px) and (min-width: 769px){
   
   .banner-column{
     margin-block: 10%;

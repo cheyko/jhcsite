@@ -128,7 +128,7 @@ const HomePage = props => {
         
         <hr />
      
-        <div className="box hero-body">
+        <div className="officials box hero-body">
           <div className="columns">
             <div className="column">
               <figure className="hero-body image is-3x1">
