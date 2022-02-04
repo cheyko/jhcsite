@@ -110,7 +110,7 @@ const jamaicaToday = [
                             {jamaicaToday.map((link,index) => (
                                 <div key={index} className="slick-slide ">
                                     <a href={link.path} className="card">
-                                      {link.caption}
+                                      <h3>{link.caption}</h3>
                                     </a>
                                    
                                 </div>

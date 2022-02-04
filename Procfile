@@ -1,2 +1,2 @@
-web: bin/boot
 api: gunicorn api:app
+web: bin/boot
