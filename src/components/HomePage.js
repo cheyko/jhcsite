@@ -93,7 +93,7 @@ const HomePage = props => {
 
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
-  const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
+  const postings = [];//props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
   const [openImage, setOpen] = useState(false);
   const [val, setVal] = useState(0);
 
