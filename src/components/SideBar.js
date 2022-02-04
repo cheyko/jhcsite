@@ -20,16 +20,12 @@ const SideBar  = props => {
         breakpoint: 480,
         settings: {
             slidesToShow: 1,
-            dots: true,
-            arrows: false,
         }
       },
       {
         breakpoint: 600,
         settings: {
             slidesToShow: 1,
-            dots: true,
-            arrows: false
         }
       },
       {

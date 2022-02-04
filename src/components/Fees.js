@@ -3,6 +3,15 @@ import withContext from "../withContext";
 
 const Fees = props => {
 
+    const [firstload, setLoad] = useState(true);
+    
+    useEffect( () => {
+        if (firstload){ 
+            window.scrollTo(0,0);
+            setLoad(false);
+        }
+    });
+     
     return(
         <div className="hero">
             <div className="hero-body">
