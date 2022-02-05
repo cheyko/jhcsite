@@ -5,7 +5,7 @@
     },
     "proxies": {
       "/api/": {
-        "origin": "https://jhcsite.herokuapp.com"
+        "origin": "https://jhcsite.herokuapp.com/api"
       }
     },
     "host":"jhcsite.herokuapp.com"
