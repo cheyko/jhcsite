@@ -322,5 +322,5 @@ def sendMessage():
 @app.errorhandler(404)
 def handle_404(e):
     if request.method == 'GET':
-        return redirect(f'https://jhcsite.herokuapp.com/{(request.path)}')
+        return redirect(f'https://jhcsite.herokuapp.com{(request.path)}')
     return e
