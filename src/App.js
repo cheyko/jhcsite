@@ -77,7 +77,7 @@ export default class App extends Component {
         'Authorization' : jwt
       }
     });*/
-    const time = await axios.get('/api/time',{
+    const time = await axios.get('time',{
       headers: {
         'Authorization' : jwt
       }
@@ -100,7 +100,7 @@ export default class App extends Component {
     });*/
 
     let user = localStorage.getItem("user");
-    const postings = await axios.get("/api/postings",{
+    const postings = await axios.get("postings",{
       headers: {
         'Authorization' : jwt
       }
