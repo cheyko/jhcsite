@@ -1,2 +1,2 @@
-web: gunicorn -b :5000 api:app
+web: gunicorn api:app
 worker: bin/boot
