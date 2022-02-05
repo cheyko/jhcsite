@@ -2,7 +2,7 @@
     "root": "build/",
     "proxies": {
       "/api/": {
-        "origin": "/"
+        "origin": "https://jhcsite.herokuapp.com"
       }
     },
     "host":"jhcsite.herokuapp.com"
