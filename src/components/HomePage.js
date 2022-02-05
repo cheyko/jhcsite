@@ -222,7 +222,7 @@ const HomePage = props => {
         <hr />
      
         <div className="hero site-features">
-          <div className="container">
+          <div className="container hero-contain">
             <div className="box">
               <Link to="/fees">
                 <div className="button is-primary subtitle has-text-weight-bold"><h1 className="subtitle"> VIEW FEES &nbsp;<i className="fa fa-mouse-pointer"></i></h1></div>

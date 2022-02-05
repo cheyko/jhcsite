@@ -484,6 +484,10 @@ figcaption{
   text-align: center !important;
 }
 
+.hero-contain{
+  padding-inline: 1rem !important;
+}
+
 @media screen and (max-width:374px){
   .governance img{
     height: 13rem !important;
