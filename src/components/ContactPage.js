@@ -43,8 +43,10 @@ class ContactPage extends Component {
   handleChange = (e) => {
     if(e.target.name === "nationality" && e.target.value === "Other"){
       this.setState({otherText: true,[e.target.name]: e.target.value, error: ""});
-    }else{
+    }else if (e.target.name === "nationality" && e.target.value !== "Other"){
       this.setState({[e.target.name]: e.target.value,otherText: false, error: ""});
+    }else{
+      this.setState({[e.target.name]: e.target.value, error: ""});
     }
   }
 

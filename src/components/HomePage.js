@@ -55,7 +55,7 @@ const HomePage = props => {
   let images;
   let titles;
 
-  var total = 1;//props.context.postings.length;
+  var total = props.context.postings.length;
   if (total > 3){
     titles = [props.context.postings[total-1].title,props.context.postings[total-2].title,props.context.postings[total-3].title];
     images = [`${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
@@ -93,7 +93,7 @@ const HomePage = props => {
 
 
   //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
-  const postings = [];//props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
+  const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
   const [openImage, setOpen] = useState(false);
   const [val, setVal] = useState(0);
 
