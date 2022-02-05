@@ -72,11 +72,11 @@ export default class App extends Component {
   
   async componentDidMount() {
     const jwt = sign(data, secret, algorithm);
-    const checkApi = await axios.get("/api/",{
+    /*const checkApi = await axios.get("/api/",{
       headers: {
         'Authorization' : jwt
       }
-    });
+    });*/
     const time = await axios.get('/api/time',{
       headers: {
         'Authorization' : jwt
