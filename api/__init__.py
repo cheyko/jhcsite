@@ -322,5 +322,5 @@ def sendMessage():
 @app.errorhandler(404)
 def handle_404(e):
     if request.method == 'GET':
-        return redirect('/{quote_plus(request.path)}')
+        return redirect(f'/{quote_plus(request.path)}')
     return e
