@@ -104,7 +104,7 @@ const jamaicaToday = [
                       <div className="thumbnail thumbnail-slider-wrap"> 
                         {<Slider {...settings}>
                             {jamaicaToday.map((link,index) => (
-                                <div key={index} className="slick-slide ">
+                                <div key={index} className="slick-slide has-text-centered">
                                     <a href={link.path} className="card">
                                       <h3>{link.caption}</h3>
                                     </a>
