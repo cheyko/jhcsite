@@ -237,9 +237,9 @@ def login():
         email = request.json.get('email', None)
         password = request.json.get('password', None)
         if not email:
-            return jsonify({"msg": "Missing username parameter from request."}), 400
+            return jsonify({"msg": "Missing username parameter in request"}), 400
         if not password:
-            return jsonify({"msg": "Missing password parameter from request."}), 400
+            return jsonify({"msg": "Missing password parameter in request"}), 400
         
         user = User.query.filter_by(email=email).first()
         if user is not None and check_password_hash(user.password,password):           
@@ -319,8 +319,13 @@ def sendMessage():
         sendEmail(sendTo ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
 
-@app.errorhandler(404)
+"""@app.errorhandler(404)
 def handle_404(e):
     if request.method == 'GET':
-        return redirect(f'https://jhcsite.herokuapp.com{(request.path)}')
+        return redirect(f'/?request_path={quote_plus(request.path)}')
     return e
+"""
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
