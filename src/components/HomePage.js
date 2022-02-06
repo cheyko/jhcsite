@@ -302,7 +302,7 @@ const HomePage = props => {
 
         <hr />
       
-        <div className="columns hero-contain">
+        <div className="columns hero-body">
           <div className="column is-three-quarters">
             <Alerts />
 
@@ -315,7 +315,7 @@ const HomePage = props => {
           </div>
         </div>
         
-        <div className="map-of-jamaica hero-contain">
+        <div className="map-of-jamaica hero-body">
           <article>
             <div className="message" style={{backgroundColor:"rgb(0,0,0,0)"}}>
               <div className="message-header">

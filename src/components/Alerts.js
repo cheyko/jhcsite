@@ -7,18 +7,18 @@ const Alerts  = props => {
         <>
             <div className="hero">
                 <article className="is-normal is-size-5">
-                    <div className="box grnBkgn">
+                    <div className="box grnBkgn hero-body">
                       <h3> Alerts and Messages </h3>
                     </div>
                       <div>
                         <dl>
-                          <dt className="card yellowbkgn"> <h3> LEAVING NIGERIA </h3> </dt>
+                          <dt className="card yellowbkgn hero-body"> <h3> LEAVING NIGERIA </h3> </dt>
                           <br></br>
                           <dd>
                             <ul>
                               <li>
                                 <div>
-                                  <article className="message is-success">
+                                  <article className="message is-success hero-body">
                                     <div className="message-header">
                                       <p> COVID-19 Testing </p>
                                       <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
@@ -34,7 +34,7 @@ const Alerts  = props => {
                               <br></br>
                               <li>
                                 <div>
-                                  <article className="message is-success">
+                                  <article className="message is-success hero-body">
                                     <div className="message-header">
                                       <p> COVID-19 Vaccination </p>
                                       <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
@@ -58,7 +58,7 @@ const Alerts  = props => {
                           <ul>
                             <li> 
                               <div>
-                                <article className="message is-danger">
+                                <article className="message is-danger hero-body">
                                   <div className="message-header">
                                     <p>What is COVID-19 ? </p>
                                     <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
@@ -78,7 +78,7 @@ const Alerts  = props => {
                             <br></br>
                             <li> 
                               <div>
-                                <article className="message is-warning">
+                                <article className="message is-warning hero-body">
                                   <div className="message-header">
                                     <p> COVID-19 Information - Jamaica </p>
                                     <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
@@ -93,7 +93,7 @@ const Alerts  = props => {
                             <br></br>
                             <li> 
                               <div>
-                                <article className="message is-warning">
+                                <article className="message is-warning hero-body">
                                   <div className="message-header">
                                     <p>COVID-19 Information - West Africa </p>
                                     <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
