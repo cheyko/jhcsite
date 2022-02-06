@@ -136,6 +136,12 @@ const Covid19 = props => {
                             </div>
                         </div>
                     </article>
+                    <div className="hero-body">
+                      <div className="card">
+                        <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                        <span> World Health Organisation : https://www.who.int/</span>
+                      </div>
+                    </div>
                 </div>
 
                 <div className="column is-one-quarter">

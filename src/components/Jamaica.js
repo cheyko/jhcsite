@@ -811,7 +811,17 @@ const Jamaica = props => {
                             </div>
                         </div>
                     </TabPanel>
-                        </Tabs>
+                    </Tabs>
+                    <div className="hero-body">
+                        <div className="card">
+                            <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                            <span> Britannica Encyclopedia : https://www.britannica.com/</span>
+                            <br />
+                            <span> Jamaica Information Service : https://jis.gov.jm/</span>
+                            <br />
+                            <span> Wikipedia : https://www.wikipedia.org/</span>
+                        </div>
+                    </div>
                     </article>
 
                     <br></br>

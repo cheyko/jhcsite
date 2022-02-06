@@ -537,6 +537,16 @@ const WestAfrica = props => {
                             </TabPanel>
 
                         </Tabs>
+                        <div className="hero-body">
+                            <div className="card">
+                                <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                                <span> Britannica Encyclopedia : https://www.britannica.com/</span>
+                                <br />
+                                <span> Economic Community of West African States : https://www.ecowas.int/</span>
+                                <br />
+                                <span> Wikipedia : https://www.wikipedia.org/</span>
+                            </div>
+                        </div>
                     </article>
 
                     <br></br>

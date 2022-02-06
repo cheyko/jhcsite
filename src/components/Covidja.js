@@ -140,6 +140,12 @@ const Covidja = props => {
                             </div>
                         </div>
                     </article>
+                    <div className="hero-body">
+                      <div className="card">
+                        <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                        <span> Ministry of Health and Wellness : https://www.moh.gov.jm/</span>
+                      </div>
+                    </div>
                 </div>
 
                 <div className="column is-one-quarter">

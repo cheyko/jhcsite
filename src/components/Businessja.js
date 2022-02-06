@@ -61,6 +61,12 @@ const Businessja = props => {
                             </div>
                         </div>
                     </article>
+                    <div className="hero-body">
+                      <div className="card">
+                        <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                        <span> Jamaica Promotions Corporation (JAMPRO) : https://dobusinessjamaica.com/</span>
+                      </div>
+                    </div>
                 </div>
 
                 <div className="column is-one-quarter">

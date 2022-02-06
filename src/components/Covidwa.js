@@ -217,6 +217,12 @@ const Covidwa = props => {
                             </div>
                         </div>
                     </article>
+                    <div className="hero-body">
+                      <div className="card">
+                        <h1 style={{textDecoration:"underline"}}> Sources </h1>
+                        <span> Economic Community of West African States Covid Page : https://www.ecowas.int/covid-19/</span>
+                      </div>
+                    </div>
                 </div>
 
                 <div className="column is-one-quarter">
