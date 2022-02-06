@@ -12,8 +12,7 @@ const Alerts  = props => {
                     </div>
                       <div>
                         <dl>
-                          <dt className="card yellowbkgn hero-body"> <h3> LEAVING NIGERIA </h3> </dt>
-                          <br></br>
+                          <dt className="card yellowbkgn"> <h3> LEAVING NIGERIA </h3> </dt>
                           <dd>
                             <ul>
                               <li>
@@ -31,7 +30,7 @@ const Alerts  = props => {
                                   </article>
                                 </div>
                               </li>
-                              <br></br>
+                      
                               <li>
                                 <div>
                                   <article className="message is-success hero-body">
@@ -53,7 +52,7 @@ const Alerts  = props => {
                         <dl>
                           <br></br>
                           <dt className="card yellowbkgn"> <h3> COVID-19 INFORMATION </h3> </dt>
-                          <br></br>
+                           
                         <dd>
                           <ul>
                             <li> 
@@ -75,7 +74,7 @@ const Alerts  = props => {
                                 </article>
                               </div>
                             </li>
-                            <br></br>
+                            
                             <li> 
                               <div>
                                 <article className="message is-warning hero-body">
@@ -90,7 +89,7 @@ const Alerts  = props => {
                                 </article>
                               </div>
                             </li>
-                            <br></br>
+                          
                             <li> 
                               <div>
                                 <article className="message is-warning hero-body">

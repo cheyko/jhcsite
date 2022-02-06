@@ -33,6 +33,7 @@ const HomePage = props => {
       }
     ]
   };
+
   let images;
   let titles;
 
@@ -61,6 +62,7 @@ const HomePage = props => {
           id : 2, info : titles[2], path : images[2] 
       },
   ];
+  
   /**Variables containing information used in on HorizontalCard function component. */
   const CommissionerName = "H. E. Esmond Reid";
   const CommissionerTitle = "High Commissioner For The Jamaican High Commission in Nigeria.";
@@ -103,8 +105,8 @@ const HomePage = props => {
         <br></br>
 
         <div className="commissioner-card">
-            <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
-          </div> 
+          <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
+        </div> 
         {/*
           <div className="hero remarks">
             <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />

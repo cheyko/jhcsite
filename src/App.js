@@ -83,21 +83,16 @@ export default class App extends Component {
     });
     console.log(time); //used to see if request are being sent and responses retrieved.
 
-    /*const response = await axios.get('https://jamaica-gleaner.com/feed/rss.xml', {
-      //mode: '*cors',
-      //withCredentials: true,
-      headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length',
-      'Access-Control-Allow-Credentials':true
-      //'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    }).then(data => {
-        console.log(data);
-    });*/
-
+    /*
+      //request to third party server to retrieve some data.
+      
+      const response = await fetch('https://jamaica-gleaner.com/feed/rss.xml', {mode: 'no-cors'}).then(
+        result => { console.log(result);}
+      );
+      const news = await response.json();
+      console.log(news);
+    */
+    
     let user = localStorage.getItem("user");
 
     /**API request sent to retreive all postings from server time.*/

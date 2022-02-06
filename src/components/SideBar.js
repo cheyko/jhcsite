@@ -68,20 +68,19 @@ const jamaicaToday = [
             </div>
             <div className="message-body">
                   <dl style={{textAlign:"left"}}>
-                        <dd>The Jamaican High Commission</dd>
-                        <dd>13 Hassan Musa Katsina Street</dd>
-                        <dd>Asokoro, Abuja</dd>
-                        <dd>Federal Republic of Nigeria</dd>
-                        <br></br>
-                        <dd>Telephone 1: 0813 606 3356 </dd>
-                        <dd>Telephone 2: 0816 737 4252 </dd>
-                        <br></br>
-                        <dd>Email Address: <a href="mailto:consular-jhcnig@mfaft.gov.jm">consular-jhcnig@mfaft.gov.jm</a></dd> 
-                        <br></br>
-                        <dd>Monday - Thursday , 9:00 am - 5:00 pm</dd>
-                        <br></br>
-                        <dd>Fridays , 9:00 am - 4:00 pm</dd>
-                        
+                      <dd>The Jamaican High Commission</dd>
+                      <dd>13 Hassan Musa Katsina Street</dd>
+                      <dd>Asokoro, Abuja</dd>
+                      <dd>Federal Republic of Nigeria</dd>
+                      <br></br>
+                      <dd>Telephone 1: 0813 606 3356 </dd>
+                      <dd>Telephone 2: 0816 737 4252 </dd>
+                      <br></br>
+                      <dd>Email Address: <a href="mailto:consular-jhcnig@mfaft.gov.jm">consular-jhcnig@mfaft.gov.jm</a></dd> 
+                      <br></br>
+                      <dd>Monday - Thursday , 9:00 am - 5:00 pm</dd>
+                      <br></br>
+                      <dd>Fridays , 9:00 am - 4:00 pm</dd>    
                   </dl>
                   <br></br>
                   <dl style={{textAlign:"left"}}>
@@ -107,7 +106,6 @@ const jamaicaToday = [
                                 <div key={index} className="slick-slide has-text-centered">
                                     <a href={link.path} className="card">
                                       <h3>{link.caption}</h3>
-                                      
                                     </a>
                                     <br />
                                 </div>
@@ -169,9 +167,8 @@ const jamaicaToday = [
                 </a>
             </div>
           </article>
-                          </div>
-                          
-                          </>
+        </div>  
+      </>
      
 
     )
