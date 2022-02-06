@@ -28,6 +28,7 @@ const HomePage = props => {
         breakpoint: 700,
         settings: {
             arrows: false,
+            dots: true
         }
       }
     ]
@@ -213,7 +214,7 @@ const HomePage = props => {
               </Link>
             </div>
             <div className="columns is-multiline is-mobile">
-              <div className="column a-feature">
+              <div className="column a-feature hero-body">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image" style={{backgroundColor:"skyblue"}}>
                     <figure className="image is-4x3">
@@ -233,7 +234,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>      
-              <div className="column a-feature">
+              <div className="column a-feature hero-body">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
@@ -253,8 +254,8 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column a-feature">
-                <div className="card yellowbkgn" style={{height:"100%"}}>  
+              <div className="column a-feature hero-body">
+                <div className="card yellowbkgn hero-contain" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
                       <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/jamaica_waterfront.jpg"} alt="Placeholder" />
@@ -274,7 +275,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column a-feature">
+              <div className="column a-feature hero-body">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">

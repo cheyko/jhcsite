@@ -2,6 +2,11 @@
   text-align: center;
   background-color:white;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  overflow-x: hidden !important;
+}
+
+.is-fullwidth{
+  width: 100% !important;
 }
 
 .banner{
@@ -114,10 +119,6 @@
   
 }
 
-.standardLook{
-  padding: 0 !important;
-  width: 15rem !important;
-}
 .is-content .message-body{
   background-color: rgb(255,255,0) !important;
   color: black;
@@ -213,13 +214,13 @@
 */
 
 .slick-prev{
-  left: 5px !important;
+  left: -1.5rem !important;
   z-index: 3 !important;
 }
 
 .slick-next{
   z-index: 3  !important;
-  right: 25px !important;
+  right: 0.25rem !important;
 }
 
 .slick-prev:before, .slick-next:before {
@@ -311,6 +312,10 @@
 
  .thumbnail .slick-next, .thumbnail .slick-prev {
     margin-top: 3rem !important;
+  }
+
+  .attractions .thumbnail .slick-next, .attractions .thumbnail .slick-prev{
+    margin-top: 6rem !important;
   }
 
   .slide-label {
@@ -489,6 +494,10 @@ figcaption{
   padding-inline: 1rem !important;
 }
 
+.dropdown-menu {
+  width: 100% !important;
+}
+
 @media screen and (max-width:374px){
   .governance img{
     height: 13rem !important;
@@ -556,7 +565,8 @@ figcaption{
     text-indent: 3rem !important;
   }
   .a-feature{
-    margin-bottom: 3rem !important;
+    margin: 1rem !important;
+    padding: 1rem !important;
   }
 
   .navbar-item{

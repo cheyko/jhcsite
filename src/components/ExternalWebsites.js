@@ -80,17 +80,19 @@ const ExternalWebsites = props => {
 
     return (
         <>
-            <article style={{width:"initial"}} className="message is-link is-size-5">
+            <article style={{width:"initial"}} className="attractions message is-link is-size-5">
                 <div className="message-header">
                     <p> Some Notable Attractions in Jamaica </p>
                 </div>
                 <div className="message-body info-link has-text-left">
                     <div className="slider-wrapper governance">
-                        <div className="thumbnail thumbnail-slider-wrap"> 
+                        <div className="thumbnail thumbnail-slider-wrap "> 
                             <Slider {...settingsThumbs}>
                                 {carousel}
                             </Slider>
+                            <br/>
                         </div>
+                        <small className="has-text-centered is-fullwidth">slide left or right</small>
                     </div>
 
                 </div>

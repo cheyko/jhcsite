@@ -17,6 +17,15 @@ const ViewPosting = props => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+            arrows: false,
+            dots: true
+        }
+      }
+    ]
   };
 
   useEffect(() => {

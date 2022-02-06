@@ -231,7 +231,7 @@ export default class App extends Component {
           <Banner />
           <nav
             id="navbar"
-            className="navbar"
+            className="navbar has-text-centered"
             role="navigation"
             aria-label="main navigation"
           >
@@ -257,42 +257,42 @@ export default class App extends Component {
                 <b>menu</b>
               </label>
             </div>
-              <div className={`navbar-menu ${
+              <div className={`navbar-menu has-text-centered ${
                   this.state.showMenu ? "is-active" : ""
                 }`}>
                   <div className="dropdown navbar-item is-tab is-hoverable">
-                    <div className="dropdown-trigger navbar-link is-expanded">
-                      <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/general" className="custom-nav" style={{paddingTop:"0"}}>
+                    <div className="dropdown-trigger navbar-link is-expanded is-tab">
+                      <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/general" className="custom-nav" style={{paddingTop:"0"}}>
                         <span><i className="fa fa-laptop"></i> General <br className="wrap-text"/> Information </span> 
                       </Link>
                     </div>
-                    <div className="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
-                      <div className="dropdown-content standardLook ">                      
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/jamaica" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
+                    <div className="dropdown-menu standardLook has-text-centered" id="dropdown-menu4" role="menu">
+                      <div className="dropdown-content standardLook has-text-centered">                      
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/jamaica" className="navbar-item is-expanded is-tab">
                           About Jamaica
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/westafrica" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/westafrica" className="navbar-item is-expanded is-tab">
                           About West Africa 
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covid19" style={{textAlign:"left"}} className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covid19" className="navbar-item is-expanded is-tab">
                           General COVID-19 Information
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidja" className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidja" className="navbar-item is-expanded is-tab">
                           COVID-19 in Jamaica
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidwa" className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/covidwa" className="navbar-item is-expanded is-tab">
                           COVID-19 in West Africa
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businessja" className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businessja" className="navbar-item is-expanded is-tab">
                           Doing Business in Jamaica
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businesswa" className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}} onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} to="/businesswa" className="navbar-item is-expanded is-tab">
                           Doing Business in West Africa
                         </Link>
-                        <a onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://www.gov.jm/" className="navbar-item is-expanded is-tab">
+                        <a style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://www.gov.jm/" className="navbar-item is-expanded is-tab">
                           Government of Jamaica
                         </a>
-                        <a style={{textAlign:"left"}}   href="https://mot.gov.jm/" className="navbar-item is-expanded is-tab">
+                        <a style={{textAlign:"left"}} href="https://mot.gov.jm/" className="navbar-item is-expanded is-tab">
                           Ministry of Tourism, Jamaica
                         </a>
                       </div>
@@ -317,16 +317,16 @@ export default class App extends Component {
                     </div>
                     <div className="dropdown-menu standardLook" id="dropdown-menu4" role="menu">
                       <div className="dropdown-content standardLook is-size-6">                      
-                        <Link to="/fees" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}} to="/fees" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
                           Fees
                         </Link>
-                        <Link onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}} onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}}  to="/commissioner" className="navbar-item is-expanded is-tab">
                           The Commissioner
                         </Link>
-                        <Link to="/staff" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
+                        <Link style={{textAlign:"left"}} to="/staff" onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} className="navbar-item is-expanded is-tab">
                           The General Staff
                         </Link>
-                        <a style={{textAlign:"left"}}  onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://mfaft.gov.jm/jm/" className="navbar-item is-expanded is-tab">
+                        <a style={{textAlign:"left"}} onClick={ () => {this.setState({ showMenu: !this.state.showMenu })}} href="https://mfaft.gov.jm/jm/" className="navbar-item is-expanded is-tab">
                           Ministry of Foreign Affairs and Foreign Trade Jamaica
                         </a>
                       </div>
