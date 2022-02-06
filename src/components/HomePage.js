@@ -255,7 +255,7 @@ const HomePage = props => {
                 </div>
               </div>
               <div className="column a-feature hero-body">
-                <div className="card yellowbkgn hero-contain" style={{height:"100%"}}>  
+                <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
                       <img className="ad-card-image" src={process.env.PUBLIC_URL + "/images/jamaica_waterfront.jpg"} alt="Placeholder" />
