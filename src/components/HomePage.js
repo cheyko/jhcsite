@@ -207,14 +207,14 @@ const HomePage = props => {
         <hr />
      
         <div className="hero site-features">
-          <div className="container hero-contain">
+          <div className="container hero-body">
             <div className="box">
               <Link to="/fees">
                 <div className="button is-primary subtitle has-text-weight-bold"><h1 className="subtitle"> VIEW FEES &nbsp;<i className="fa fa-mouse-pointer"></i></h1></div>
               </Link>
             </div>
             <div className="columns is-multiline is-mobile">
-              <div className="column a-feature hero-body">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image" style={{backgroundColor:"skyblue"}}>
                     <figure className="image is-4x3">
@@ -225,7 +225,7 @@ const HomePage = props => {
                     <div className="card-header-title is-centered">Services to Jamaicans</div>
                   </div>
                   <div className="card-content">
-                    <p> The Jamaican High Commission is here to serve Jamaicans who are in need of consular services.
+                    <p> Jamaicans who are in need of consular services can visit the Jamaican High Commission.
                     </p>
                     <br/>
                     <Link to="/citizens"><button className="button is-info is-outlined">
@@ -234,7 +234,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>      
-              <div className="column a-feature hero-body">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
@@ -254,7 +254,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column a-feature hero-body">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
@@ -275,7 +275,7 @@ const HomePage = props => {
                   </div>
                 </div>
               </div>
-              <div className="column a-feature hero-body">
+              <div className="column a-feature">
                 <div className="card yellowbkgn" style={{height:"100%"}}>  
                   <div className="card-image">
                     <figure className="image is-4x3">
