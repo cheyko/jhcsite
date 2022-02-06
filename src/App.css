@@ -433,6 +433,7 @@
 
 .curve-border{
   border-radius: 1rem;
+  padding: 1rem;
 }
 
 .caption-tag{
@@ -622,10 +623,6 @@ figcaption{
   }
   .container:is(.is-max-desktop):is(.is-max-widescreen){
     width: 50% !important;
-  }
-
-  .posting-item-card {
-    width:auto !important;
   }
 
   .break-text{

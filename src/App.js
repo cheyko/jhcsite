@@ -44,16 +44,13 @@ import Attractions from "./components/Attractions";
 import Fees from "./components/Fees";
 
 //const cors = require('cors');
+/**constants created for security feature of website; a token is creadted and signed, then encoded. */
 const sign = require('jwt-encode');
 const secret = 'some$3cretKey';
 const algorithm = 'HS256';
 const data = {
   token : 'Required'
 };
-/*const cors = require('cors');
-const express = require('express');
-const app = express();
-app.use(cors());*/
 
 let browserHistroy = useHistory;
 
@@ -61,9 +58,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
-      postings: [],
-      contactName:"", contactEmail: "", nationality: "", contactSubject:"", contactMessage:"",
+      user: null, //initialized user object
+      postings: [], //initialized postings array; empty initially
+      contactName:"", contactEmail: "", nationality: "", contactSubject:"", contactMessage:"", //initialized variables used in contact page  
       showQues1 : false, showQues2 : false, showQues3 : false,
     };
     this.routerRef = React.createRef();
@@ -71,18 +68,20 @@ export default class App extends Component {
 
   
   async componentDidMount() {
-    const jwt = sign(data, secret, algorithm);
+    const jwt = sign(data, secret, algorithm); // creation of the JSON Web Token which is placed in the API request headers.
+    /**API request sent to check API; recommended by some cloud platforms */
     const checkApi = await axios.get("/api/",{
       headers: {
         'Authorization' : jwt
       }
     });
+    /**API request sent to retreive server time, also used as a check on the API */
     const time = await axios.get('/api/time',{
       headers: {
         'Authorization' : jwt
       }
     });
-    console.log(time);
+    console.log(time); //used to see if request are being sent and responses retrieved.
 
     /*const response = await axios.get('https://jamaica-gleaner.com/feed/rss.xml', {
       //mode: '*cors',
@@ -100,22 +99,25 @@ export default class App extends Component {
     });*/
 
     let user = localStorage.getItem("user");
+
+    /**API request sent to retreive all postings from server time.*/
     const postings = await axios.get("/api/postings",{
       headers: {
         'Authorization' : jwt
       }
     });
-    console.log(postings);
-    user = user ? JSON.parse(user) : null;
-    this.setState({ user, postings:postings.data.postings});
-    window.scrollTo(0, 0);
-    window.addEventListener('scroll', this.handleScroll);
+
+    user = user ? JSON.parse(user) : null; //user object is given a value from parse item in local storage 
+    this.setState({ user, postings:postings.data.postings}); // states of objects are created and saved inside context.
+    window.scrollTo(0, 0); //used to scroll to top of page on render.
+    window.addEventListener('scroll', this.handleScroll);// call of function that is used to set the navbar at top of page.
   }
 
   componentDidUpdate() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll); // call of function that is used to set the navbar at top of page.
   }
 
+  // used to set navigation at top of page when user is scrolling the web application (website).
   handleScroll = e => {
     // Get the navbar
     let navbar = document.getElementById("navbar");
@@ -130,27 +132,31 @@ export default class App extends Component {
     }
   }
 
+  //function used to retreive photos for each respective post.
   getTargetPhotos = async (theID, numOfPics) => {
     let targetPhotos = [];
     console.log("test");
     for ( var x = 0; x < numOfPics; x++){
       targetPhotos.push("image"+x+".jpg"); 
     }
-    //console.log(targetPhotos);
     return targetPhotos;
   }
 
+  //function used to get each respective post. 
   getPost = postID => {
     const { postings } = this.state
     return postings.find(post => post.id.toString() === postID.toString())
   }
 
+  //function used in addPosting function componet to get add a posting; notice, article or album.
   addPosting = (posting, callback) => {
     let postings = this.state.postings.slice();
     postings.push(posting);
     this.setState({ postings }, () => callback && callback());
   };
   
+  /* login function called inside the login funciton component; this function accepts two parameters
+  an email and a password which are admin privileaged */
   login = async (email, password) => {
     const jwt = sign(data,secret,algorithm);
     const res = await axios.post("/api/login",{email,password},{
@@ -163,14 +169,8 @@ export default class App extends Component {
       }
     )
 
-    /*const res = await axios.get("/api/loginnow").catch((res) => {
-      //return { status: 401, message: 'Unauthorized' }
-      console.log(res);
-    })*/
-    console.log(res.data);
     if(res.status === 200) {
       let email  = jwt_decode(res.data.access_token).sub;
-      console.log(res.data.access_rights);
       const user = {
         id: res.data.id,
         email,
@@ -186,11 +186,15 @@ export default class App extends Component {
     }
   }
   
+  //function used to logout of website
   logout = e => {
     e.preventDefault();
     this.setState({ user: null, showMenu: !this.state.showMenu });
     localStorage.removeItem("user");
   };
+
+  /* functions that can be used to control the display of FAQ's that are on the GeneralInfo Page,
+  however FAQ's are currently commented out
 
   showQues1Func = e => {
     e.preventDefault();
@@ -205,7 +209,7 @@ export default class App extends Component {
   showQues3Func = e => {
     e.preventDefault();
     this.setState({ showQues3: !this.state.showQues3 });
-  };
+  };*/
 
   render() {
     return (

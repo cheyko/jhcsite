@@ -118,6 +118,7 @@ EmailTemp = """\
 
 plainEmail = MIMEText(text, "plain")
 
+#function used to wrap API Functions preventing unauthorized access.
 def authenticate_token(t):
     @wraps(t)
     def decorated_func(*args, **kwargs):
@@ -135,6 +136,7 @@ def authenticate_token(t):
             return t(*args, **kwargs)
     return decorated_func
 
+#function used to send email to consulate, used in API function sendMessage
 def sendEmail(sendTo, subject, emailTemp):
     message = MIMEMultipart("alternative")
     message["Subject"] = subject
@@ -149,6 +151,7 @@ def sendEmail(sendTo, subject, emailTemp):
         server.login(app.config['GMAIL_SENDER'], app.config['GMAIL_PASSWORD'])
         server.sendmail(app.config['GMAIL_SENDER'], sendTo , message.as_string())
 
+#User Database Model
 class User(db.Model):
     # You can use this to change the table name. The default convention is to use
     # the class name. In this case a class name of UserProfile would create a
@@ -190,6 +193,7 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' %  self.email
 
+#Posting Database Model
 class Posting(db.Model):
     __tablename__ = 're_postings'
 
@@ -214,22 +218,26 @@ class Posting(db.Model):
     def __repr__(self):
         return '<House %r>' %  self.title
 
+#API function that renders index.html from browser GET request.
 @app.route("/", defaults={'path':''})
 @app.route('/index')
 @cross_origin()
 def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
+#Test API Function that returns ok message if request is authorized.
 @app.route('/api/', methods=['GET', 'POST'])
 @authenticate_token
 def home():
     return "ok", 200
 
+#Test API Function that returns server OS time and 200 status if request is authorized.
 @app.route('/api/time', methods=['GET', 'POST'])
 @authenticate_token
 def get_current_time():
     return {'time': time.time()}
 
+#API function used to perform Authentication.
 @app.route('/api/login', methods=['GET', 'POST'])
 @authenticate_token
 def login():
@@ -257,6 +265,7 @@ def login():
     else:
         return jsonify({"msg": "There was an error"}), 400
 
+#API function used to retreive all postings from database.
 @app.route('/api/postings', methods=['GET', 'POST'])
 @authenticate_token
 def postings():
@@ -292,6 +301,7 @@ def postings():
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id, "numOfPics":numOfPics}), 200
 
+#API function used to send Email message to consulate.
 @app.route('/api/message', methods=['POST'])
 @authenticate_token
 def sendMessage():
@@ -319,13 +329,7 @@ def sendMessage():
         sendEmail(sendTo ,contactSubject,body)
         return jsonify({"msg":"Message sent successfully"}), 200
 
-"""@app.errorhandler(404)
-def handle_404(e):
-    if request.method == 'GET':
-        return redirect(f'/?request_path={quote_plus(request.path)}')
-    return e
-"""
-
+#Function used to handle routing of Page request sent to Backend.
 @app.errorhandler(404)
 def not_found(e):
     return app.send_static_file('index.html')

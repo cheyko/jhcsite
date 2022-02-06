@@ -10,7 +10,7 @@ const PostingItem = props => {
   const { posting } = props;
   
   return (
-    <div className="column is-full-mobile is-one-third-desktop news-article">
+    <div className="column is-full-mobile is-one-third-tablet ">
       <Link to={`/view-posting/${posting.id}`}>
         <div className="posting-item-card" style={{height:"100%",margin:"0 auto"}}>
           <div className="has-text-left"> <small style={{color:"red"}}>{posting.category}</small> </div>

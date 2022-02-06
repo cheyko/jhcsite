@@ -6,6 +6,7 @@ import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
 import HorizontalCard from "./HorizontalCard";
 
+/**Variables containing information used in on HorizontalCard function component. */
 const CommissionerName = "H. E. Esmond Reid";
 const CommissionerTitle = "High Commissioner For The Jamaican High Commission in Nigeria.";
 const CommissionerBio = "His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ...  ";
@@ -13,7 +14,7 @@ const CommissionerBio = "His Excellency (H.E) Mr. Esmond Reid became High Commis
 const AboutPage = props => {
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0,0); //used to scroll to top of page on render.
   },[]);
 
   return (
@@ -87,7 +88,7 @@ const AboutPage = props => {
                       
                     </article>
                     
-                    <article className="message commissioner is-content is-size-5">
+                    {/*<article className="message commissioner is-content is-size-5">
                       <div className="message-header">
                         <p> Consulate Highlights </p>
                       </div>
@@ -95,7 +96,7 @@ const AboutPage = props => {
 
                       </div>
                     </article>
-                    <br></br>
+                    <br></br>*/}
 
                     <br></br>
                     <article className="message commissioner is-content is-size-5">

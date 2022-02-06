@@ -13,27 +13,7 @@ import Lightbox from "react-image-lightbox";
 
 const HomePage = props => {
 
-  //const [postings, setPostings] = useState(null);
-
-  /*useEffect(() => {
-    //window.scrollTo(0, 0);
-    //setPostings(props.context.postings);
-  }, /*[props.context.postings]);*/
-
-  /*let history = useHistory();
-
-  useEffect(() => {
-    // find if server refresh needs history
-    const $request_path = $('input[name=request_path]');
-    const val = $request_path.val();
-    if (val) {
-        $request_path.val("");
-        history.push(val);
-        return;
-    }
-  } , []);
-  */
-
+  /**Constant created which stores the settings for the slider options */
   const settings = {
     dots: true,
     infinite: true,
@@ -55,6 +35,8 @@ const HomePage = props => {
   let images;
   let titles;
 
+  /* implementation used to control the selection of slider images; each image represents a post, however if the are less than
+  3 postings then a set number of images are used. */
   var total = props.context.postings.length;
   if (total > 3){
     titles = [props.context.postings[total-1].title,props.context.postings[total-2].title,props.context.postings[total-3].title];
@@ -66,6 +48,7 @@ const HomePage = props => {
     images = ["/images/consulate/consulate1.JPG", "/images/consulate/consulate2.jpg","/images/consulate/consulate3.JPG"];
   }
 
+  /** array of slider variables */
   const slides = [
       {
           id : 0, info : titles[0], path : images[0] 
@@ -77,6 +60,7 @@ const HomePage = props => {
           id : 2, info : titles[2], path : images[2] 
       },
   ];
+  /**Variables containing information used in on HorizontalCard function component. */
   const CommissionerName = "H. E. Esmond Reid";
   const CommissionerTitle = "High Commissioner For The Jamaican High Commission in Nigeria.";
   const CommissionerBio =  `His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, 
@@ -91,11 +75,10 @@ const HomePage = props => {
   is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to 
   Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... ` ;
 
-
-  //const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)): props.context.postings ) : null ;
+  /**A reduced number of postings is retrieved for display on homepage. */
   const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  const [openImage, setOpen] = useState(false);
-  const [val, setVal] = useState(0);
+  const [openImage, setOpen] = useState(false); //  constant used to control the expansion of images
+  const [val, setVal] = useState(0); //  constant used to control the expansion of images
 
   return (
     <>
@@ -121,10 +104,11 @@ const HomePage = props => {
         <div className="commissioner-card">
             <HorizontalCard title={CommissionerName} subtitle={CommissionerTitle} body={CommissionerBio} type={"bio"}/>
           </div> 
-        {/*<div className="hero remarks">
-          <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
-        </div>
-                  */}
+        {/*
+          <div className="hero remarks">
+            <HorizontalCard title={CardTitle} subtitle={CardSubheading} body={CardBody} type={"remarks"} />
+          </div>
+        */}
      
         <div className="officials box">
           <div className="columns">
@@ -314,12 +298,10 @@ const HomePage = props => {
             </div>
           </div>
         </div>
-     
 
         <hr />
-   
-        
-        <div className="columns" style={{marginInline:"1rem"}}>
+      
+        <div className="columns hero-contain">
           <div className="column is-three-quarters">
             <Alerts />
 
@@ -332,8 +314,7 @@ const HomePage = props => {
           </div>
         </div>
         
-
-        <div className="map-of-jamaica" style={{width:"75%", margin:"3rem auto"}}>
+        <div className="map-of-jamaica hero-contain">
           <article>
             <div className="message" style={{backgroundColor:"rgb(0,0,0,0)"}}>
               <div className="message-header">
@@ -341,15 +322,17 @@ const HomePage = props => {
               </div>
               <div className="message-body">
                 <figure className="image is-4x3">
-                        <a href="http://www.mapsofworld.com/jamaica/">
-                          <img alt="map of jamaica" src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
+                        <a href="https://www.ezilon.com/maps/north-america/jamaica-maps.html">
+                          <img alt="map of jamaica" src="https://www.ezilon.com/maps/images/caribbean/political-map-of-Jamaica.gif" style={{width: "100%"}} />
                         </a>
                 </figure>
               </div>
             </div>
           </article>
         </div>
-
+        
+        <br></br>
+        
         <div className="hero famous-quote">
           <div className="container">
             <div className="card yellowbkgn">
@@ -368,7 +351,7 @@ const HomePage = props => {
             </div>
           </div>
         </div>
-        <br></br>
+        
         <br></br>
       </div>
     </>

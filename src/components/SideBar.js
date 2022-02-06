@@ -98,7 +98,7 @@ const jamaicaToday = [
             <div className="message-header">
               <p> Jamaica Today </p>
             </div>
-                <div className="message-body has-text-left">
+                <div className="message-body">
                   <div className="slide-wrapper">
                       <div className="box news-box">
                       <div className="thumbnail thumbnail-slider-wrap"> 
@@ -107,8 +107,9 @@ const jamaicaToday = [
                                 <div key={index} className="slick-slide has-text-centered">
                                     <a href={link.path} className="card">
                                       <h3>{link.caption}</h3>
+                                      
                                     </a>
-                                   
+                                    <br />
                                 </div>
                             ))}
                             </Slider>}
@@ -126,13 +127,13 @@ const jamaicaToday = [
             </div>
             <a href="https://boj.org.jm">
                 <div className="message-body">
-                    <div className="columns is-multiline">
-                        <div className="column is-full">
+                    <div className="rows">
+                        <div className="row">
                           <figure className="image is-256x256" style={{margin:"0 auto"}}>
                                 <img src={process.env.PUBLIC_URL + "/images/boj-logo.jpeg"} alt="Placeholder" />
                           </figure>
                         </div>
-                        <div className="column is-full">
+                        <div className="row has-text-centered">
                           <p className="title is-4">FX | Rates</p>
                           <p className="subtitle is-4">Bank of Jamaica</p>
                         </div>
@@ -163,8 +164,8 @@ const jamaicaToday = [
               <p>Map of Jamaica</p>
             </div>
             <div className="message-body">
-                <a href="http://www.mapsofworld.com/jamaica/">
-                  <img alt="map of jamaica" src="https://secureservercdn.net/198.71.233.110/u3v.7d0.myftpupload.com/wp-content/uploads/2016/02/Jamaicaphysicalmap.gif" style={{width: "100%"}} />
+                <a href="https://www.ezilon.com/maps/north-america/jamaica-maps.html">
+                  <img alt="map of jamaica" src="https://www.ezilon.com/maps/images/caribbean/political-map-of-Jamaica.gif" style={{width: "100%"}} />
                 </a>
             </div>
           </article>

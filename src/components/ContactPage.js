@@ -37,9 +37,10 @@ class ContactPage extends Component {
   constructor(props){
     super(props);
     this.state = initState;
-    window.scrollTo(0,0);
+    window.scrollTo(0,0); //used to scroll to the top of page on render.
   }
 
+  /* Function used to control form input */
   handleChange = (e) => {
     if(e.target.name === "nationality" && e.target.value === "Other"){
       this.setState({otherText: true,[e.target.name]: e.target.value, error: ""});
@@ -50,6 +51,7 @@ class ContactPage extends Component {
     }
   }
 
+  /* Function used to send message to consulate; containing api request which sends email to the respective consulate email addresses. */
   sendMessage = async (e) => {
     e.preventDefault();
     const jwt = sign(data,secret,algorithm);

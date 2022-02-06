@@ -6,13 +6,14 @@ const Alerts  = props => {
     return (
         <>
             <div className="hero">
-                <article className="message is-normal is-size-5">
-                      <div className="message-header">
-                      <p> Alerts and Messages </p>
+                <article className="is-normal is-size-5">
+                    <div className="box grnBkgn">
+                      <h3> Alerts and Messages </h3>
                     </div>
-                      <div className="message-body">
+                      <div>
                         <dl>
-                          <dt> <h3> LEAVING NIGERIA </h3> </dt>
+                          <dt className="card yellowbkgn"> <h3> LEAVING NIGERIA </h3> </dt>
+                          <br></br>
                           <dd>
                             <ul>
                               <li>
@@ -50,7 +51,9 @@ const Alerts  = props => {
                           </dd>
                         </dl>
                         <dl>
-                          <dt> <h3> COVID-19 INFORMATION </h3> </dt>
+                          <br></br>
+                          <dt className="card yellowbkgn"> <h3> COVID-19 INFORMATION </h3> </dt>
+                          <br></br>
                         <dd>
                           <ul>
                             <li> 

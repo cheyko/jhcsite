@@ -11,12 +11,13 @@ import 'react-image-lightbox/style.css';
 
 const CommissionerPage = props => {
 
-  const [openImage, setOpen] = useState(false);
+  const [openImage, setOpen] = useState(false); //used control the expanding of Picture on page.
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0); //used to scroll to the top of page on render.
   }, []);
 
+  /* Function used to expand image on Page */
   function imgControl(e){
     setOpen(true);
     e.preventDefault();

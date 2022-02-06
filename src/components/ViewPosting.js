@@ -8,6 +8,8 @@ import Lightbox from 'react-image-lightbox';
 import Slider from "react-slick";
 
 const ViewPosting = props => {
+
+    /**Constant created which stores the settings for the slider options */
   const settings = {
     dots: false,
     infinite: true,
@@ -18,13 +20,13 @@ const ViewPosting = props => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0); //used to scroll to top of page on render.
   }, []);
 
-  let posting = localStorage.getItem("posting");
+  let posting = localStorage.getItem("posting"); // current posting is retreived from session storage
   const theID = props.match.params.id;
  
-  const result = props.context.getPost(theID);
+  const result = props.context.getPost(theID); //post if retreive by calling function from main class component (App.js)
   posting = (result === undefined) ? JSON.parse(posting) : result;
   localStorage.setItem("posting", JSON.stringify(posting));
   const [openImage, setOpen] = useState(false);

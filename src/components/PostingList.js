@@ -6,22 +6,23 @@ import SideBar from "./SideBar";
 import ReactPaginate from 'react-paginate';
 
 const PostingList = props => {
-  const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  const perPage = 12;
-  const pageCount = Math.ceil(postings.length / perPage);
+ 
+  const postings = props.context.postings; //variable created which has all postings retreived from API.
+  const perPage = 12; //constant set which is later used as a limit per page for the number of postings.
+  const pageCount = Math.ceil(postings.length / perPage); //total number of pages calculated using the ceiling of number of post divided by limit per page. 
   let slice;
   const [offset, setOffset] = useState(0);
   
   useEffect(() => {
-    window.scrollTo(0, 300);
+    window.scrollTo(0, 300); //used to scroll to a section of page on render.
   }, []);
 
+  /** function that navigates through pages with the click of a next or previous button. */
   const handlePageClick = (e) => {
     setOffset(e.selected * perPage);
     window.scrollTo(0, 300);
   };
-  slice = postings ? postings.slice(offset, offset + perPage) : []; 
-  //console.log(slice[0]);
+  slice = postings ? postings.slice(offset, offset + perPage) : []; //variable used to load the postings for each respective page.
 
   return (
     <>
@@ -48,7 +49,7 @@ const PostingList = props => {
               <div className="columns">
                 <div className="column">
                   <div className="box yellowbkgn">
-                    <div className="columns is-multiline">
+                    <div className="columns is-mobile is-multiline">
                       {slice && slice.length > 0 ? (
                         slice.map((posting, index) => (
                           <PostingItem
