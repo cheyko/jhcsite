@@ -19,24 +19,24 @@ const ExternalWebsites = props => {
         {
             id : 4, url:"/images/attractions/green-grotto.jpeg", path : "http://greengrottocavesja.com/", title : "Green Grotto Caves", caption : "A Journey into underworld charm."
         },
-        {
+        /*{
             id : 5, url:"/images/attractions/harmony-beach.jpeg", path : "https://udcja.com/harmony-beach-park/", title : "Harmony Beach Park", caption : "A Tribute to Freedom."
+        },*/
+        {
+            id : 5, url:"/images/attractions/jamaica-carnival.jpeg", path : "https://www.bacchanaljamaica.com/", title : "Jamaica Carnival", caption : "20 years of Pure Excitement."
         },
         {
-            id : 6, url:"/images/attractions/jamaica-carnival.jpeg", path : "https://www.bacchanaljamaica.com/", title : "Jamaica Carnival", caption : "20 years of Pure Excitement."
+            id : 6, url:"/images/attractions/Tosh-Guitar.jpeg", path : "https://petertosh.com/museum/", title : "Peter Tosh Museum", caption : "Legend & Pioneer of Marijuana Legalization."
         },
         {
-            id : 7, url:"/images/attractions/Tosh-Guitar.jpeg", path : "https://petertosh.com/museum/", title : "Peter Tosh Museum", caption : "Legend & Pioneer of Marijuana Legalization."
-        },
-        {
-            id : 8, url:"/images/attractions/blue-mountains.jpeg", path : "https://www.blueandjohncrowmountains.org/", title : "Blue Mountains", caption : "A UNESCO and National Heritage Site."
-        },
+            id : 7, url:"/images/attractions/blue-mountains.jpeg", path : "https://www.blueandjohncrowmountains.org/", title : "Blue Mountains", caption : "A UNESCO and National Heritage Site."
+        }/*,
         {
             id : 9, url:"/images/attractions/rio-cobre-rock.jpeg", path : "http://jamaica-star.com/article/news/20211124/rio-cobre-source-myths-heartaches-and-opportunities", title : "Bog Walk Gorge", caption : "Home of the Famous Rock."
         },
         {
             id : 10, url:"/images/attractions/cockpit-country.jpeg", path : "https://www.cockpitcountry.com/", title : "Cockpit Country", caption : "Endless Heritage."
-        }
+        }*/
     ];
 
     const carousel = externalLinks.map((link,index) => (
