@@ -47,7 +47,7 @@ const Covidwa = props => {
                             <div className="message-body has-text-left">
                                 <p className="p-format">
                                 The Covid-19 pandemic continues to rage across the World. Africa was the last continent 
-                                to be hit by the virus and has not experienced as much devestation as other continents. 
+                                to be hit by the virus and has not experienced as much davestation as other continents. 
                                 Meanwhile many countries are currently experiencing the second wave of the outbreak and 
                                 a new variant called the 'Delta Variant'. West Africa, with a population of 367 million 
                                 people, had confirmed 412 178 cases of COVID-19 with 5363 deaths as of 14 March 2021; 
@@ -74,7 +74,7 @@ const Covidwa = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p className="p-format"> 
-                                 In Nigeria, the national public health response to the Coronavirus pandemic is lead by 
+                                 In Nigeria, the national public health response to the Coronavirus pandemic is led by 
                                  The Nigeria Centre for Disease Control (NCDC) through the National Emergency Operations Centre 
                                  (EOC) with oversight of the Presidential Task Force on COVID-19 (PTF-COVID-19). 
                                  Working closely with all states of the Federation to support their response activities to the 
@@ -183,7 +183,7 @@ const Covidwa = props => {
                                 </p>
                                 <br />
                                 <p className="p-format">
-                                Public transportation services (taxis, care rapides and intercity buses) may 
+                                Public transportation services (taxis, care rapids and intercity buses) may 
                                 transport the maximum number of passengers, provided all passengers wear a mask. 
                                 Violators of facial covering requirements face possible detention and fines imposed 
                                 by law enforcement officials. The Government of Senegal has implemented restrictions 
@@ -191,7 +191,7 @@ const Covidwa = props => {
                                 citizens or residents of Senegal or a country that is a member of the Economic Community 
                                 of West African States, or who do not meet certain other exemptions outlined on 
                                 their <a style={{color:"green"}} href="https://twitter.com/MTTASN/status/1283435028383498240">twitter feed</a>, may be 
-                                denied entry or face difficulty traveling to Senegal. If one has an understanding of french and require
+                                denied entry or face difficulty traveling to Senegal. If one has an understanding of French and require
                                 more information on the Latest with regards to Covid-19 in Senegal then check 
                                 the <a style={{color:"green"}} href="https://www.sante.gouv.sn/">Website</a> of the Ministry of Health and Social Action in Senegal.
                                 </p>
@@ -209,7 +209,7 @@ const Covidwa = props => {
                                   The National Coronavirus Emergency Response Committee (NaCOVERC) was created in Sierra Leone to tackle
                                   the Coronavirus Pandemic in the Country. Recently, Sierra Leone President Julius Maada Bio rolled out a number of new nationwide measures, 
                                   including a curfew that begins on Monday at 11PM to stem the increasing number of cases of Covid-19 
-                                  in the country. In order for travelers to gian entry to Sierre Leone, they are required to sign up on
+                                  in the country. In order for travellers to gain entry to Sierra Leone, they are required to sign up on
                                   the <a style={{color:"green"}} href="https://www.travel.gov.sl/">Travel Portal</a> to apply and pay for Covid-19 Testing.
                                   Before signing up for the portal, it is recommended that Travelers review the <a style={{color:"green"}} href="https://www.travel.gov.sl/travel-advisory">Travel Advisory</a> issued in Sierra Leone.  
 

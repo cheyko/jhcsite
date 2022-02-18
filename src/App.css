@@ -214,12 +214,10 @@
 */
 
 .slick-prev{
-  left: 5px !important;
-  z-index: 3 !important;
+  left: 5px !important; 
 }
 
 .slick-next{
-  z-index: 3  !important;
   right: 25px !important;
 }
 
@@ -260,7 +258,7 @@
 }
 
 .p-format{
-  text-align: justify;
+  text-align: left;
   text-indent: 3rem;
 }
 

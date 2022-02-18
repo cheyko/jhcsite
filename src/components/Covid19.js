@@ -49,7 +49,7 @@ const Covid19 = props => {
                                     capable of causing illnesses that range from the common cold to severe diseases 
                                     such as Severe Acute Respiratory Syndrome (SARS-CoV) or Middle East 
                                     Respiratory Syndrome (MERS-CoV). The coronavirus disease 2019 or 
-                                    more commmonly known as COVID-19 is a new strain of the coronavirus 
+                                    more commonly known as COVID-19 is a new strain of the coronavirus 
                                     and was discovered in 2019 hence given the name COVID-19 (COVID for Coronavirus 
                                     Disease and -19 represents the year 2019). This new disease has caused millions 
                                     of deaths around the world as well as lasting health problems in some who have 
@@ -78,17 +78,7 @@ const Covid19 = props => {
                             </div>
                         </div>
                     </article>
-                    <br/>
-                    <article>
-                        <div className="message is-danger">
-                            <div className="message-header">
-                                <p>Delta Variant</p>
-                            </div>
-                            <div className="message-body has-text-left">
-                                <p> COVID-19 Symptoms include :</p>
-                            </div>
-                        </div>
-                    </article>
+                    
                     <br/>
                     <article>
                         <div className="message is-warning">

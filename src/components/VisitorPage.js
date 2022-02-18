@@ -39,17 +39,17 @@ const VisitorPage = props => {
                     <div className="message-header">
                       <p> Entry to Jamaica </p>
                     </div>
-                    <div className="message-body" style={{textAlign:"justify"}}>
+                    <div className="message-body" style={{textAlign:"left"}}>
                       <p>
                           <strong> All persons from The West African States of 
                             Nigeria, Cameroon, Ghana, Senegal and Sierra Leone 
                             seeking to Travel to Jamaica must obtain a
                             Visa from the Consular Section of the Jamaican High Commission.
-                            With addition to the Aquisition of a Visa to Jamaica, Persons are 
+                            With addition to the Acquisition of a Visa to Jamaica, Persons are 
                             required to follow Jamaica's COVID-19 Entry Requirements before being 
                             permitted entry to the Island of Jamaica. COVID-19 requirements change 
                             ocassionally hence it is recommended to view the latest requirements from the 
-                            <a href="https://jamcovid19.moh.gov.jm/"> JamCovid19 </a>Webiste of the Ministry of Health and Wellness in Jamaica.
+                            <a href="https://jamcovid19.moh.gov.jm/"> JamCovid19 </a>Website of the Ministry of Health and Wellness in Jamaica.
                           </strong>
                       </p>
                     </div>
@@ -80,7 +80,7 @@ const VisitorPage = props => {
                       <div className="message-header">
                       <p> Validity of Documents</p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body" style={{textAlign:"left"}}>
                       <p>
                       Based on international standards, persons wishing to visit Jamaica must 
                       be in possession of a passport  or other travel document with validity 
@@ -95,7 +95,7 @@ const VisitorPage = props => {
                       <div className="message-header">
                       <p> Visa Requirements for Jamaica</p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body" style={{textAlign:"left"}}>
                         <p>Below are the visa requirements for african nationals seeking to travel to
                           the beautiful Island of Jamaica.
                         </p>

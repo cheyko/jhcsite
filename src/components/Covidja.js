@@ -77,7 +77,7 @@ const Covidja = props => {
                             <div className="message-body has-text-left">
                                 <p className="p-format">
                                 Along with an approved Travel Authorization form prior to boarding a flight to Jamaica, 
-                                ALL travelers ages 12 and up regardless of nationality, are required to show proof of a 
+                                ALL travellers ages 12 and up regardless of nationality, are required to show proof of a 
                                 negative COVID-19 molecular (PCR, NAA, RNA) or Antigen test performed by an accredited 
                                 lab for which the sample was collected within 3 days of the travel date. Know that we are 
                                 well-equipped to accommodate on-island testing prior to your return flight, as well.
@@ -85,7 +85,7 @@ const Covidja = props => {
                                 <br/>
                                 <p className="p-format">
                                 Learn more about <a style={{color:"green"}} href="https://www.visitjamaica.com/travelauthorization/tas/">Travel Authorizations</a> and the Covid-19 test requirements. 
-                                All travelers to Jamaica are reminded that the Government of Jamaica <a style={{color:"orange"}} href="https://www.visitjamaica.com/travelauthorization/traveller-categories/" >Controlled 
+                                All travellers to Jamaica are reminded that the Government of Jamaica <a style={{color:"orange"}} href="https://www.visitjamaica.com/travelauthorization/traveller-categories/" >Controlled 
                                 Entry Programme protocols </a> must be observed at all times.
                                 </p>
                             </div>
@@ -100,7 +100,7 @@ const Covidja = props => {
                             <div className="message-body has-text-left">
                                 <p className="p-format">
                                 Central to the risk management efforts are the Controlled Entry Programme initiatives.
-                                 These include the categorization and assignment of all arriving travelers based on 
+                                 These include the categorization and assignment of all arriving travellers based on 
                                  their purpose of visit and intended accommodation type of the Travel Authorization 
                                  application. Visitors staying at approved accommodation within the resilient corridor 
                                  can freely enjoy the many comforts of their stay, and to visit approved Covid-19 protocol 
@@ -134,7 +134,7 @@ const Covidja = props => {
                             </div>
                             <div className="message-body has-text-left">
                                 <p className="p-format">
-                                  """""" The Vaccination efforts in Jamaica are very much comendable. A large number of persons
+                                  """""" The Vaccination efforts in Jamaica are very much commendable. A large number of persons
                                   have now decided to take the vaccine and we are seeing a large influx of applications. """"""""
                                 </p>
                             </div>

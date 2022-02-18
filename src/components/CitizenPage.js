@@ -42,18 +42,18 @@ const CitizenPage = props => {
                     </div>
                       <div className="message-body">
                       <p className="p-format">
-                      The Jamaican High Comission in Abuja the capital of the Federal 
+                      The Jamaican High Commission in Abuja the capital of the Federal 
                       Republic of Nigeria provides information and assistance to Jamaican 
                       Nationals in the West African States under its jurisdiction. These countries 
                       include the <strong> Federal Republic of Nigeria, Republics of Cameroon, Ghana, 
-                      Senegal and Sierre Leone</strong>. For visit to the Consular Office, Jamaicans
+                      Senegal and Sierra Leone</strong>. For visit to the Consular Office, Jamaicans
                       can schedule an appointment by contacting the chancery at telephone numbers
                       <strong> <span type="tel">0813 606 3356</span> </strong> or 
                       <strong> <span type="tel">0816 737 4252</span> </strong>. 
                       Citizens of Jamaica can also contact the Chancery by email via 
                       <strong> <a href="mailto:consular-jhcnig@mfaft.gov.jm">Send Email</a></strong> or 
                       the <strong> <span href="">contact page</span> </strong> of this website.
-                      <em>The Jamaican High Commission is here to serve its Country and its People.</em>
+                      <em> The Jamaican High Commission is here to serve its Country and its People.</em>
                       </p>
                       <br></br>  
                       <p>

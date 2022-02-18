@@ -69,7 +69,7 @@ const Footer = props => {
                         </div>
                     </div>
                     <hr></hr>
-                     <div>&copy; 2021 Jamaican High Commission, Nigeria</div>
+                     <div>&copy; 2022 Jamaican High Commission, Nigeria</div>
                      <br />
                      <div style={{width:"100%"}} className="blkYellow"> 
                         <p>Website developed by Ariel Carmichael Wilson</p>

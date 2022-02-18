@@ -19,33 +19,23 @@ const Alerts  = props => {
                                 <div>
                                   <article className="message is-success hero-body">
                                     <div className="message-header">
-                                      <p> COVID-19 Testing </p>
+                                      <p> Travel Advisory </p>
+
                                       <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
                                     </div>
-                                    <div className="message-body">
-                                     ---- enter details of covid testing ----
-                                    The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
-                                        for tourism. <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
+                                    <div className="message-body" >
+                                      <p style={{textAlign:"left"}}>As of December 5, 2021; All passengers age 10 and up, irregardless of 
+                                      requirements of destination countries, must present a 
+                                      Negative PCR Test, Completed within 48 Hours before departure. Or provide
+                                      proof of full vaccination. Children under the age of 10 years old are exempt 
+                                      from testing. {" "} </p>
+                                      <br />
+                                     <Link style={{color:"blue"}} to="/covidwa">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
                                     </div>
                                   </article>
                                 </div>
                               </li>
                       
-                              <li>
-                                <div>
-                                  <article className="message is-success hero-body">
-                                    <div className="message-header">
-                                      <p> COVID-19 Vaccination </p>
-                                      <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
-                                    </div>
-                                    <div className="message-body">
-                                    ---- enter details of covid vaccination ---
-                                    The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
-                                        for tourism. <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
-                                    </div>
-                                  </article>
-                                </div>
-                              </li>
                             </ul>
                           </dd>
                         </dl>
@@ -63,7 +53,7 @@ const Alerts  = props => {
                                     <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
                                   </div>
                                   <div className="message-body">
-                                    <p>The coronavirus disease 2019 or 
+                                    <p style={{textAlign:"left"}}>The coronavirus disease 2019 or 
                                     more commmonly known as COVID-19 is a new strain of the coronavirus. 
                                     It was discovered in 2019 hence given the name COVID-19 (COVID for Coronavirus 
                                     Disease and -19 represents the year 2019). For more details on Covid-19 click on the link below.</p>
@@ -83,8 +73,10 @@ const Alerts  = props => {
                                     <button className="fa fa-exclamation-triangle" aria-label="exclamation-triangle"></button>
                                   </div>
                                   <div className="message-body">
-                                  The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
-                                      for tourism. <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
+                                   <p> The Government of Jamaica has developed “<a style={{color:"blue"}} href="https://www.visitjamaica.com/travelauthorization/resilient-corridors">Resilient Corridors</a>”
+                                      for tourism. </p>
+                                      <br />
+                                      <Link style={{color:"blue"}} to="/covidja">Click</Link> to see more details about Jamaica's Response to the Coronavirus.
                                   </div>
                                 </article>
                               </div>
@@ -99,7 +91,9 @@ const Alerts  = props => {
                                   </div>
                                   <div className="message-body">
                                   <p>African countries have been using experiences from past epidemics to build resilience and response strategies 
-                                      which may be the contributing factor why the continent’s health systems are not overwhelmed. <Link style={{color:"blue"}} to="/covidwa">Read More</Link></p>
+                                      which may be the contributing factor why the continent’s health systems are not overwhelmed. </p>
+                                      <br />
+                                      <Link style={{color:"blue"}} to="/covidwa">Read More</Link>
                                   </div>
                                 </article>
                               </div>   

@@ -45,7 +45,7 @@ const AboutPage = props => {
                       <div className="message-header">
                       <p>About the Jamaican High Commision in Abuja, Nigeria.</p>
                     </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body" >
                       <p>
                       The Jamaican High Comission in Abuja the capital of the Federal 
                       Republic of Nigeria provides consular services to assist Jamaicans 
@@ -74,7 +74,7 @@ const AboutPage = props => {
                       <div className="message-header">
                         <p> General Services offered by the Consulate</p>
                       </div>
-                      <div className="message-body" style={{textAlign:"justify"}}>
+                      <div className="message-body">
                         <ul style={{listStyleType:"square"}}>
                           <li> <strong> Provide consular services to Jamaican citizens including passport, citizenship and notarial services. </strong> </li>
                           <li> <strong> Provide general information to the Jamaican community specific to their needs and to the public at large. </strong> </li>
