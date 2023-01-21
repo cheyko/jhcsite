@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
-import {Link, useHistory} from "react-router-dom";
+import React from "react";
+import {Link } from "react-router-dom";
 import Slider from "react-slick";
 
 import withContext from "../withContext";
 import HorizontalCard from "./HorizontalCard";
 import PostingItem from "./PostingItem";
 import Alerts from "./Alerts";
-import $ from 'jquery';
+//import $ from 'jquery';
 import SideBar from "./SideBar";
 import ExternalWebsites from "./ExternalWebsites";
-import Lightbox from "react-image-lightbox";
+//import Lightbox from "react-image-lightbox";
 
 const HomePage = props => {
 
@@ -71,17 +71,17 @@ const HomePage = props => {
                             is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to 
                             Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... ` ;
 
-  const CardTitle = "Opening Remarks";
+  /*const CardTitle = "Opening Remarks";
   const CardSubheading = "From : H. E. Esmond Reid; High Commissioner For The Jamaican High Commission in Nigeria."
   const CardBody = `His Excellency (H.E) Mr. Esmond Reid became High Commissioner of the Jamaican High Commission in Abuja, 
   Federal Republic of Nigeria in March 2019. The High Commissioner, in addition to being accredited to Nigeria, 
   is also non-resident High Commissioner to the Republics of Cameroon and Ghana and non-resident Ambassador to 
   Senegal and Sierra Leone. H.E Esmond Reid, is an International Relations and Business Specialist with over 30 years experience in ... ` ;
-
+ */
   /**A reduced number of postings is retrieved for display on homepage. */
   const postings = props.context.postings ? (props.context.postings.length > 5 ? (props.context.postings.slice(0,6)) : props.context.postings ) : null ;
-  const [openImage, setOpen] = useState(false); //  constant used to control the expansion of images
-  const [val, setVal] = useState(0); //  constant used to control the expansion of images
+  //const [openImage, setOpen] = useState(false); //  constant used to control the expansion of images
+  //const [val, setVal] = useState(0); //  constant used to control the expansion of images
 
   return (
     <>
@@ -117,30 +117,30 @@ const HomePage = props => {
           <div className="columns">
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="container" onClick={() => {setOpen(true); setVal(1);}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
-                {openImage && val === 1 && (
+                <img className="container" onClick={() => {/*setOpen(true); setVal(1);*/}} src={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"} alt="The Jamaican Flag"/>
+                {/*openImage && val === 1 && (
                     <Lightbox
                         imageTitle={`SIR PATRICK ALLEN`}
                         mainSrc={process.env.PUBLIC_URL + "/images/consulate/Governor-General.jpeg"}
                         onCloseRequest={() => setOpen(false)}
                         
                     />
-                )}
+                )*/}
                 <figcaption className="caption-tag">Governor General</figcaption>
               </figure>
               <div>His Excellency, The Most Honourable <br /> <span className="official"> SIR PATRICK ALLEN </span> <br /> ON, GCMG, CD, KST.J </div>
             </div>
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="container" onClick={() => {setOpen(true); setVal(2);}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
-                {openImage && val === 2 && (
+                <img className="container" onClick={() => {/*setOpen(true); setVal(2);*/}} src={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"} alt="The Jamaican Flag" />
+                {/*openImage && val === 2 && (
                     <Lightbox
                         imageTitle={`ANDREW HOLNESS`}
                         mainSrc={process.env.PUBLIC_URL + "/images/consulate/Prime-Minister.jpeg"}
                         onCloseRequest={() => setOpen(false)}
                         
                     />
-                )}
+                )*/}
                 <figcaption className="caption-tag">Prime Minister</figcaption>
               </figure>
               <div>The Most Honourable <br /> <span className="official"> ANDREW HOLNESS </span> <br /> ON, MP </div>
@@ -148,15 +148,15 @@ const HomePage = props => {
             </div>
             <div className="column">
               <figure className="hero-body image is-3x1">
-                <img className="container" onClick={() => {setOpen(true); setVal(3);}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
-                {openImage && val === 3 && (
+                <img className="container" onClick={() => {/*setOpen(true); setVal(3);*/}} src={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"} alt="The Jamaican Flag" />
+                {/*openImage && val === 3 && (
                     <Lightbox
                         imageTitle={`KAMINA JOHNSON SMITH`}
                         mainSrc={process.env.PUBLIC_URL + "/images/consulate/Foreign-Minister.jpeg"}
                         onCloseRequest={() => setOpen(false)}
                         
                     />
-                )}
+                )*/}
                 <figcaption className="caption-tag">Minister of Foreign Affairs <br/> and Foreign Trade</figcaption>
                 </figure>
                 <div>Senator, The Honourable <br /> <span className="official"> KAMINA JOHNSON SMITH </span> </div>

@@ -16,7 +16,7 @@ const Banner = props => {
                                         </figure>
                                     </div>
                                 </div>
-                                <div className="column ">
+                                <div className="column">
                                     <div className="hero banner-column">
                                         <b className="title is-size-5" style={{color:"black"}}>
                                             Jamaican High Commission
@@ -28,8 +28,8 @@ const Banner = props => {
                                 </div>
                             </div>
                         </div>
-                        <div className="column is-two-fifths">
-                            <figure className="hero-body image is-3by1">
+                        <div style={{padding:"0rem"}} className="column is-two-fifths">
+                            <figure style={{paddingTop:"40%"}} className="hero-body image is-3by1">
                                 <img src={process.env.PUBLIC_URL + "/images/consulate/consulate_office.jpg"} alt="Placeholder" />
                             </figure>
                         </div>

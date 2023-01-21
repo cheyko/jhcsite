@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import withContext from "../withContext";
 
 class Login extends Component {
@@ -42,10 +42,10 @@ class Login extends Component {
             </div>
           </div>
           <br />
-          <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+          <nav className="breadcrumb is-centered" aria-label="breadcrumbs">
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li class="is-active"><span aria-current="page"> &nbsp; Login</span></li>
+              <li className="is-active"><span aria-current="page"> &nbsp; Login</span></li>
             </ul>
           </nav>
         </div>
@@ -86,7 +86,7 @@ class Login extends Component {
         </form>
       </>
     ) : (
-      <Redirect to="/" />
+      <Navigate to="/" />
     );
   }
 }

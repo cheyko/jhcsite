@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
 import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
 
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+//import Lightbox from 'react-image-lightbox';
+//import 'react-image-lightbox/style.css';
 
 
 const CommissionerPage = props => {
 
-  const [openImage, setOpen] = useState(false); //used control the expanding of Picture on page.
+  //const [openImage, setOpen] = useState(false); //used control the expanding of Picture on page.
 
   useEffect(() => {
     window.scrollTo(0, 0); //used to scroll to the top of page on render.
@@ -19,7 +19,7 @@ const CommissionerPage = props => {
 
   /* Function used to expand image on Page */
   function imgControl(e){
-    setOpen(true);
+    //setOpen(true);
     e.preventDefault();
   };
   return (
@@ -51,13 +51,13 @@ const CommissionerPage = props => {
                       <div className="box grnBkgn">
                         <figure className="image is-4x3">
                           <img alt="High Commissioner" onClick={imgControl} src={process.env.PUBLIC_URL + "/images/consulate/high_commissioner.jpg"} />
-                          {openImage && (
+                          {/*openImage && (
                             <Lightbox
                               imageTitle="Jamaican High Comissioner"
                               mainSrc={process.env.PUBLIC_URL + "/images/consulate/high_commissioner.jpg"}
                               onCloseRequest={() => setOpen(false)}
                             />
-                          )}
+                          )*/}
                           <figcaption>
                             <p>His Excellency Esmond St. Clair Reid</p>
                             <br></br>

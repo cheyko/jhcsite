@@ -15,12 +15,8 @@ const Map = props => {
               title={address}
               src={searchUrl}
               width="100%"
-              height="400rem"
+              height="500rem"
               id="gmap_canvas"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
             />
           </div>
         </div>

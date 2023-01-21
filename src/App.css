@@ -203,7 +203,7 @@
 }
 
 .customSlide {
-  height: 30rem;
+  height: 40rem;
   width: 100%;
 }
 
@@ -215,10 +215,12 @@
 
 .slick-prev{
   left: 5px !important; 
+  z-index: 3 !important;
 }
 
 .slick-next{
   right: 25px !important;
+  z-index: 3 !important;
 }
 
 
@@ -258,7 +260,7 @@
 }
 
 .p-format{
-  text-align: left;
+  text-align: justify;
   text-indent: 3rem;
 }
 
@@ -491,9 +493,11 @@
   padding-inline: 1rem ;
 }
 
+/*
 .governance .image img, .officials .image img{
   cursor: pointer !important;
 }
+*/
 
 figcaption{
   text-align: center !important;
@@ -505,6 +509,14 @@ figcaption{
 
 .dropdown-menu {
   width: 100% !important;
+}
+
+.banner-column{
+  padding-block: 1rem;
+}
+
+.jamaican-services li{
+  text-align: left;
 }
 
 @media screen and (max-width:374px){
@@ -639,6 +651,7 @@ figcaption{
   
   .banner-column{
     margin-block: 10%;
+    padding: 0rem;
   }
   .container:is(.is-max-desktop):is(.is-max-widescreen){
     width: 50% !important;

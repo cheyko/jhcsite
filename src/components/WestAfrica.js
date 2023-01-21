@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import withContext from "../withContext";
-import Slider from "react-slick";
+//import Slider from "react-slick";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import ExternalWebsites from "./ExternalWebsites";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import ExternalItem from "./ExternalItem";
-import axios from "axios";
-import Lightbox from "react-image-lightbox";
+//import ExternalItem from "./ExternalItem";
+//import axios from "axios";
+//import Lightbox from "react-image-lightbox";
 
 const WestAfrica = props => {
 
@@ -19,9 +19,9 @@ const WestAfrica = props => {
             window.scrollTo(0,0);
             setLoad(false);
         }
-    });
+    },[firstload]);
 
-    const settings = {
+    /*const settings = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -38,9 +38,9 @@ const WestAfrica = props => {
             }
         }
         ]
-    };
+    };*/
 
-    const slides = [
+    /*const slides = [
         {
             id : 0, info : "test0", path : "/images/about-westafrica/nike-art-center.jpeg", label : "Nike Art center in Lagos, Nigeria."
         },
@@ -56,10 +56,12 @@ const WestAfrica = props => {
         {
             id : 4, info : "test4", path : "/images/about-westafrica/bunce-island.jpeg", label : "Located in the Sierra Leone River, the Bunce Island has dwellings dating back to the 1670's."
         }
-    ];
+    ];*/
 
     const [openImage, setOpen] = useState(false);
     const [val, setVal] = useState(0);
+    console.log(openImage);
+    console.log(val);
 
     return(
         <div className="hero about-westafrica">
@@ -157,14 +159,14 @@ const WestAfrica = props => {
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
                                                     <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/cameroon.png"} alt="The National Flag of Cameroon" />
-                                                    {openImage && val === 4 && (
+                                                    {/*openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`The National Flag of Cameroon`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/cameroon.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
-                                                    )}
+                                                    )*/}
                                                 </figure>
                                                 <figcaption>
                                                     The National Flag of Cameroon
@@ -203,14 +205,14 @@ const WestAfrica = props => {
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
                                                     <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/ghana.png"} alt="Lagos Nigeria" />
-                                                    {openImage && val === 4 && (
+                                                    {/*openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`The National Flag of Ghana`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/ghana.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
-                                                    )}
+                                                    )*/}
                                                 </figure>
                                                 <figcaption>
                                                     The National Flag of Ghana
@@ -250,14 +252,14 @@ const WestAfrica = props => {
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
                                                     <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"} alt="The National Flag of Nigeria" />
-                                                    {openImage && val === 4 && (
+                                                    {/*openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`The National Flag of Nigeria`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/nigeria.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
-                                                    )}
+                                                    )*/}
                                                 </figure>
                                                 <figcaption>
                                                    The National Flag of Nigeria
@@ -296,14 +298,14 @@ const WestAfrica = props => {
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
                                                     <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/senegal.png"} alt="The National Flag of Senegal" />
-                                                    {openImage && val === 4 && (
+                                                    {/*openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`The National Flag of Senegal`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/senegal.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
-                                                    )}
+                                                    )*/}
                                                 </figure>
                                                 <figcaption>
                                                     The National Flag of Senegal
@@ -342,14 +344,14 @@ const WestAfrica = props => {
                                             <div className="column is-one-third">
                                                 <figure className="image is-256x256">
                                                     <img className="card" onClick={() => {setOpen(true); setVal(4);}} src={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"} alt="The National Flag of Sierra Leone" />
-                                                    {openImage && val === 4 && (
+                                                    {/*openImage && val === 4 && (
                                                         <Lightbox
                                                             imageTitle={`The National Flag of Sierra Leone`}
                                                             mainSrc={process.env.PUBLIC_URL + "/images/about-westafrica/sierra-leone.png"}
                                                             onCloseRequest={() => setOpen(false)}
                                                             
                                                         />
-                                                    )}
+                                                    )*/}
                                                 </figure>
                                                 <figcaption>
                                                     The National Flag of Sierra Leone

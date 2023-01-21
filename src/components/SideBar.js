@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import ExternalItem from "./ExternalItem";
+//import ExternalItem from "./ExternalItem";
 import withContext from "../withContext";
 
 const SideBar  = props => {    

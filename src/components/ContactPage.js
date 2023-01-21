@@ -9,7 +9,7 @@ import { faInbox} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 import Map from "./Map";
-import { send } from "process";
+//import { send } from "process";
 
 const sign = require('jwt-encode');
 const secret = 'some$3cretKey';

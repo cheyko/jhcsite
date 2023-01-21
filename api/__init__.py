@@ -3,19 +3,18 @@ import json
 import os
 import jwt
 
-from flask import Flask, send_from_directory, redirect
+from flask import Flask, send_from_directory, request, jsonify # ,redirect
 from urllib.parse import quote_plus
 from flask_sqlalchemy import SQLAlchemy
-from flask import request, jsonify
 from flask_migrate import Migrate
-from flask_login import login_user, logout_user, current_user, login_required
+#from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
-from flask_jwt_extended import create_access_token, create_refresh_token, jwt_required, get_jwt_identity, JWTManager
+from flask_jwt_extended import create_access_token, create_refresh_token, JWTManager #, jwt_required, get_jwt_identity
 from flask_cors import CORS, cross_origin
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask_restful import Api, Resource, reqparse
+from flask_restful import Api #, Resource, reqparse
 from functools import wraps
 import pathlib
 
@@ -25,8 +24,8 @@ api = Api(app)
 parentpath = pathlib.Path().resolve() 
 #app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
 app.config['UPLOAD_FOLDER'] = str(parentpath) + "/build/images/post-images"
-#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
 app.config['SECRET_KEY'] = "some$3cretKey"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
@@ -333,3 +332,7 @@ def sendMessage():
 @app.errorhandler(404)
 def not_found(e):
     return app.send_static_file('index.html')
+
+@app.route('/api/test', methods=['GET'])
+def test():
+    return "ok", 200

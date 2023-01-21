@@ -10,7 +10,7 @@ const Fees = props => {
             window.scrollTo(0,0);
             setLoad(false);
         }
-    });
+    },[firstload]);
      
     return(
         <div className="hero">

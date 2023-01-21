@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
 import ExternalWebsites from "./ExternalWebsites";
 import withContext from "../withContext";
-import Lightbox from 'react-image-lightbox';
+//import Lightbox from 'react-image-lightbox';
 import Slider from "react-slick";
 
 const ViewPosting = props => {
@@ -38,8 +38,8 @@ const ViewPosting = props => {
   const result = props.context.getPost(theID); //post if retreive by calling function from main class component (App.js)
   posting = (result === undefined) ? JSON.parse(posting) : result;
   localStorage.setItem("posting", JSON.stringify(posting));
-  const [openImage, setOpen] = useState(false);
-  const [idx, setIndex] = useState(true);
+  //const [openImage, setOpen] = useState(false);
+  //const [idx, setIndex] = useState(true);
 
   return (
 <>
@@ -74,15 +74,15 @@ const ViewPosting = props => {
                             {[...Array(posting.numOfPics).keys()].map((aFile, index) => (
                                 <div key={index} className="slick-slide slide--has-caption">
                                   <figure key={index} className="image is-2by1">
-                                      <img className="slick-slide-image" onClick={e => {setOpen(true); setIndex(index);}} src={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/upload${index}.jpg`} alt="upload" />
-                                      {openImage && (
+                                      <img className="slick-slide-image" onClick={e => {/*setOpen(true); setIndex(index);*/}} src={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/upload${index}.jpg`} alt="upload" />
+                                      {/*openImage && (
                                         <Lightbox
                                             imageTitle={`${posting.title}`}
                                             mainSrc={`${process.env.PUBLIC_URL}/images/post-images/post${posting.id}/upload${idx}.jpg`}
                                             onCloseRequest={() => setOpen(false)}
                                             
                                         />
-                                      )}
+                                      )*/}
                                   </figure>
                                 </div>
                                 

@@ -1,6 +1,6 @@
 {
-  "short_name": "JHC Nigeria",
-  "name": "Jamaican High Commission, Nigeria",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
