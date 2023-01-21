@@ -32,6 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd api && venv/Scripts/flask run --no-debugger",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +44,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "http://cheyko.github.io/jhcsite",
   "proxy": "http://127.0.0.1:5000",
   "browserslist": {
     "production": [
@@ -54,5 +57,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
