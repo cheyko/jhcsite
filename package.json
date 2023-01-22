@@ -43,9 +43,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "http://cheyko.github.io/jhcsite",
   "proxy": "http://127.0.0.1:5000",
-  "type": "module",
   "browserslist": {
     "production": [
       ">0.2%",
