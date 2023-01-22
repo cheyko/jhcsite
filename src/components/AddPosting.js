@@ -159,7 +159,7 @@ class AddPosting extends Component {
 
             ):(
               <figure className="image is-4x3">
-                <img alt="view post" style={{height:"30rem"}} src={process.env.PUBLIC_URL + "/images/image7.jpg"} />
+                <img alt="view post" style={{height:"30rem"}} src={process.env.PUBLIC_URL + "/images/post-images/image7.jpg"} />
               </figure>
             )}
           </div> 
@@ -277,7 +277,7 @@ class AddPosting extends Component {
                 <button
                   className="button is-primary is-outlined is-pulled-right"
                   type="submit"
-                  onClick={this.save}
+                  onClick={ e => this.save}
                 >
                   Submit
                 </button>

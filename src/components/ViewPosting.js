@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import SideBar from "./SideBar";
 import Alerts from "./Alerts";
 import ExternalWebsites from "./ExternalWebsites";
@@ -33,9 +33,9 @@ const ViewPosting = props => {
   }, []);
 
   let posting = localStorage.getItem("posting"); // current posting is retreived from session storage
-  const theID = props.match.params.id;
+  let {id} = useParams();
  
-  const result = props.context.getPost(theID); //post if retreive by calling function from main class component (App.js)
+  const result = props.context.getPost(id); //post if retreive by calling function from main class component (App.js)
   posting = (result === undefined) ? JSON.parse(posting) : result;
   localStorage.setItem("posting", JSON.stringify(posting));
   //const [openImage, setOpen] = useState(false);

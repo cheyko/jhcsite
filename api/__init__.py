@@ -22,8 +22,8 @@ app = Flask(__name__, static_url_path='', static_folder='../build')
 api = Api(app)
 
 parentpath = pathlib.Path().resolve() 
-#app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
-app.config['UPLOAD_FOLDER'] = str(parentpath) + "/build/images/post-images"
+app.config['UPLOAD_FOLDER'] = "../public/images/post-images/"
+#app.config['UPLOAD_FOLDER'] = str(parentpath) + "/build/images/post-images/"
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://jhcadmin:keke123@localhost/jhcdb"
 #app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://vrkqhsnowowmty:2e80b0955b54cd39ebfc779dd22fdd891cd169ae1dc9893025836fcf92c24090@ec2-18-214-238-28.compute-1.amazonaws.com:5432/de1r5mu0ivn96p"
 app.config['JWT_SECRET_KEY'] = 'super-secret'  # Change this!
@@ -295,7 +295,7 @@ def postings():
         prefix = "post" + str(newPost.id)
         os.makedirs(app.config['UPLOAD_FOLDER'] + prefix)   
         for index, pic in enumerate(photos):
-            filename = "upload" + str(index)  
+            filename = "upload" + str(index) + ".jpg" 
             pic.save(os.path.join(app.config['UPLOAD_FOLDER'] + prefix, filename))
         db.session.commit()
         return jsonify({"msg": "added successfully","id":newPost.id, "numOfPics":numOfPics}), 200

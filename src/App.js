@@ -49,6 +49,7 @@ class App extends Component {
         this.state = {
           user: null, //initialized user object
           postings: [], //initialized postings array; empty initially
+          contactName:"", contactEmail: "", nationality: "", contactSubject:"", contactMessage:"", //initialized variables used in contact page
         };
         this.routerRef = React.createRef();
     }
