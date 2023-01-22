@@ -39,7 +39,7 @@ const HomePage = props => {
 
   /* implementation used to control the selection of slider images; each image represents a post, however if the are less than
   3 postings then a set number of images are used. */
-  var total = props.context.postings.length;
+  var total = props.context.postings ? props.context.postings.length : 0;
   if (total > 3){
     titles = [props.context.postings[total-1].title,props.context.postings[total-2].title,props.context.postings[total-3].title];
     images = [`${process.env.PUBLIC_URL}/images/post-images/post${total}/upload${0}.jpg`,
