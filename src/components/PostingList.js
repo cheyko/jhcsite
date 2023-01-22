@@ -7,7 +7,7 @@ import ReactPaginate from 'react-paginate';
 
 const PostingList = props => {
  
-  const postings = props.context.postings; //variable created which has all postings retreived from API.
+  const postings = props.context.postings ? props.context.postings : []; //variable created which has all postings retreived from API.
   const perPage = 12; //constant set which is later used as a limit per page for the number of postings.
   const pageCount = Math.ceil(postings.length / perPage); //total number of pages calculated using the ceiling of number of post divided by limit per page. 
   let slice;
